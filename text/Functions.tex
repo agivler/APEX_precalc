@@ -1,0 +1,325 @@
+\section{Introduction to Functions}\label{sec:functions}
+
+This section introduces ideas and notation for functions. Much of the work in calculus relies heavily on understanding the meaning of a function and a proper understanding of function notation. Here we'll talk about these ideas and work through several examples involving function notation and how they relate to calculus.
+
+\vskip \baselineskip
+\noindent\textbf{\large What is a Function?}\\
+
+In mathematics, we look for patterns to help explain the world around us. Mathematicians often use functions to express these patterns succinctly. For example, we learn in geometry that the area of a square with sides of length 2 in is $2\times 2=4$ in$^2$. Similarly, if the square has sides of length 3 in, it's area is $3\times 3 = 9$ in$^2$. This shows us a pattern for determining the area of a square: if we know the side length, we simply multiply the side length by itself to get the area. Rather than writing out what this rule looks like for all sorts of different side lengths, we can express the pattern as a function:
+
+\begin{equation}\label{eqn:area_of_square}
+	\begin{split}
+		A(x) & = x \times x \\
+		     & = x^2 
+	\end{split}
+\end{equation}
+
+This function tells us that the area of a square with sides of length $x$ has an area of $x^2$. This is a lot more compact than writing out a table with all sorts of different side lengths and areas. 
+
+\vskip \baselineskip
+\noindent\textbf{\large Function Notation}\\
+
+Here we say that $x$ is the \emph{input} of the function $A(x)$ (read as ``$A$ of $x$''), and that $x^2$ is the corresponding \emph{output}. Notice that since we get to choose the ``name'' of the function, $A$, we used something that has some meaning for our example; our function gives us area, so calling the function $A$ makes that clearer than if we had chosen something like $l(x)$, where you might be tempted to think $l$ for length.
+
+Mathematicians will often use letters like $f$, $g$, and $h$ to name their functions, but you can name your function anyway you like. In fact, some functions that you may already be familiar with have longer names, like $\sin$ for the sine function or $\cos$ for the cosine function. Similarly, mathematicians will often use $x$ to represent the input of the function, but you can choose any name you want. In our example above, we could use $l$ as our input to stand for ``length'', giving us $A(l) = l^2$. This looks a little different than using $A(x)$, but it provides the same meaning for mathematicians: take your input and square it
+
+Often, mathematicians will use ``the function $A$'' and ``the function $A(x)$'' interchangeably. Both tell us to use the same rule that is shown in (\ref{eqn:area_of_square}), but the second gives us an added bit of information; it tells us that for the function $A$, $x$ is our input variable. For our example function, this information isn't particularly useful because the only letter on the right side of our function is $x$, but some functions will have other letters that aren't input variables. We'll run into this fairly often in calculus. For example, suppose we want to know the height of a ball that has been thrown into the air. Physics (and calculus) gives us a function for this:
+
+\begin{equation}\label{eqn:height_of_ball}
+	h(t)=h_0+v_0 t +\frac{1}{2}a t^2
+\end{equation}
+
+Since the left side has $h(t)$, we know that $t$ is our input variable, but we have lots of other letters on the right side. These letters all have meaning for this problem: $h_0$ is the initial height of the ball, $v_0$ is the velocity it was thrown at, and $a$ is the acceleration due to gravity. While they all have meaning and can change based on the particular instance of a ball being thrown, they are considered \emph{parameters} of the function, and not input variables. Why? Well, as soon as the ball is thrown, $h_0$, $v_0$, and $a$ won't change for that ball. Only the time the ball has been in the air changes; the ball has a different height after $t=2000$ seconds than it did after only $t=2$ seconds. Therefore, only $t$ is an input variable for this function. While it might not seem like a big deal to write $A$ instead of $A(x)$, we can see that writing $h$ instead of $h(t)$ could lead to confusion, so it's good to be careful and include that input variable when it's not perfectly clear.
+
+
+\vskip \baselineskip
+\noindent\textbf{\large Evaluating a Function}\\
+
+Now that we are familiar with why we use functions let's look at how to evaluate a function. We'll start will evaluating a function for a single value.
+
+\vskip \baselineskip
+
+\example{ex_01_02_01}{Evaluating a Function at a Point}{Determine the value of $f(-2)$ if $f(x)=x^2+4x-10$}{
+	First, we notice that the left side tells us that our input is $x$. Since we want to determine the value of $f(-2)$, we'll replace every $x$ on the right side with $(-2)$.
+	\begin{equation}
+		\begin{split}
+			f(-2) & = (-2)^2+4(-2)-10 \\
+			      & = (4) + 4(-2)-10 \\
+			      & = 4-8-10=-14
+		\end{split}
+	\end{equation}
+	
+	So, we find that $f(-2)=-14$.}\\
+
+It's good to notice that the question in Example \ref{ex_01_02_01} can be written in several different ways. All of the following require the same work, but are worded in slightly different ways:
+
+\begin{itemize}
+	\item Determine the value of $f(-2)$
+	\item Determine the value of $f(x)$ for $x=-2$
+	\item Evaluate $f(-2)$
+	\item Evaluate $f$ at $-2$
+\end{itemize}
+
+There are probably more ways to ask this question, but these are some of the most common ones. Let's look at an example where the function has parameters.
+
+\vskip \baselineskip
+
+\example{ex_01_02_02}{Evaluating a Function with Parameters}{Using the height formula in equation (\ref{eqn:height_of_ball}), determine the height of a ball 5 seconds after it was thrown.}{First, let's make sure we have the correct equation. The (\ref{eqn:height_of_ball}) label is next to $h(t)=h_0+v_0t+\frac{1}{2}a t^2$, so that tells us we are working with that function. The left side tells us that $t$ is our input variable since the function is called $h(t)$. That means we need to substitute $(5)$ for $t$ in the function:
+
+\begin{equation*}
+	\begin{split}
+		h(5) & = h_0 + v_0 (5) + \frac{1}{2} a (5)^2 \\
+		     & = h_0 + 5 v_0 + \frac{1}{2} a (25) \\ 
+		     & = h_0 + 5 v_0 + \frac{25}{2}a
+	\end{split}
+\end{equation*} 
+
+Notice that our final answer includes all three parameters. This is to be expected because we weren't given values for these parameters, so we'll leave them as letters rather than making up numbers to use. This gives us the flexibility to determine the height after 5 seconds for a variety of parameter values.}\\
+
+Notice that in Example \ref{ex_01_02_01}, we replaced $x$ not just with $-2$, but with $(-2)$ and in Example \ref{ex_01_02_02} we replaced $t$ with $(5)$. This helps in a couple of ways. First, it makes sure we don't miss any implied parentheses when we square $x$ in Example \ref{ex_01_02_01}. Second, it makes sure we replace $x$ and $t$ with the \emph{entire} input. This becomes very important in calculus. In differential calculus, you will spend a lot of time looking at how quickly function outputs change when the input only changes a tiny bit. You will do this by looking at a \emph{difference quotient} for the function. The general form of difference quotient for the function $f(x)$ that you will use is:
+
+\begin{equation}\label{eqn:difference_quotient}
+	\frac{f(x+h) - f(x)}{h}
+\end{equation}
+
+Notice that the numerator starts with $f(x+h)$. This means that every $x$ on the right side needs to be replaces with $x+h$. Here, the parentheses make a big difference even with a simple function like $p(x)=x^2$. If we include the parentheses, we get that 
+
+\begin{equation}\label{eqn:p(x+h)}
+	\begin{split}
+		p(x+h) & = (x+h)^2 \\
+		       & = (x+h)\times (x+h) \\
+		       & = x^2+2xh+h^2
+	\end{split}
+\end{equation}
+
+However, if we don't include the parentheses, we would get $x+h^2$, which is a very different (and incorrect) answer. Let's look at an example of finding a difference quotient for a more complicated function.
+
+\vskip \baselineskip
+\example{ex_01_02_03}{Finding a Difference Quotient}{Find the difference quotient for $g(t) = 2t^2-3t+1$}{Here we have a function called $g$, with $t$ as its input. That means that in our difference quotient, we will have $g$ instead of $f$ and $t$ instead of $x$, but $h$  will still be $h$. So, our difference quotient will look like
+\begin{equation*}
+	\begin{split}
+		\frac{g(t+h)-g(t)}{h} & = \frac{\big[2(t+h)^2-3(t+h)+1\big] - \big[2t^2-3t+1 \big]}{h} \\
+				      & = \frac{\big[2(t^2+2th+h^2)-3(t+h)+1\big] - \big[2t^2-3t+1 \big]}{h} \\
+				      & = \frac{\big[2t^2+4th+2h^2-3t-3h+1\big] - \big[2t^2-3t+1 \big]}{h} \\
+				      & = \frac{2t^2+4th+2h^2-3t-3h+1- \big[2t^2-3t+1 \big]}{h} \\
+				      & = \frac{2t^2+4th+2h^2-3t-3h+1- 2t^2+3t-1 }{h} \\
+				      & = \frac{4th+2h^2-3h}{h} \\
+				      & = 4t+2h-3
+	\end{split}
+\end{equation*} 
+
+There are a few important things to notice here. First, when we replaced $
+t$ with $(t+h)$ in the first term, we included those parentheses to make sure we used the whole input. Second, from line 3 to line 5, we dropped all parentheses; when we did this we made sure to distribute the negative to everything inside the second set of parentheses, and not just the first term.}\\
+
+\vskip \baselineskip
+\noindent\textbf{\large Common Types of Functions}\\
+
+There are several different types of functions that get use commonly in calculus. In this section, we'll briefly describe each. Later, we'll talk about how we can combine these in different ways, what types of inputs these functions can take, and what their graphs look like.
+
+\vskip \baselineskip
+\noindent\textbf{Power Functions}\\
+
+A \emph{power function} is any function that involves a variable raised to a power:
+
+\begin{equation}\label{eqn:power_function}
+	f(x)= a x ^ b
+\end{equation}
+
+Here, the left side tells us that $x$ is the variable; $a$ and $b$ are parameters that can be any real numbers. Because $a$ and $b$ can be anything, this is a very general function type meaning that the properties of the function can be very different based on these values of $a$ and $b$. 
+
+A \emph{monomial} is a special type of power function where $b$ is a non-negative integer; this means $b$ can be 0, 1, 2, 3, etc. We call $b$ the \emph{degree} of the function. $f(x) = 2x$ has degree 1, $g(x) = 45x^{13}$ has degree 13, and $h(x)=12 = 12x^0$ has degree 0. Later, we'll see that the degree helps us to quickly determine the shape of the function when we graph it.
+
+If we take one or more monomials and add them together, we get a \emph{polynomial}. That means that $f(x) = 2x$, $g(x) = 45x^{13}$, and $h(x)=12 = 12x^0$ are not only monomials, but also polynomials, and if we add them all together we get a new polynomial: $p(x) = 45x^{13}+2x+12$. We could get a different polynomial by taking the difference (subtracting) them: $q(x)=-45x^{13}-2x-12$. There are many more polynomials we could make from the three functions with various combinations of addition and subtraction.
+
+Traditionally, polynomials are written with the highest degree monomial first because for big values of $x$ it becomes the most important term. The highest degree monomial also tells us the degree of the polynomial: $p(x)$ and $q(x)$ both have degree 13. If the degree of the polynomial is 3, like with $r(\theta) = 4\theta^3 + 2 \theta^2 - 5\theta +2$, we can call it a \emph{cubic} function, and if the degree is 2, we call it a \emph{quadratic} function. If the degree is 1, like with $n(t) = 5t-2$, we simply call it a \emph{linear} function, and if the degree is 0, we say it's a \emph{constant} function. These four all have special names because they get used very often in mathematics.
+
+\vskip \baselineskip
+\noindent\textbf{Root Functions}\\
+
+Later, we'll talk more about the importance of root functions, but for now we'll focus on what they look their general form. A \emph{root} function is any function that looks like $f(x) = x^{1/n}$ where $n$ is a natural number (a positive integer, or counting number like 1, 2, 3, 4, etc.). This means that root functions are a special type of power function. The most commonly used root function is the square root function, $f(x)= x^{1/2}$. You've most likely seen this written in a different form: $f(x) = \sqrt{x}$. There are many other root functions like the cube root function ($g(x) = x^{1/3}=\sqrt[3]{x}$) and the fourth root function ($h(x) = x^{1/4} = \sqrt[4]{x}$). In general, we say that $x^{1/n}$ is the n$^{th}$ root of $x$, so $x^{1/7}$ would be called the seventh root of $x$. These can sometimes be tricky to evaluate. You probably know that $9^{1/2} = \sqrt{9} = 3$ because $3^2=9$, but few people know a good approximation for $5^{1/2}$. In these situations, it's usually best to leave your answer as $5^{1/2}$ or $\sqrt{5}$ rather than using a calculator to turn it into a decimal because it's more precise (and quicker to write than 2.2360679775).
+
+\vskip \baselineskip
+\noindent\textbf{Exponential Functions}\\
+
+\emph{Exponential} functions have the form $f(x) = b^x$, with $b>0$ and $b\neq 1$. Notice that like a power function, an exponential function involves an exponent, but there is a big difference. For a power function, the input variable, $x$ is the base with a parameter as the exponent. For an exponential function, the roles are swapped: the base is a parameter and the input variable is the exponent. 
+
+\vskip \baselineskip
+\noindent\textbf{Logarithmic Functions}\\
+
+\emph{Logarithms}, or \emph{logarithmic} functions are quite important in many applications of calculus because each logarithmic function is the inverse of an exponential function. They have the form $f(x) = \log_b{(x)}$. Just like with exponentials, we need $b>0$ and $b\neq1$. There are two very commonly used logarithms. The first is $\log_{10}{(10)}$, read as ``log base 10 of $x$.'' Sometimes you will see this written as just $\log{(x)}$ instead of $\log_{10}{(x)}$. The second commonly used logarithm is $\log_{e}{(x)}$, ``log base $e$ of $x$'', also know as the natural logarithm (commonly written as $\ln{(x)}$.
+
+
+\vskip \baselineskip
+\noindent\textbf{Trigonometric Functions}\\
+
+\emph{Trigonometric} functions are functions that relate the angles of a triangle to the length of the sides in that triangle. They can be used to describe many natural phenomena like waves (sound, light, and water waves) and harmonic motion (motion that repeats the same pattern over and over, also know as cyclic motion). The trigonometric functions that are most commonly used are sine ($\sin{(x)}$), cosine ($\cos{(x)}$), and tangent ($\tan{(x)}$). We'll talk about these functions and their application more later in the course.
+
+
+\vskip \baselineskip
+\noindent\textbf{\large Combining Functions}\\
+
+While each of these function types has its own set of special uses, often combinations of these functions are needed to accurately model events. For this section, we will use three different functions to help provide examples of how we can combine and modify functions:
+
+\begin{equation}\label{eqn:combine_fncts_f}
+	f(x) = 3x^2
+\end{equation}
+\vskip -\baselineskip
+
+\begin{equation}\label{eqn:combine_fncts_g}
+	g(x) = x-4
+\end{equation}
+\vskip -\baselineskip
+
+\begin{equation}\label{eqn:combine_fncts_h}
+	h(x) = \sqrt{x} + 6
+\end{equation}
+
+In differential calculus it is very important to be able to recognize how functions are combined. How they are combined greatly impacts how you take the derivative of the function. This text will not cover derivatives, but they are one of the most important topics in calculus, so being able to recognize these combination methods will be quite useful in calculus.
+
+\vskip \baselineskip
+\noindent\textbf{Scalar Multiples of Functions}\\
+
+The first way we can modify functions is with \emph{scalar multiplication}. This simply means multiplying the function by a constant (a number). For example,
+\begin{itemize}
+	\item $4f(x)=4(3x^2) = 12x^2$;
+	\item $4g(x) = 4(x-4) = 4x-16$;
+	\item $4h(x) = 4(\sqrt{x} + 6) = 4\sqrt{x} + 24$.
+\end{itemize}
+
+There's nothing special about the number $4$, we could multiply by anything: negative numbers, positive numbers, whole numbers, fractions, decimals, or even zero (even though that would make for a pretty boring result). Notice that for each of these we used parenthesis around the whole function when we multiplied. This makes sure that we really multiplied the entire function by $4$, and not just part of the function. This is particularly important with $g(x)$ and $h(x)$ since they each had two terms already and we had to distribute the $4$ to both terms.
+
+\vskip \baselineskip
+\noindent\textbf{Sums and Differences of Functions}\\
+
+One way to combine functions is to add them (sums) or subtract them (differences) from each other. For example, the sum of $f(x)$ and $g(x)$ is $f(x)+g(x) = 3x^2 + x-4$. Sums are nice to work with for many reasons; mathematicians use sums of functions to get better and better approximations when working with complicated data, and with sums order doesn't change the result. If we did $g(x)+f(x)$ instead of $f(x)+g(x)$, we get $g(x)+f(x) = x-4 + 3x^2$; if we rearrange terms so that the highest degree comes first, we get $3x^2 +x-4$ which is exactly the same as $f(x)+g(x)$.
+
+With differences, we have to be a little more careful because the order will make a difference. Let's take a look:
+\begin{itemize}
+	\item $f(x)-g(x) = 3x^2-(x-4) = 3x^2 -x +4$
+	\item $g(x)-f(x) = x-4-(3x^2) = x-4 -3x^2 = -3x^2 + x -4$
+\end{itemize}
+
+Here we see that $f(x)-g(x)$ and $g(x)-f(x)$ give us different results. Like with scalar multiplication, we were again careful to put parentheses around the entire function when we wrote the second function. This is because subtracting it really involves multiplying it by $-1$ and we want to make sure we distribute that negative to the entire function.
+
+With both sums and differences, we can use as many functions as we want:
+\begin{equation*}
+	f(x)-h(x)- g(x) = 3x^2 - (x-4) - (\sqrt{x} + 6) = 3x^2 -x + 4 -\sqrt{x} -6 = 3x^2 -x -\sqrt{x} -2
+\end{equation*}
+
+We can also mix between addition and subtraction:
+
+\begin{equation*}
+	h(x) + g(x) - f(x) = \sqrt{x} + 6 + x-4 - (3x^2) = -3x^2 + x + \sqrt{x} +2
+\end{equation*}
+
+\vskip \baselineskip
+\noindent\textbf{Products of Functions}\\
+
+Another way of combining functions is through products (multiplication) of functions. Like with sums of functions, order doesn't make a difference, so $f(x)g(x)=g(x)f(x)$. We won't show the details here, but try to verify it on your own. (Note: it is common for college level mathematics textbooks to state a property like this without showing the details. This means that the author(s) believe you are capable of working through the steps on your own, and working through these statements is a good way to verify that you do understand the steps involved.) With products of functions, we again will want to use parentheses to make sure we are using the entire function as one unit. This is particularly important when the function has multiple terms:
+\begin{itemize}
+	\item $ g(x)f(x) = (x-4)(3x^2) = (x)(3x^2) - 4(3x^2) = 3x^3 -12x^2$
+	\item $h(x)g(x) = (\sqrt{x} + 6) (x-4) = (\sqrt{x})(x-4) + 6(x-4) = x\sqrt{x} - 4\sqrt{x} + 6x -24 $
+
+\end{itemize}
+
+\vskip \baselineskip
+\noindent\textbf{Quotients of Functions}\\
+
+Next, we can combine functions by through division. We call the function $\frac{f(x)}{g(x)}$ the \emph{quotient} of $f$ and $g$. As with differences, order matters here; the quotient of $f$ and $g$ is different than the quotient of $g$ and $f$. (Reminder, this is another good place to try verifying a property on your own. Showing things are different can be just as useful as showing they are the same.) Remember that with fractions we have implied parenthesis around the entire numerator and around the entire denominator so we don't need to explicitly include those parentheses here. Typically we won't have to worry about much simplification with quotients of functions; later we'll see how to identify when we may be able to simplify, but for now it's safer to \emph{not} simplify these types of combinations. Let's look at a few examples:
+
+\begin{itemize}
+	\item $\displaystyle \frac{f(x)}{g(x)} = \frac{3x^2}{x-4}$
+	\item $\displaystyle \frac{g(x)}{f(x)} = \frac{x-4}{3x^2}$
+	\item $\displaystyle \frac{h(x)}{g(x)} = \frac{\sqrt{x} + 6}{x-4} $
+\end{itemize}
+
+\vskip \baselineskip
+\noindent\textbf{Composition of Functions}\\
+
+The last way we can combine functions is quite different. With all of our previous methods, we could take the output from one function and use arithmetic to combine it with the output from another function. For example, if we wanted to know $f(4) + g(4)$ but didn't care about the function $f(x)+g(x)$ in general, we could simply find $f(4)$ ($f(4)=3(4^2) = 3 (16) = 48$) and $g(4)$ ($g(4) = (4)-4 = 0$) and add them together: $f(4) + g(4) = 48 + 0 =48$. With composition of functions, we are going to use the output of one function as the input for another function. The \emph{composition} of $f(x)$ with $g(x)$ is written as $f(g(x))$, or as $(f \circ g)(x)$, using mathematical notation and is read as `` f of g of x.'' If we look at the notation, we see that function $f$ is going to take $g(x)$ as it's input variable. $g(x)$ will sometimes be referred to as the ``inside'' function and $f(x)$ as the ``outside'' function because $g(x)$ goes ``inside'' of $f$. As an example, let's look at $f(g(4))$ (``f of g of 4''). This tells us that we want to find the value of $f$ when we input $g(4)$. Well, we know from above that the value of $g(4)$ is $0$, so let's see what happens when we input $0$ into $f$. We would get that $f(0) = 3(0^2) = 3(0) = 0$. To show this work using only mathematical notation, we would write
+
+\begin{equation}\label{eqn:function_composition_at_a_point}
+	\begin{split}
+		f(g(4)) & = f(0) \text{, since } g(4)=0 \\
+			& = 3(0^2) \\
+			& = 3(0) \\
+			& = 0
+	\end{split}
+\end{equation}
+
+That's great if we just care about one point, but what if we want to know what $f(g(x))$ looks like at several different points? 
+
+\vskip \baselineskip
+
+\example{ex_01_02_04}{Composing Two Functions}{Using $f(x)$ and $g(x)$ from above, determine $j(x) = f(g(x))$.}{Since $g(x)$ is our input, we need to replace every $x$ in $f$ with $(x-4)$. This gives us
+\begin{equation}
+	\begin{split}
+		j(x) = f(g(x)) & = f(x-4) \\ 
+			       & =3(x-4)^2 \\
+			       & = 3(x-4)(x-4) \\
+			       & = 3 (x^2 - 8x + 16) \\
+			       & = 3x^2 - 24x + 48
+	\end{split}
+\end{equation}} \\
+
+We can verify that this agrees with the single point we looked earlier:
+
+\begin{equation*}
+	\begin{split}
+		j(4) & = 3 (4^2) - 24(4) + 48 \\
+		     & = 3(16)-24(4) + 48 \\
+		     & = 48 - 96 + 48 \\
+		     & = 0
+	\end{split}
+\end{equation*}
+
+Composition of functions is another place where order can make a difference. Let's take a look at $g(f(x))$.
+
+\vskip \baselineskip
+
+\example{ex_01_02_05}{Composing Two Functions}{Using $f(x)$ and $g(x)$ from above, determine $k(x) = g(f(x))$.}{Since $f(x)$ is our input, we need to replace every $x$ in $g$ with $(3x^2)$. This gives us
+\begin{equation}
+	\begin{split}
+		k(x) = g(f(x)) & = g(3x^2) \\
+			       & = (3x^2)-4 \\
+			       & = 3x^2-4
+	\end{split}
+\end{equation}} \\
+
+We can clearly see that $j(x)$ and $k(x)$ are very different functions.\\
+
+Function composition is not limited to using different functions for the inside function and the outside function. We could look at compositions like $f(f(x))$, $g(g(x))$, and $h(h(x))$. We work with these the same way we worked with $f(g(x))$ and $g(f(x))$; replace every $x$ in the outside function with the entire inside function. Neither is function composition restricted to only two functions; we could look at compositions with many layers. Let's take a look at a composition with 3 layers.
+
+\vskip \baselineskip
+
+\example{ex_01_02_06}{Composing Three Functions}{Using $f(x)$ and $g(x)$ from above, determine $m(x) = f(g(g(x))$.}{With multiple layers of composition, it's typically easiest to start on the inner layer first and then work your way out. Here the outermost function is $f(x)$, then $g(x)$ in the middle, and $g(x)$ on the inside. We already know what $g(x)$ looks like by itself, and the first composition we run into is $g(g(x))$. Let's call this $m_{inside}(x)$:
+
+\begin{equation}
+	\begin{split}
+		m_{inside}(x) = g(g(x)) & = g(x-4) \\
+					& = (x-4)-4 \\
+					& = x-4 -4 \\
+					& = x-8
+	\end{split}
+\end{equation}
+
+Just like before, we took the inside function, $(x-4)$ and used it to replace every $x$ in the outside function. Now, we've done the first layer of composition. We can now write $m(x) = f(g(g(x)) = f(m_{inside}(x))$. Now we have one last composition to worry about, with $m_{inside}$ as the inside function and $f$ as the outside function:
+
+\begin{equation}
+	\begin{split}
+		m(x) = f(m_{inside}(x)) & = f(x-8) \\
+					& = 3(x-8)^2 \\
+				        & = 3(x-8)(x-8) \\
+				        & = 3(x^2 -16x +64) \\
+				        & = 3x^2 - 48x+192
+	\end{split}
+\end{equation} }\\
+
+\vskip \baselineskip
+\noindent\textbf{Multiple Combinations of Functions}\\
+
+We've talked about many different ways to combine functions. It is important to note that all of the combination methods can be mixed together. We could create a combination like $f(x)[g(x) + h(x)]$ where we add $g$ and $h$ and then multiply the result with $f$, or a combination like $g(2f(x))$ where we multiply $f$ by a scalar and then use that as the input for $g$. As when we work with numbers, we must still use our same order of operations rules when we work with functions. For example, in the combination $[f(x) + g(x)][h(g(x))]$ we would need to complete the combinations inside of each set of brackets before multiplying the results.
+
+
+\printexercises{exercises/fncts_exercises}
+

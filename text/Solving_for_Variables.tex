@@ -1,0 +1,243 @@
+\section{Solving for Variables}\label{sec:solving_for_variables}
+
+
+In many math and science courses, you will need to be able to isolate, or solve for, a variable. This skill gets used in many places: in differential calculus it will help you identify the maximum or minimum value of a function and when you perform implicit differentiation where you will need to express one variable in terms of several variables and parameters; in integral calculus you will use it when you work to identify intersection points, and in the many physics based problems you will see in differential calculus such as equations working with spring motion. In many of these situations, you will either have multiple variables, lots of parameters, or fairly complicated functions. In all of these situations, the first step to solving for a variable involves figuring out what type of expression or function that you are working with. The type of expression guides the solution process; we take a different approach for quadratics than we do for linear expression and a different approach yet for trigonometric expressions. We will learn some of these approaches in this section, but we won't discuss approaches for trigonometric, logarithmic, and exponential functions until we discuss these functions in greater detail.
+
+When identifying the type of expression, you'll need to make sure you are focusing on your variable of interest. For example, we've looked at a formula for the height of a ball that has been thrown into the air, formula \ref{eqn:height_of_ball}:
+
+\begin{equation*}
+	h(t)=h_0+v_0 t +\frac{1}{2}a t^2
+\end{equation*}
+
+\noindent
+We discussed how this function has one variable, $t$, and several parameters: $h_0$, $v_0$, and $a$. Here, since $t$ is our variable, we naturally focus on $t$ and say that we have a quadratic function of $t$. However, there may be situations where our focus shifts. For example, you may want the ball to have a certain height, say 10 meters, after $t=30$ seconds and you are able to adjust the initial velocity, $v_0$, that the ball is thrown with. In this situation our focus is really on $v_0$ and not on $t$. This would give us the equation
+
+\begin{equation}\label{eqn:height_after_30_sec}
+	\begin{split}
+		10 & = h(30) = h_0 + v_0 (30) + \frac{1}{2}a (30)^2 \text{, or} \\
+		10 & = h_0+30v_0 + 450 a
+	\end{split}
+\end{equation}
+
+\noindent
+Here, our equation still includes the parameters $h_0$, $v_0$, and $a$, but we've substituted 30 for $t$, and we are looking for the value of $v_0$ that makes this statement true. Since we are focusing on $v_0$, we really only have a linear equation of $v_0$. In general, we would say that $h(t)$ is linear in $v_0$, meaning that if everything else is treated like a parameter, the highest degree of $v_0$ is 1, so it is linear. Similarly, $h(t)$ is a linear function of $h_0$ and a linear function of $a$. Let's take a look at a few more examples.
+
+\vskip \baselineskip
+
+\example{ex_determining_type}{Determining Statement Type}{The statement $y^3 \sin{(w)} = 4y^2z+2x^2y+xy+10$ is what type of statement in terms of 
+\noindent\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}
+		\item	the letter $w$?	
+		\item	the letter $x$?	
+		\end{enumerate}
+		\end{minipage}
+		\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}\addtocounter{enumi}{2}
+		\item	the letter $y$?
+		\item	the letter $z$?	
+		\end{enumerate}
+		\end{minipage} }{
+\noindent
+\begin{enumerate}
+	\item Here, our focus is on the letter $w$. The letter $w$ only appears on the left-hand side in the term $y^3 \sin{(w)}$. Since $w$ is inside of the sine function, this statement is trigonometric in $w$.
+	\item Here, our focus is on the letter $x$. The letter $x$ appears in two terms: $2x^2y$ and $xy$. The remaining terms, $y^3 \sin{(w)}$, $4y^2z$, and $10$ do not involve $x$, so they are considered to be constant terms when we focus on $x$. Out of the terms that include $x$, we have an $x^2$ term and an $x$ term. This tells us that the statement is quadratic in $x$.
+	\item Now, we are focusing on $y$. The letter $y$ shows up in every term except $10$. We have a $y^3$ term, a $y^2$ term, two $y$ terms, and a constant term. We could rewrite the statement so that there only looks like one $y$ term by gathering like terms and rewriting $2x^2y+xy$ as $(2x^2+x)y$. Since we only have these four different types of terms, this statement is cubic in $y$.
+	\item Lastly, we'll look at $z$. The letter $z$ only shows up in the term $4y^2z$; every other term counts as a constant when we focus on $z$. This tells us that the statement is linear in $z$.
+\end{enumerate}}\\
+
+Note that in the previous example, we do not know if each letter is representing a variable or a parameter because we are given no context for the statement. Since we are unsure, we just referred to ``letters'' so that we do not add meaning that may not be correct.
+
+Identifying the type of statement or equation for our variable of interest is our first step in solving for the variable. Next, we'll look at how to solve when we have linear statements, quadratic statements, or special kinds of higher degree polynomials. We'll also discuss the first steps for solving trigonometric, logarithmic, or exponential functions, but we won't learn how to fully solve these until later sections.
+
+\vskip \baselineskip
+\noindent\textbf{\large Solving a Linear Statement}\\
+
+Solving a linear statement is rather straightforward. For this explanation, we'll use $x$ as our variable of interest. Start by moving every term that doesn't have an $x$ to one side, and every term that does have an $x$ to the other side of the statement. Then, factor the $x$ out of every term with $x$. Lastly, divide the side without $x$ by the coefficients on $x$. Let's take a look at solving a linear statement.
+
+\vskip \baselineskip
+
+\example{ex_solving_linear}{Solving a Linear Statement}{Solve the statement $xz+2yz-4=\sin{(x)} + y^2+y^2z$ for $z$.}{Here we see that we do have a linear statement in $z$: the highest degree of $z$ in the statement is 1, and $z$ does not appear inside of any other functions. We'll start by gathering every term with a $z$ on the left side by subtracting $y^2z$ from both sides:
+
+\begin{equation*}
+	xz+2yz+y^2z-4=\sin{(x)+y^s}
+\end{equation*}
+
+\noindent
+Next, we'll gather all terms that don't have a $z$ on the right side:
+
+\begin{equation*}
+	xz+2yz+y^2z=\sin{(x)} +y^2 +4
+\end{equation*}
+	
+\noindent
+We did this by adding $4$ to both sides. Next, we'll factor out $z$ on the left side since it is a common factor for all of those terms:
+
+\begin{equation*}
+	z(x+2y+y^2)=\sin{(x)} +y^2 + 4
+\end{equation*}
+
+\noindent
+Lastly, we'll divide the right side by the $z$ coefficient on the left side:
+
+\begin{equation*}
+	z=\frac{\sin{(x)}+y^2+4}{x+2y+y^2}
+\end{equation*}}\\
+
+\vskip \baselineskip
+\noindent\textbf{\large Solving a Quadratic Statement}\\
+
+When we solve quadratic statements, we'll build off of the skills we learn with factoring quadratics and with finding the roots of quadratics. We know that if we want to find the roots of a function, we are really looking for all inputs that give us an output of zero. So, we take the function and set it equal to zero and use the quadratic formula. We know we could instead find the factors of the function and use those to find the roots. Here, we will focus on using the quadratic formula since we are dealing with fairly complicated expressions that will be more difficult to factor. With either method, we are building off of this idea of finding roots/factors, which relies on a statement where one side is zero. This means that when we work with quadratic statements, we will need to move all of our terms to one side before we do anything else. This is a common tripping point for people working with quadratics. Rather than developing a whole new set of techniques, mathematicians like to use old techniques as much as possible, and here that means we need one side to be zero. 
+
+Once we've moved all terms to one side, then we can gather our like terms. We know that our quadratic formula relies on knowing the coefficients of the $x^2$ term, the $x$ term, and the constant term, so we will want to gather all $x^2$ terms together, to gather all $x$ terms together,and to gather all constant terms together. From each set, we will factor out the $x$'s to find these coefficients. Let's take a look.
+
+\vskip \baselineskip
+
+\example{ex_solving_quadratic}{Solving a Quadratic Statement}{Solve the statement $xz+2yz-4=\sin{(x)} + y^2+y^2z$ for $y$.}{We saw this statement in our last example, but there we were solving for $z$. Here, we want to solve for $y$. We can see that this statement is quadratic in $y$ because we only have $y^2$ terms, $y$ terms, and constant terms. We'll start by moving every term on the right to the left (you could move everything to the right instead; you would end up with the same final answer).
+
+\begin{equation*}
+	xz+2yz-4-\sin{(x)} - y^2 -y^2z =0
+\end{equation*}
+
+\noindent
+Now, we will rearrange the order of our terms to gather all of the like terms. We'll start with the $y^2$ terms, then the $y$ terms, then the constant terms.
+
+\begin{equation*}
+	-y^2-y^2z + 2yz + xz -4 -\sin{(x)}=0
+\end{equation*}
+
+\noindent
+Now we will factor out the $y^2$ from the first two terms, then the $y$ from the next term.
+
+\begin{equation*}
+	y^2(-1-z) + y(2z) + xz-4-\sin{(x)} =0
+\end{equation*}
+
+\noindent
+Notice that when we factored $y^2$ out of the first two terms, we did not factor out the negative, even though both terms are negative. This is because we want the negative to be part of the $y^2$ coefficient in order to be in the right form to use the quadratic formula. Now, we can use the quadratic formula. In the quadratic formula, $a$ is the coefficient on the squared term, so here we have $a=-1-z$. Next, $b$ is the coefficient on the $y$ term, so $b=2z$. Lastly, $c$ is the constant term, so we have $c=xz-4-\sin{(x)}$. Substituting into the quadratic formula, we get:
+
+\begin{equation*}
+	\begin{split}
+		y & = \frac{-b \pm \sqrt{b^2-4ac}}{2a} \\
+		  & = \frac{-(2z) \pm \sqrt{(2z)^2 - 4(-1-z)(xz-4-\sin{(x)})}}{2(-1-z)} \\
+		  & = \frac{-2z \pm \sqrt{4z^2 - 4(-1-z)(xz-4-\sin{(x)})}}{-2-2z} \\
+		  & = \frac{-2z \pm \sqrt{4z^2 + (4+4z)(xz-4-\sin{(x)})}}{-2-2z} \\
+		  & = \frac{-2z \pm \sqrt{ 4z^2+4xz-16-4 \sin{(x)} - 4xz^2-16z-4z \sin{(x)} }}{-2-2z}
+	\end{split}
+\end{equation*}
+
+Since this cannot be easily simplified, we will leave the answer as it is.}\\
+
+As you probably noticed, the answer to this example is quite complicated, which shows us that trying to find factors for this quadratic rather than the roots is quite difficult. It's important to notice that we get two answers here:
+
+\begin{equation*}
+	\begin{split}
+		y & = \frac{-2z + \sqrt{ 4z^2+4xz-16-4 \sin{(x)} - 4xz^2-16z-4z \sin{(x)} }}{-2-2z}\\
+		y & = \frac{-2z - \sqrt{ 4z^2+4xz-16-4 \sin{(x)} - 4xz^2-16z-4z \sin{(x)} }}{-2-2z}
+	\end{split}
+\end{equation*}
+
+\noindent
+We get two answers because of the $\pm$; this tells us that one answer comes from using $+$ and the other from using $-$. This shows us that every quadratic statement will have two solutions. Sometimes these solutions will look the same (if we solve $(x-1)^2 = 0$ both answers will be $x=1$), and then mathematicians say there is \emph{one repeated solution} (or one repeated root). This repetition of the root does make a difference in other properties of the function that you will discuss in differential calculus. For the previous example, if the square root evaluates to zero, we would have one repeated solution. If we end up with the square root of a positive number, we would have \emph{two distinct (different) solutions} (or roots), and if we end up with the square root of a negative number, we would have a \emph{complex conjugate pair of solutions} (roots). Complex means that our answers involve imaginary numbers (any number that involves $i=\sqrt{-1}$) and conjugate pair means that they are related, and the only difference is that for one answer we use the $+$ part of the $\pm$ and for the other we use the $-$ part of the $\pm$. This shows that for this example, our final answers could change drastically depending on the values of $x$ and $z$.
+
+For quadratics, these are our only options for classifying our answers. In later courses like differential equations, the type of answer will tell you about properties of related functions. Notice that for a quadratic, we have 2 answers and the degree of the statement is 2. For linear statements, we only have one answer, and the degree of the statement is 1. This pattern continues; for cubic statements you have 3 answers and the degree is 3, for quartic statements you have 4 answers and the degree is 4. With any polynomial with degree of 2 or more, we could have solutions that are repeated, or complex conjugate pairs, as well as distinct solutions. The complex conjugate pairs give you two answers; for a cubic if you have a complex conjugate pair of solutions, your other solution must be a real solution. Let's take one look at a quadratic that has complex conjugate solutions so you can see how to write your answer using $i$, which is the most common way to express these answers.
+
+\vskip \baselineskip
+
+\example{ex_complex_conjugate_roots}{Solving a Quadratic Statement}{Solve $x(x-4) = -13$ for $x$.}{From the form of the statement we are given, it's not entirely obvious that we are working with a quadratic. We'll need to expand the left side before we do anything else so that we can easily see that it is a quadratic and so we can correctly determine all of the coefficients. Expanding gives $x^2-4x=-13$. Our next step is to move everything to one side:
+
+\begin{equation*}
+	x^2-4x+13=0
+\end{equation*}
+
+Now, we can pick out our values of $a$, $b$, and $c$ for the quadratic formula. $x^2$ has a coefficient of $1$, so $a=1$; $x$ has a coefficient of $-4$, so $b=-4$; and the constant is $-13$, so $c=-13$. The quadratic formula gives us
+
+\begin{equation*}
+	\begin{split}
+		x & = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\\
+		  & = \frac{-(-4) \pm \sqrt{(-4)^2 -4(1)(13)}}{2(1)}\\
+		  & = \frac{4 \pm \sqrt{16 - 52}}{2} \\
+		  & = \frac{4 \pm \sqrt{-36}}{2}
+	\end{split}
+\end{equation*}
+
+Now, we'll need to deal with that negative under the square root before we simplify our answer. We can deal with this by factoring the square root: $\sqrt{-36} = \sqrt{(-1)(36)} = \sqrt{-1}\sqrt{36} = i\sqrt{36}$. Now, we can continue simplifying our answers:
+
+\begin{equation*}
+	\begin{split}
+		x & = \frac{4 \pm \sqrt{-36}}{2} \\
+		  & = \frac{4 \pm i \sqrt{36}}{2} \\
+		  & = \frac{4 \pm i(6)}{2} \\
+		  & = \frac{4 \pm 6i}{2} \\
+		  & = 2 \pm 3i
+	\end{split}
+\end{equation*} 
+
+So, we end up with a complex conjugate pair: $x=2+3i$ and $x=2-3i$.}\\
+
+\vskip \baselineskip
+\noindent\textbf{\large Solving Higher Degree Statements}\\
+
+For higher degree polynomial statements that do not include parameters, we can build off of the strategies we used when factoring and finding roots. For these, we can solve by moving all of the terms to one side, and then finding the roots. These roots will be the same as the solutions to the original statement. However, solving higher degree statements can be quite difficult if they have many parameters. For cubic functions, there is a formula (akin to the quadratic formula) that will allow you to solve if you move all terms to one side, but the formula is long and hard to simplify. Few mathematicians could tell you this formula without looking it up because it is rarely used; because of this we will not cover it, but it is good to know that it exists. Similarly, an even more complicated formula exists to find a root of a quartic function; once you find the first root you would then have to use the cubic function formula. For any functions of degree 5 or higher, there is no known formula to help you solve. Since these higher degree functions are quite difficult to work with, we will not work with them. We will, however, look at solving special cases of them later when we discuss exponents in section 3.2.
+
+
+\begin{comment}we will only cover solving special cases of these statements. 
+
+
+The special case we will look at is when our statement only has one term involving a variable of our interest and one or more constant terms. The term involving our variable can be raised to any power for this method to work, but here we will focus on the case where the exponent is a positive integer; we will look at other cases more in depth when we focus on exponents in section 3.3.
+
+Our special case applies to statements like $2ab^2x^5 = 10$ and $a^2cx^4 -2=0$, assuming that we are interested in the variable $x$. Our solution method here is straightforward: rearrange the statement so that the $x$ term and the constant are on opposite sides; divide both sides by any coefficients on $x$; and raise both sides to the power $\frac{1}{b}$, where $b$ is the exponent on $x$. This works because $x^b$ and $x^{1/b}$ (the b$^{th}$ root of $x$) are inverses of each other; one operation ``cancels'' the other, like how multiplying by 2 is canceled out by dividing by 2. Let's take a look:
+
+\vskip \baselineskip
+
+\example{ex_solving_fifth_deg}{Solving a Higher Degree Statement}{Solve the statement $a^2cx^4-2=0$ for $x$.}{Here we fit our special case; there is only one term with $x$ and one or more constant terms. Let's start by adding 2 to both sides:
+
+\begin{equation*}
+	a^2cx^4=2
+\end{equation*}
+
+\noindent
+Now, we will divide both sides by the coefficient on the $x$ term. Here, the coefficient is $a^2c$.
+
+\begin{equation*}
+	x^4 = \frac{2}{a^2c}
+\end{equation*}
+
+\noindent
+
+Lastly, we will raise both sides to the $\frac{1}{4}$ power:
+
+\begin{equation*}
+	\begin{split}
+		(x^4)^{1/4} & = \Bigg( \frac{2}{a^2c}\Bigg)^{1/4} \\
+		x & = \Bigg( \frac{2}{a^2c}\Bigg)^{1/4}
+	\end{split}
+\end{equation*}}\\
+
+Let's look at one more.
+
+\vskip \baselineskip
+
+\example{ex_solving_high_deg}{Solving a Higher Degree Statement}{Solve $a^7b^3cx-7 + \sin{(b)}=2x^2$ for $a$.}{First, let's check that this fits our special case. We are interested in $a$, which only appears in the first term, and is raised to the seventh power. No other terms include $a$, so they all count as constants. This means this statement is covered by our special case. Here, we will show the work with no verbal description; stop after each line and see if you can provide the verbal description on your own.
+
+\begin{equation*}
+	\begin{split}
+		a^7b^3cx-7 + \sin{(b)} & =2x^2 \\
+		a^7b^3cx & =2x^2+7-\sin{(b)} \\
+		a^7 & = \frac{2x^2+7-\sin{(b)}}{b^3cx} \\
+		(a^7)^{1/7} & = \Bigg( \frac{2x^2+7-\sin{(b)}}{b^3cx} \Bigg)^{1/7} \\
+		a & = \Bigg( \frac{2x^2+7-\sin{(b)}}{b^3cx} \Bigg)^{1/7}
+	\end{split}
+\end{equation*}}\\
+
+\end{comment}
+
+\vskip \baselineskip
+\noindent\textbf{\large Solving Non-polynomial Statements}\\
+
+Lastly, we will briefly discuss solving non-polynomial statements, statements where our letter of interest is an input for a trigonometric function, a logarithmic function, or an exponential function. These types of statements require the use of tools and ideas that we have not yet discussed, so the full details will be covered in later sections. However, for all of these, the first half of the process is the same as solving for a linear statement. We start by isolating the function that involves our letter of interest by moving all other terms to the other side, and then dividing by any coefficients on our term of interest. For example, if we wanted to solve the statement $\ln{(a)}b^3cx-7 + \sin{(b)}=2x^2$ for $a$, we would start by isolating $\ln{(a)}$, and would end up with $\displaystyle \ln{(a)}  = \frac{2x^2+7-\sin{(b)}}{b^3cx}$. This doesn't tell us what $a$ is, but we're nearly there. We'll cover this last step in section 3.3 when we take a closer look at logarithmic functions, but you now have most the of tools you need to solve statements similar to this one.
+
+
+\printexercises{exercises/solve_vars_exercises}
+
+
+%\clearpage

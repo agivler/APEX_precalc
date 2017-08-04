@@ -1,0 +1,175 @@
+\section{Function Domains}\label{sec:domains}
+
+This section covers domains and interval notation. In calculus, we will use domains to help identify any discontinuities in functions and perform a full analysis of a function.
+
+\vskip \baselineskip
+\noindent\textbf{\large Interval Notation}\label{sec:interval_notation}\\
+
+Before we get to domains, we'll discuss interval notation. \emph{Interval notation} provides us with a way to describe ranges of numbers concisely. Unlike order of operations, with interval notation parentheses and brackets have different meaning. For example, $[1,4.5]$ is the range of numbers between 1 and 4.5, including those endpoints. For example, 1, 2, $\pi$, and 4.5 are all included in that interval, but -1.2, 85, and 4.5000001 are not. However, if we look at $(1,4.5)$, 2 and $\pi$ are still in this interval but 1 and 4.5 are not. Brackets tell us we include the endpoint and parentheses tell us that we don't.
+
+With interval notation, we can mix parentheses and brackets if we need to include one endpoint but not the other. For example, $[1,4.5)$ contains 1 but not 4.5 and $(1,4.5]$ contains 4.5 but not 1.
+
+\vskip \baselineskip
+
+\example{ex_01_03_01}{Interval Notation}{Determine if each of the following numbers is included in the interval $[-5, 27)$.
+\noindent\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}
+		\item	$2$	
+		\item	$\pi$	
+		\item	$-5$	
+		\item	$-8$	
+		\end{enumerate}
+		\end{minipage}
+		\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}\addtocounter{enumi}{4}
+		\item	$27$
+		\item	$32$	
+		\item	$-5.000001$	
+		\item	$-4.999999$	
+		\end{enumerate}	
+		\end{minipage}
+}{For each of these, we need to determine if the number is between the two numbers given in the interval.
+\noindent	\begin{enumerate}
+		\item	$2$ is bigger than $-5$ and smaller than $27$ so it is in the interval.
+		\item	$\pi$ is bigger than $-5$ and smaller than $27$ so it is in the interval.
+		\item	$-5$ is one of our endpoints, so we need to see if it has a bracket or a parenthesis on that end. It has a bracket, so it is included in the interval.
+		\item	$-8$ is smaller than $-5$, so it is \emph{not} included in the interval.
+		\item	$27$ is one of our endpoints, so we need to see if it has a bracket or a parenthesis on that end. It has a parenthesis, so it is \emph{not} included in the interval.
+		\item	$32$ is bigger than $27$, so it is \emph{not} included in the interval.
+		\item	$-5.000001$ is smaller than $-5$, so it is \emph{not} included in the interval.	
+		\item	$-4.999999$ is bigger than $-5$ and smaller than $27$ so it is in the interval.	
+		\end{enumerate}	
+}
+
+We can also use interval notation to express ranges that don't have an upper bound. For example, if we wanted to use interval notation to write the range for all positive numbers, we would write $(0,\infty)$. We know there's no limit to how big a positive number can get, so we use $\infty$ to indicate that we are just looking at numbers bigger than $0$. Similarly, we can write $(-\infty,0)$ to express the range for all negative numbers. Note that for both of these we use a parenthesis with the infinity symbol and not a bracket since infinity isn't a number.
+
+Additionally, we can use interval notation to express more complicated ranges of numbers. We can combine ranges using $\cup$, the shorthand mathematical way of writing ``or''. For example, $[1,3]\cup(4,\infty)$ means the range of values between 1 and 3, including the endpoints, as well as any numbers bigger than 4. So 2, 4.1, and 20 are all in this interval, but -2, 3.5, and 4 are not.
+
+\vskip \baselineskip
+\noindent\textbf{\large Interval Notation and Inequalities}\\
+
+
+Interval notation also gives us another way of expressing an inequality. For example, $x\geq 2$ can be written as $x \in [2,\infty)$. Here the $\in$ symbol is read as the word ``in''. We would read this out loud by saying ``x is greater than or equal to 2''  is the same as ``x is in the range from 2, inclusive, to infinity.'' The statement $x \in (2,\infty)$ is a bit different; it's the same as $x > 2$ since we don't want to include 2 as part of our range. Here, we would read the range as ``x in 2, exclusive, to infinity.''
+
+\vskip \baselineskip
+
+\noindent\textbf{\large Function Domains}\\
+
+The \emph{domain} of a function is the set of all possible real number inputs that result in a real number output for that function. Domains are typically expressed using interval notation, labeled with ``$D$:''. With domains, it's often easier to look for inputs that will cause problems, rather than looking for ``good'' inputs. By making a list of trouble points, we will determine the domain by looking at what's left. We'll start by looking at the domain for each of our common functions discussed in Section \ref{sec:functions}.
+
+For power functions, the domain will depend on the value of the exponent. Last section, we said that power functions have the form $f(x)=ax^b$ where $a$ and $b$ can be any real numbers. We'll start by looking at where we could run into trouble with certain inputs.
+
+The first place we can run into trouble is if $b$ is negative. This will always cause a problem for $x=0$ because the negative exponent means we would be dividing by 0 (and we can't do that!). 
+
+The second place where we can run into trouble is when $b$ is not a whole number. Here we'll focus on rational numbers, i.e., any number that can be written as a fraction. Say $b=\frac{p}{q}$ where $p$ and $q$ are whole numbers with no common factors. If $q$ is odd, we won't have any trouble with any inputs, but if $q$ is even we can have problems. If we try to take an even root of a negative number (like $\sqrt{-4}=(-4)^{1/2}$) we don't get a real number. We'll have this trouble with any negative number if $q$ is even, so in this situation, we can't input any negative numbers.
+
+By combining these two trouble spots, we can find the domain of any power function you're likely to run into.
+%
+%\begin{enumerate}
+%	\item D: $(-\infty, infty)$ if $b$ is a positive whole number;
+%	\item D: $(-\infty,0)\cup(0,\infty)$ if $b$ is a negative whole number;
+%	\item D: $[0,\infty)$ if $b=\frac{p}{q}$ where $b$ is positive and $q$ is even;
+%	\item D: $(0,\infty)$ if $b=\frac{p}{q}$ where $b$ is negative and $q$ is even;
+%	\item D: $
+%\end{enumerate}
+
+\vskip \baselineskip
+
+\example{ex_01_03_02}{Power Function Domains}{Determine the domain for each of the following power functions:\\
+\noindent\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}
+		\item	$\displaystyle f(x) = x ^{2/3}$	
+		\item	$\displaystyle g(x) = 4 x ^ {-2}$	
+		\item	$\displaystyle h(x) = -5 x ^{8}$	
+		\end{enumerate}
+		\end{minipage}
+		\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}\addtocounter{enumi}{4}
+		\item	$\displaystyle w(t) = \frac{1}{2} t ^{-1/3}$
+		\item	$\displaystyle y(t) = t ^ {-3/4}$	
+		\item	$\displaystyle z(t) = -2 t^{3/4}$	
+		\end{enumerate}	
+		\end{minipage}
+}{For each of these, we need to look at the exponent only; scalar multiplication of a function does not affect the domain.
+\noindent \begin{enumerate}
+		\item For $f(x)$, $b=\frac{2}{3}$. This is a fraction, so we need to look at the denominator. The denominator is 3, an odd number. This tells us that negative inputs are fine. Since $b$ is positive, we know that 0 is also fine. So, we have D: $(-\infty,\infty)$.
+		\item For $g(x)$, we have $b=-2$. This is a whole number, so we only need to look at its sign. It's negative, so this tells us that 0 will cause trouble. So, D: $(-\infty,0)\cup(0,\infty)$.
+		\item For $h(x)$, $b=8$. This is a positive whole number, so we don't have any trouble inputs since we can only run into trouble if $b$ is negative or a fraction. So, D: $(-\infty,\infty)$.
+		\item For $w(t)$, we have $b=-\frac{1}{3}$. It's negative, so 0 is a problem, but it's a fraction with an odd denominator, so negative inputs are fine. Thus, D: $(-\infty,0)\cup(0,\infty)$.
+		\item For $y(t)$, $b=-\frac{3}{4}$. This is negative, so 0 is a problem. It's a fraction with an even denominator, so negative inputs are also a problem. That leaves D: $(0,\infty)$.
+		\item For $z(t)$, $b=\frac{3}{4}$. This is positive, so 0 is fine, but again it's a fraction with an even denominator so negative inputs are a problem. That means D: $[0,\infty)$.
+
+	\end{enumerate}	
+
+Notice that the domain for $z(t)$ has a bracket, so it includes 0, but the domain for $y(t)$ has a parenthesis so it doesn't include 0.
+}\\
+
+Next on our list of common functions are exponential functions. For exponential functions, we can use any real number input and get a real number as output, so the domain is always $(-\infty,\infty)$. 
+
+For logarithmic functions, only positive inputs give us real number outputs, so the domain is always $(0,\infty)$. Note that 0 is not in the domain.
+
+The last type of common function we discussed was trigonometric functions. Here the domain depends on the exact function you are using; we'll discuss these more later in the course.
+
+\vskip \baselineskip
+
+\noindent\textbf{\large Domains for Combined Function}\\
+
+When we look at combined functions, we will start by looking at the domain for each individual function. If an input is a problem for the individual function, it will also be a problem for the combined function. Additionally, other problems can be introduced depending on how the functions are combined. Scalar multiplication, addition, subtraction, and multiplication do not introduce other problems, but quotients and compositions can.
+
+With quotients, for every input we are evaluating a fraction. We can run into a new problem if the denominator is 0. So, as part of determining the domain of a quotient, we will need to see when, if anywhere, the denominator is 0. Let's take a look:
+
+\vskip \baselineskip
+
+\example{ex_01_03_03}{Quotient Function Domains}{Determine the domain of
+\begin{equation*}
+	f(\theta) = \frac{\theta^2 +4}{\sqrt{\theta} - 1}
+\end{equation*}
+}{
+First, let's look at each of the individual functions. The numerator has $\theta^2 +4$. This is the addition of two monomials: $\theta^2$ and $4$. The addition doesn't introduce any problems. $\theta^2$ is a power function where $b$ is a positive whole number, so it doesn't introduce any problems. $4$ doesn't depend on an input, so it doesn't introduce any problems.
+
+The denominator is  $\sqrt{\theta} -1$. This is the difference of $\sqrt{\theta}$ and $ 1$. Like with addition, the difference doesn't introduce any problems. The function $1$ doesn't introduce any problems. $\sqrt{\theta}$ is another way of writing $\theta^{1/2}$. This is a power function where $b$ is positive, so 0 is fine. However, $b$ is a fraction with an even denominator so negative inputs cause a problem.
+
+So far, the only issue we have comes from the square root. However, since we have a quotient, we need to see if the denominator is ever 0. We'll do this by solving:
+
+\begin{equation*}
+	\sqrt{\theta} -1 = 0 
+\end{equation*}
+
+Adding 1 to both sides gives
+
+\begin{equation*}
+	\sqrt{\theta} = 1
+\end{equation*}
+
+Squaring both sides gives us
+\begin{equation*}
+	\theta = 1 ^2 = 1
+\end{equation*}
+
+This tells us that we will also have a problem when $\theta=1$. All together then, we have problems with negative inputs and with 1, so the domain of $f(\theta)$ is $[0,1)\cup(1,\infty)$. }\\
+
+Notice that in Example \ref{ex_01_03_03}, 0 is part of the domain even though we have a quotient. A quotient doesn't mean that 0 as an input is a problem, rather that any inputs that make the denominator 0 are problems.
+
+Composition of functions can drastically change domains. With composition, you'll have to restrict the output of the inside function to make sure it's suitable to be an input of the outside function. This can give extra restrictions on the overall domain. 
+
+\vskip \baselineskip
+
+\example{ex_01_03_04}{Domain of a Function Composition}{Determine the domain of
+\begin{equation*}
+	f(x) = \sqrt{6-x} + 12x
+\end{equation*}
+}{Overall, we have the addition of two functions, $\sqrt{6-x}$ and $12x$. Addition doesn't introduce any problems. The second function, $12x$ has no problem inputs because it's a power function where $b$ is a positive whole number. However, we know that the square root function can't use negative inputs since it's really a power functions with $b=\frac{1}{2}$. Since the square root is a composition with $6-x$ as the inside function, we'll need to determine when $6-x$ is negative to find which values of $x$ are a problem. To do that, we'll solve the inequality
+
+\begin{equation*}
+	6-x <0
+\end{equation*}
+
+Luckily, this isn't too complicated; we'll add $-x$ to both sides to get $6<x$, or $x>6$. This tells us that any input bigger than 6 is going to be a problem for $f(x)$. So, the domain of $f(x)$ is $(-\infty,6].$ We use a bracket on the right since we can use 6 as an input.
+}\\
+
+The hardest part of finding domains is working carefully and methodically. You probably noticed that all of these examples seem to have an awful lot of written explanation for math problems. While we don't typically write out complete sentences in my own work, we will include notes like ``$\ln(x)$: problems with 0 and $x<0$''. We also keep a running list of problem points on the side of the page as we work through more complicated functions to make sure we get all of the problem inputs so that we can exclude them from my domain.\\
+
+
+\printexercises{exercises/domains_exercises}
+
+

@@ -1,0 +1,145 @@
+In this chapter, we will look at several special types of functions that are commonly used in calculus: logarithmic functions, exponential functions, and trigonometric functions. Additionally, we will look at solving inequalities and at simplifying exponents. Each of these skills are quite important in calculus. Inequalities show up frequently in differential calculus when we want to determine where a function is increasing or decreasing from looking at the first derivative (a special type of function that is related to the original function of interest) or when we want to determine  the concavity of a function from its second derivative. You will need to be familiar with exponent rules in order to correctly simplify derivatives. Logarithmic functions, exponential functions and trigonometric functions are used in many places in calculus and differential equations. Logarithmic functions are used in many measurement scales such as the Richter scale that measures the strength of an earthquake and in decibels, which measures the loudness of sound. Exponential functions are used to describe growth rates, whether it's the number of animals living in an area or the amount of money in your retirement fund. Trigonometric functions help model natural phenomena such as sound and light waves, and are used in related rates to determine how quickly something, like an angle, is changing. Because of the varied applications you will see in calculus, familiarity with these functions is a must. 
+
+\section{Solving Inequalities}\label{sec:inequalities}
+
+In this section, we will look at solving inequalities. You will often work with inequalities in calculus, particularly when you work with derivatives. A derivative is a function that tells you how quickly a related function is changing. A positive derivative tells you the function is increasing and a negative derivative tells you the function is decreasing. This means you will need to be able to identify when the derivative is greater than zero and when it is less than zero.
+
+When solving inequalities, mathematicians express their answers using interval notation, just like we used to describe the domain of a function. The intervals will tell us when the inequality is a true statement, i.e., they tell us all the input values that make the inequality valid. You will also hear mathematicians use the phrase ``the inequality holds for...'; this is another way of saying that these are the inputs that make the inequality true. If you are feeling a bit rusty on interval notation, we recommend reviewing section \ref{sec:interval_notation}.
+
+For inequalities, our solution method will rely heavily on the skills we discussed in section \ref{sec:solving_for_variables}. Rather than building an entirely new set of methods, we will start all inequality problems by turning them into equality problems. The solution(s) to the equality problem will tell us the ``break points,'' the input values where the inequality may switch from being true to being false. We'll test values on both sides of each break point to see where the inequality is true. We will work carefully to make sure we find all the break points because we don't want to miss any places where the inequality could switch from true to false. Let's look at a few straightforward examples before we move onto the more complicated inequalities.
+
+\vskip \baselineskip
+
+\example{ex_ineq1}{Polynomial Inequality}{Solve $x^2 -6x +8 >0$.}{Our first step is to convert this into an equality statement by changing the $>$ symbol to an $=$ symbol:
+
+\begin{equation*}
+	x^2-6x+8 =0
+\end{equation*}
+
+Now, we can use any solution method we learned for quadratic functions to solve. Here we have a quadratic that factors nicely, so we will take that approach, but you could use the quadratic formula if you prefer.
+
+\begin{equation*}
+	\begin{split}
+		x^2 -6x+8 & = 0 \\
+		(x-2)(x-4) & = 0 \\
+		x & =2,4
+	\end{split}
+\end{equation*}
+
+This tells us that the break points are $x=2$ and $x=4$. These are the only places that the inequality could change from being true to being false for this type of function. We'll test values on each side of both break points; this means we need to test a value that is less than 2, a value between 2 and 4, and a value bigger than 4. We like to work from left to right, so we will start with testing a value less than 2. We can pick any number that is less than 2, but we will use 0 because it is easy to work with. If we substitute in $x=0$ we get:
+
+\begin{equation*}
+	x^2-6x + 8 = (0)^2-6(0)+8 = 8 >0
+\end{equation*}
+
+We get 8, which is bigger than 0, so the inequality is true for all values less than 2. Next, we need to test a value between 2 and 4; 3 seems like the easiest option.
+
+\begin{equation*}
+	x^2-6x + 8 = (3)^2-6(3)+8 = 9-18+8 = -1 <0
+\end{equation*}
+
+
+We get a negative number, so the inequality is false for everything between 2 and 4. Now, we need to test something bigger than 4. We'll use 5, but you can pick any number, as long as it's bigger than 4.
+
+\begin{equation*}
+	x^2-6x + 8 = (5)^2-6(5)+8 = 25 - 30 + 8 = 3 >0
+\end{equation*}
+
+The result is positive, so the inequality is true. Now, we have that the inequality is true for numbers less than 2 and numbers greater than 4. It is not true for $x=2$ or $x=4$ since both of these make the left side 0 and we want the left side to be bigger than 0, not equal to it. In interval notation, we have:
+
+\begin{equation*}
+ (-\infty,2)\cup(4,\infty)
+\end{equation*} }\\
+
+In this example, we have a \emph{strict inequality}. We say it is strict because it is $>$ and not $\geq$. Similarly, we would say an inequality with $<$ is strict. With strict inequalities, our final answer will not include the break points, so we will use parentheses at these break points because we do not want to include these points.
+
+Many people will use a number line when working with inequalities. When using a number line, you would mark each break point, and then shade or otherwise mark the intervals where the inequality is true. For the previous problem, this would look like the following:
+
+\begin{center}
+\myincludegraphics{figures/figineq_num_line1}\label{fig:ineq_num_line1}
+\end{center}
+
+
+\noindent
+Since we have a strict inequality (meaning we have $>$ or $<$ so that we are strictly greater than or strictly less than), we use open circles to mark our break points. This reminds us that we do not include these points in our intervals. Some people will use check-marks and X's instead, with a check-marks indicating where the inequality holds and a X where it doesn't. This would look like the following:
+
+\begin{center}
+\myincludegraphics{figures/figineq_num_line2}\label{fig:ineq_num_line2}
+\end{center}
+
+\noindent
+These number lines become quite useful if you have a lot of break points. They make it very clear so that you can be sure to test a point in each interval. We can also use a table to summarize results, rather than using a number line. The table has a few key advantages: it clearly summarizes your work making your thought process easier to follow and will help eliminate careless errors from your work. A table for the previous example might look like:
+
+\begin{tabular}{r |c|c|c}
+ & $(-\infty,2)$ & $(2,4)$ & $(4,\infty)$ \\ \hline
+Value to check: & 0		& 3	  & 5 \\ \hline
+	Result: & $8>0$         & $-1>0$  & $3>0$ \\ \hline
+	   T/F: & True          & False   & True
+\end{tabular}\\
+
+Any of these methods are appropriate for clearly showing your work; the one you choose is a matter of personal preference.
+
+\vskip \baselineskip
+\noindent\textbf{\large Incorporating Domain Restrictions}\\
+
+We noted earlier that our inequality can change from true to false at our break points, the points where the equality statement is true. The inequality can also change from true to false at places where the function is undefined. For example, we know that the function $f(x) = \frac{1}{x}$ is positive when $x$ is positive and negative when $x$ is negative. This means that the inequality $\frac{1}{x}>0$ holds, or is true, only for $x \in (0,\infty)$. However, there are no places where $f(x)=0$. Since $f(x)$ is undefined at $x=0$, it introduces a different type of break point; one where the graph of the function ``breaks'' because it cannot be graphed where it is undefined. Let's take a look at an example where we have to incorporate a domain restriction by including additional break points.
+
+\vskip \baselineskip
+
+\example{ex_ineq_undefined_points}{Solving a Rational Inequality}{Solve $\displaystyle \frac{x-5}{x^2-4} \geq 0$.}{We'll start by turning the inequality into an equality statement and solving for $x$.
+
+\begin{equation*}
+	\begin{split}
+		\frac{x-5}{x^2-4} &= 0 \\
+		(x^2-4) \Bigg(\frac{x-5}{x^2-4} \Bigg) & = (x^2-4)(0) \\
+		x-5 &= 0 \\
+		x &= 5
+	\end{split}
+\end{equation*}
+
+This gives us a break point at $x=5$. Next, we will need to see if the function is undefined at any points. Since it is a rational function (a fraction with a polynomial in the numerator and a polynomial in the denominator), we know it is undefined anywhere that the denominator equals zero. Let's look for these points:
+
+\begin{equation*}
+	\begin{split}
+		x^2 - 4 &= 0 \\
+		(x-2)(x+2) & = 0 \\
+		x &= 2, -2
+	\end{split}
+\end{equation*}
+
+We see that $\frac{x-5}{x^2-4}$ is undefined for $x=2$ and $x=-2$. This gives us two additional break points. That means we have three break points: $x=5$, $x=2$, and $x=-2$. Let's mark these on a number line. Since this is not a strict inequality, we will use closed circles to mark the break point at $x=5$. However, we still need to use open circles at $x=2$ and $x=-2$ because the function is undefined at these points and we will not include them in our intervals.
+
+\begin{center}
+\myincludegraphics{figures/figineq_num_line3}\label{fig:ineq_num_line3}
+\end{center}
+
+Now, we need to check values in each interval. First, we'll check something less than $-2$; we'll use $x=-3$. Substituting, gives $\frac{(-3)-5}{(-3)^2 -4} = \frac{-8}{5}<0$. This means we can place an x-mark over this interval:
+
+\begin{center}
+\myincludegraphics{figures/figineq_num_line4}\label{fig:ineq_num_line4}
+\end{center}
+
+Now, to check something between $-2$ and $2$. We'll use $x=0$. Substituting gives $\frac{(0)-5}{(0)^2-4} = \frac{-5}{-4} =\frac{5}{4} >0$. This means we can place a check-mark over this interval:
+
+\begin{center}
+\myincludegraphics{figures/figineq_num_line5}\label{fig:ineq_num_line5}
+\end{center}
+
+Now, we need to check a value between $2$ and $5$. We'll use $x=3$. We get $\frac{(3)-5}{(3)^2-4}=\frac{-2}{5} <0$, so this interval gets an x-mark.
+
+\begin{center}
+\myincludegraphics{figures/figineq_num_line6}\label{fig:ineq_num_line6}
+\end{center}
+
+Lastly, we need to check a value greater than $5$. We'll use $x=6$. This gives $\frac{(6)-5}{(6)^2-4} = \frac{1}{32} >0$, so this interval gets a check-mark.
+
+\begin{center}
+\myincludegraphics{figures/figineq_num_line7}\label{fig:ineq_num_line7}
+\end{center}
+
+We now have a mark over every interval, so we can determine our final answer. We can see that the inequality is true for $x \in (-2,2) \cup [5,\infty)$. Note that we included $x=5$ since it has a closed circle and excluded $x=-2$ and $x=2$ since they have open circles. }\\
+
+\printexercises{exercises/inequalities_exercises}
+
+
+%\clearpage

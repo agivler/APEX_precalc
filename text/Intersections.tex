@@ -1,0 +1,181 @@
+\section{Intersections}\label{sec:intersections}
+
+In many problems in integral calculus you will be finding the area enclosed by, or between, several functions. As part of finding the area, you will need to identify where the functions intersect each other, i.e., the $(x,y)$ coordinate pairs where the curves cross. The \emph{points of intersection} of two functions, $f(x)$ and $g(x)$, are the $(x,y)$ coordinator pairs for which the input, $x$, results in the same output value from both functions. In this section, we will address three different methods for finding the points of intersection for two graphs. The first two methods we will discuss rely heavily on this skills you learned in the previous section where you learned how to solve for variables. 
+
+Note that while we have mostly been using function notation like $f(x)$, here we will often indicate the output of the function as $y$. One reason why we are using $y$ here is that some of our functions will be defined \emph{implicitly}. When a function is defined implicitly, it means that the output of the function is not isolated; we've seen this before with the point slope form of a line. When the output is isolated, we say our function is defined \emph{explicitly}, as in slope intercept form.
+
+\vskip \baselineskip
+\noindent\textbf{\large Substitution}\\
+
+Substitution is most commonly used when one or both functions are defined implicitly, or when both functions have a term in common. With this method, we will solve one equation for one of the variables and then substitute the solution into the second equation and solve for the remaining variable. In this course, we are only interested in real number solutions. Here, it is a matter of personal preference when choosing which function to work with initially, and which variable to solve for. However, we recommend starting with the equation that is ``simpler;'' if one equation is linear and the other is quadratic, it is typically less complicated to start with the linear function. Let's take a look at an example.
+
+\vskip \baselineskip
+
+\example{ex_substitution1}{Points of Intersection: Substitution}{Find the points of intersection for $4x^2+y^2=4$ and $y-1=2(x-1)$.}{Here, the first equation, $4x^2+y^2=4$ is quadratic in both $x$ and in $y$, but the second equation, $y-1=2(x-1)$ is linear in both $x$ and in $y$. Because of this, we will start our work with the second equation.
+
+Additionally, in the second equation $y$ is already nearly isolated, so we will first isolate $y$ in this equation. 
+
+\begin{equation*}
+	\begin{split}
+		y-1 & = 2(x-1) \\
+		y & = 2(x-1)+1 \\
+		  & = 2x-2+1 \\
+		  & = 2x-1
+	\end{split}
+\end{equation*}
+
+Now that we have $y$ isolated, we will replace every $y$ in the equation $4x^2+y^2 = 4$ with $2x-1$. As when we evaluated functions, we will be sure to put parentheses around the term, $(2x-1)$, so that we can simplify correctly.
+
+\begin{equation*}
+	\begin{split}
+		4x^2 + y^2 & = 4\\
+		4x^2 + (2x-1)^2 & = 4 \\
+		4x^2 + (4x^2 - 4x +1 ) & = 4 \\
+		8x^2 -4x -3 & = 0 \\
+	\end{split}
+\end{equation*}
+
+\noindent
+This doesn't look like it is likely to factor nicely, so we will use the quadratic formula:
+
+\begin{equation*}
+	\begin{split}
+		x & = \frac{-(-4) \pm \sqrt{(-4)^2-4(8)(-3)}}{2(8)} \\
+		  & = \frac{4 \pm \sqrt{16+96}}{16} \\
+		  & = \frac{4\pm \sqrt{112}}{16} \\
+		  & = \frac{4 \pm 4 \sqrt{7}}{16} \\
+		  & = \frac{1 + \sqrt{7}}{4}, \frac{1 - \sqrt{7}}{4}
+	\end{split}
+\end{equation*}
+
+This only gives us the $x$ coordinates; we also need the $y$ coordinates. To get the corresponding $y$ coordinates, we will use the linear equation where we already solved for $y$ in terms of $x$. We could use the earlier form of this equation, or we could even use the quadratic equation, but either of this would require more work. The first $y$ coordinate is:
+
+\begin{equation*}
+	\begin{split}
+		y & = 2x -1 \\
+		  & = 2\Bigg(\frac{1 + \sqrt{7}}{4}\Bigg) -1 \\
+		  & =\frac{1 + \sqrt{7}}{2} - \frac{2}{2} \\
+		  & = \frac{-1 + \sqrt{7}}{2}
+	\end{split}
+\end{equation*}
+
+\noindent
+The second $y$ coordinate is:
+
+\begin{equation*}
+	\begin{split}
+		y & = 2x -1 \\
+		  & = 2\Bigg(\frac{1 - \sqrt{7}}{4}\Bigg) -1 \\
+		  & =\frac{1 - \sqrt{7}}{2} - \frac{2}{2} \\
+		  & = \frac{-1 - \sqrt{7}}{2}
+	\end{split}
+\end{equation*}
+
+\noindent
+Now, we have both of the points of intersection: $(\frac{1 + \sqrt{7}}{4}, \frac{-1 + \sqrt{7}}{2})$ and $(\frac{1 - \sqrt{7}}{4}, \frac{-1 - \sqrt{7}}{2})$.
+
+}\\
+
+Sometimes, we can be a bit creative about using substitution. Depending on the equations you are working with, it may sometimes be quicker to \emph{not} solve for a variable completely, but rather for a term that shows up in both equations. Let's take a look at an example.
+
+\vskip \baselineskip
+
+\example{ex_substitution2}{Points of Intersection: Substitution}{Find all points of intersection of $x-4=y^2$ and $x^2-4x=-y^2$.}{Here we can see that the only ``easy'' place to start by solving would be to solve for $x$ in the first equation, but once we substitute into the second equation, things will get messy quickly. However, both equations have a $y^2$ term, and no other $y$ terms. This means that we can save some work by solving for $y^2$ in one equation and substituting into $y^2$ in the other equation. Since the first equation already has $y^2$ isolated, we really just have to do the substitution. We will substitute $x-4$ into the second equation in the place of $y^2$:
+
+\begin{equation*}
+	\begin{split}
+		x^2-4x & = -y^2 \\
+		x^2 -4x & = -(x-4) \\
+		x^2 - 4x & = -x + 4 \\
+		x^2 -3x -4 & = 0 \\
+		(x-4)(x+1) & = 0 \\
+		x & =-1, 4
+	\end{split}
+\end{equation*}
+
+Now that we have our $x$ coordinates, we need to find the corresponding $y$ coordinates. We'll use the first equation, since it's a bit simpler to work with. Substituting in $x=4$ gives us $0=y^2$, or $y=0$. Substituting in $x=-1$ gives $-5=y^2$. Here, this gives us an imaginary answer for $y$, so we do not get an additional intersection point. The only intersection point for these equations is 
+
+\begin{equation*} (4,0)
+\end{equation*}}\\
+
+\vskip \baselineskip
+\noindent\textbf{\large Equating the Functions}\\
+
+The next method we will discuss works well when both functions are explicit, or are given in function notation. For this method, we will first solve each equation for the same variable, set the two equal to each, and solve. 
+
+\vskip \baselineskip
+
+\example{ex_equating}{Points of Intersection: Equating}{Find all points of intersection of $f(x)=x^2+1$ and $g(x)=x+1$}{Here, both equations are given using function notation; this means that really $f(x)$ tells us the value of the $y$ coordinate at $x$, so we can replace it with $y$: $y=x^2+1$. Similarly, $g(x)$ tells us the value of the $y$ coordinate at $x$ for the other function: $y=x+1$. Since $y$ is isolated in both, we will set the two equal to each other and solve for $x$:
+
+\begin{equation*}
+	\begin{split}
+		x^2+1 & = x + 1 \\
+		x^2 -x &= 0 \\
+		x(x-1)&=0 \\
+		x&= 0,1
+	\end{split}
+\end{equation*}
+
+Now, we just need to find the $y$ coordinates. We can use either $f(x)$ or $g(x)$ to do this; $g(x)$ is simpler so we will use it. We get that $g(0) = 1$ and $g(1)=2$. Therefore, we have two points of intersection: $(0,1)$ and $(1,2)$.}\\
+
+\vskip \baselineskip
+\noindent\textbf{\large Elimination}\\
+
+The third method we will discuss is a bit different than the other methods we have seen. This method also requires strong algebra skills. The main advantage of this method won't be obvious until the next section of this book, because it is the most useful when we have a system of two or more linear equations. Here, we will only show how to use it with two variables, but the idea extends nicely (this means that it is easy to adapt this method to other more complicated situations). For elimination, we will take each equation, multiply the entire equation by a constant, and add the equations together in such a way that one variable is eliminated.
+
+\vskip \baselineskip
+
+\example{ex_elimination1}{Points of Intersection: Elimination}{Find all points of intersection of $2x+3y=2$ and $-x+y=4$.}{We will first try to eliminate $x$ from both equations. The first equation has $2x$ and the second has $-x$. If we multiply the second equation by $2$ and add it to the first, the $x$ terms will cancel out:
+
+\begin{equation*}
+\begin{array}{r@{}r@{}c@{}r@{}c@{}r@{}c@{}r}
+ & & 2x & + & 3y & = & 2 & \\ 
++ & 2( & -x &  + & y &  = & 4 & )\\ 
+\end{array}
+\end{equation*}
+
+or:
+
+\begin{equation*}
+\begin{array}{r@{}r@{}c@{}r@{}c@{}r@{}c@{}r}
+ & & 2x & + & 3y & = & 2 & \\ 
++ & ( & -2x &  + & 2y &  = & 8 & )\\ \hline
+ & &  &  & 5y & = & 10 & \\
+ \end{array}
+\end{equation*}
+
+
+\noindent
+Notice that we lined up our variables and treated this like a big addition problem. Keeping the variables lined up makes our work easier to follow.
+
+Now, we can take the result and easily solve for $y$, getting $y=2$. We can now use $y$ to find $x$. Either equation will work, but we will use the second one: $-x+(2) = 4$, or $x=-2$. This gives use one point of intersection at $(-2,2)$.
+}\\
+
+Elimination is a particularly flexible method. To illustrate this, we will solve the problem again, but this time we will eliminate $y$ first.
+
+\vskip \baselineskip
+
+\example{ex_elimination2}{Points of Intersection: Elimination}{Find all points of intersection of $2x+3y=2$ and $-x+y=4$.}{The first equation has $3y$ and the second has $y$. We will multiply the first equation by $-\frac{1}{3}$ and add it to the second equation:
+
+\def\arraystretch{1.5}
+\begin{equation*}
+\begin{array}{r@{}r@{}c@{}r@{}c@{}r@{}c@{}r}
+	 & -\frac{1}{3}( & 2x &  + & 3y &  = & 2 & )\\
+	+& (& -x & + & y & = & 4 & \\ \hline 
+	& & -\frac{5}{3} x &  &  & = & \frac{10}{3} & \\
+ \end{array}
+\end{equation*}
+
+Solving $-\frac{5}{3}x = \frac{10}{3}$ gives us $x=-2$, and substituting into either equation gives us $y=2$. We get the same intersection point:$(-2,2)$.}\\
+
+Additionally, we could have multiplied the second equation $-x+y=4$ by $3$ and subtracted from the first to eliminate $y$ first. With elimination, it is best to do a little planning to figure out what variable will be easiest to eliminate first, and what combinations will keep the numbers simple.
+
+\vskip \baselineskip
+\noindent\textbf{\large Graphing}\\
+
+Now, we will briefly discuss a common method used by students: graphing. While graphing is a great way to help determine how many points of intersection exist and the approximate coordinates, it will not give you an exact set of coordinates, unless you use a calculator or computer. In calculus, having the exact values is necessary. In example \ref{ex_substitution1}, we ended up with two points of intersection: $(\frac{1 + \sqrt{7}}{4}, \frac{-1 + \sqrt{7}}{2})$ and $(\frac{1 - \sqrt{7}}{4}, \frac{-1 - \sqrt{7}}{2})$. If we had graphed to find these points, we would not have found the exact coordinates, and at best would have ended up with approximations. For this reason, we do not recommend relying solely on graphing for finding points of intersection. Sometimes the coordinates will be integers and the graph will be easy to read, but as in this example, often it is impossible to get the answer you need from the graph.
+
+\printexercises{exercises/intersect_exercises}
+
+
+%\clearpage

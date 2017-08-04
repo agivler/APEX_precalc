@@ -1,0 +1,243 @@
+When we first start learning about numbers, we start with the counting numbers: 1, 2, 3, etc. As we progress, we add in 0 as well as negative numbers and then fractions and non-repeating decimals. Together, all of these numbers give us the set of \textit{real numbers}, denoted by mathematicians as $\mathbb R$, numbers that we can associate with concepts in the real world. These real numbers follow a set of rules that allow us to combine them in certain ways and get an unambiguous answer. Without these rules, it would be impossible to definitively answer many questions about the world that surrounds us.
+
+In this chapter, we will discuss these rules and how they interact. We will see how we can develop our own ``rules'' that we call functions. We will learn how to describe what numbers our functions can be applied to and how to visually represent our functions with graphing. In calculus, you will be manipulating functions to answer application questions such as optimizing the volume of a soda can while minimizing the material used to make it or computing the volume and mass of a small caliber projectile from an engineering drawing. However, in order to answer these complicated questions, we first need to master the basic set of rules that mathematicians use to manipulate numbers and functions.
+
+
+\section{Real Numbers}\label{sec:real_numbers}
+
+We begin our study of \textit{real numbers} by discussing the rules for working with these numbers and combining them in a variety of ways. In elementary school, we typically start by learning basic ways of combining numbers, such as addition, subtraction, multiplication, and division, and later more advanced operations like exponents and roots. We will not be reviewing each of these operations, but we will discuss how these operations interact with each other and how to determine which operations need to be completed first in complicated mathematical expressions.
+
+You are probably already familiar with the phrase ``order of operations.'' When mathematicians refer to the order of operations they are referring to a guideline for which operations need to be calculated first in complicated expressions:
+
+\begin{multicols}{2}
+\begin{enumerate}
+	\item Parentheses
+	\item Exponents
+	\item Multiplication
+	\item Division
+	\item Addition
+	\item Subtraction
+\end{enumerate}
+\end{multicols}
+
+Often we learn phrases such as ``Please Excuse My Dear Aunt Sally'' to help remember the order of these operations, but this guideline glosses over a few important details. Let's take a look at each of the operations in more detail.\\
+
+\vskip \baselineskip
+\noindent\textbf{\large Parentheses}\\
+
+There are two important details to focus on with parentheses: nesting and ``implied parentheses.'' Let's take a look at an example of nested parentheses first:\\
+
+\vskip \baselineskip
+
+\example{ex_01_01_01}{Nested Parentheses}{Evaluate \begin{equation}\label{eqn:nested_parentheses_ex} 2\times(3+(4\times2)).\end{equation}}{Here we see a set of parentheses ``nested'' inside of a second set of parentheses. When we see this, we want to start with the inside parentheses first:
+
+\begin{equation}\label{eqn:nested_parentheses_soln1}
+	2\times(3+(4\times2)) = 2\times(3+(8))
+\end{equation}
+
+
+Once we simplify the inside parentheses to where they contain only a single number, we can drop them. Then, it's time to start on the next parentheses layer:
+
+\begin{equation}\label{eqn:nested_parentheses_soln2}
+	2\times(3+(8))=2\times(3+8) = 2\times (11) = 22
+\end{equation}
+\vskip -\baselineskip
+}
+
+\vspace{12pt}
+Sometimes this can get confusing when we have lots of layers of parentheses. Often, you will see mathematicians use both parentheses, ``('' and ``)'', and brackets, ``['' and ``]''. This can make it a bit easier to see where the parentheses/brackets start and where they end. Let's look at an example:
+
+\vskip \baselineskip
+
+\example{ex_01_01_02}{Alternating Parentheses and Brackets}{Evaluate \begin{equation} (2+(3\times(4+(2-1)) -1)) +2. \end{equation}} {
+\begin{equation}\label{eqn:parentheses_brackets}
+	\begin{split}
+		(2+(3\times(4+(2-1)) -1)) +2 & = [2+(3\times[4+(2-1)] -1)] +2 \\
+					     & = [2+(3\times[4+(1)]-1)]+2 \\
+					     & = [2+(3\times[4+1]-1)]+2 \\
+					     & = [2+(3\times[5]-1)]+2 \\
+					     & = [2+(3\times 5 -1)] + 2 \\
+					     & = [2+(15-1)]+2 \\
+					     & = [2+(14)]+2 \\
+					     & = [2+14] + 2 \\
+					     & = [16] + 2 \\
+					     & = 16 + 2 =18
+	\end{split}
+\end{equation}
+
+
+We started by finding the very inside set of parentheses: $(2-1)$. The next layer of parentheses we changed to brackets: $[4+(2-1)]$. We continued alternating between parentheses and brackets until we had found all layers. As before, we started with evaluating the inside parentheses first: $(2-1)=(1)=1$. The next layer was brackets: $[4+1]=[5]=5$. Next, we had more parentheses: $(3\times 5 -1)=(15-1)=(14)=14$. Then, we had our final layer: $[2+14]+2=[16]+2=16+2=18$.}\\
+
+When you are working these types of problems by hand, you can also make the parentheses bigger as you move out from the center:
+
+\begin{equation*}\label{eqn:sizes_of_parentheses}
+	(2+(3\times(4+(2-1)) -1)) +2  = \bigg[2+\Big(3\times \big[4+(2-1)\big] -1\Big)\bigg] +2
+\end{equation*}\\
+
+This may make it easier to see which parentheses/brackets are paired. You never have to switch a problem from all parentheses to parentheses and brackets, but you can alternate between them as you please, as long as you match parentheses ``('' with parentheses ``)'' and brackets ``['' with brackets ``]''.
+
+\vskip \baselineskip
+
+There's one more thing that we have to be careful about with parentheses, and that is ``implied'' parenthesis. Implied parentheses are an easy way to run into trouble, particularly if you are using a calculator to help you evaluate an expression. So what are implied parentheses? They are parentheses that aren't necessarily written down, but are implied. For example, in a fraction, there is a set of implied parentheses around the numerator and a set of implied parentheses around the denominator:
+
+\begin{equation}\label{eqn:implied_parentheses_fraction}
+	\frac{3+4}{2+5} = \frac{(3+4)}{(2+5)}
+\end{equation}
+
+You will almost never see the second form written down, however the first form can you get into trouble if you are using a calculator. If you enter $3+4\div 2+5$ on a calculator, it will first do the division and then the two additions since it can only follow the order of operations (listed earlier). This would give you an answer of 10. However, the work to find the actual answer is shown below.
+
+\vskip \baselineskip
+
+\example{ex_01_01_03}{Invisible Parentheses in a Fraction}{Evaluate the expression in (\ref{eqn:implied_parentheses_fraction}).} {First, let's go back and find (\ref{eqn:implied_parentheses_fraction}). You may have noticed that the fractions above have (1.6) next to them on the right side of the page. This tells us that (\ref{eqn:implied_parentheses_fraction}) is referring to this expression. Now that we know what we are looking at, let's evaluate it:
+\begin{equation}\label{eqn:implied_parentheses_fraction_solution}
+	\begin{split}
+		\frac{3+4}{2+5} & = \frac{(3+4)}{(2+5)} \\
+				& = \frac{(7)}{(7)} \\
+				& = \frac{7}{7} \\
+				& = 1
+	\end{split}
+\end{equation} 
+
+This reflects what we would get on a calculator if we entered $(3+4) \div (2+5)$.} \\
+
+As you can see, leaving off the implied parentheses drastically changes our answer. Another place we can have implied parentheses is under root operations, like square roots:
+
+\vskip \baselineskip
+
+\example{ex_01_01_04}{Invisible Parenthesis Under a Square Root}{Evaluate \begin{equation*} \sqrt{12\times 3} -20 \end{equation*}.}{
+
+\begin{equation}\label{eqn:implied_parentheses_root}
+	\begin{split}
+		\sqrt{12\times3} -11 & = \sqrt{(12\times 3)} -20 \\
+				& = \sqrt{(36)} - 20\\
+				& = 6-20\\
+				& = -14
+	\end{split}
+\end{equation} }\\
+
+Most calculators will display $\sqrt{(}$ when you press the square root button; notice that this gives you the opening parenthesis, but not the closing parenthesis. Be sure to put the closing parenthesis in the correct spot. If you leave it off, the calculator assumes that everything after $\sqrt{(}$ is under the root otherwise. This also applies to other kinds of roots, like cube roots. In the expression in Example 4, without a closing parenthesis, a calculator would give us $\sqrt{(}12\times 3 - 20 = \sqrt{(}36 -20 = \sqrt{(}16 = 4$.
+
+We'll see another example of a common issue with implied parentheses in the next section.
+
+\vskip \baselineskip
+\noindent\textbf{\large Exponents}\\
+
+With exponents, we have to be careful to only apply the exponent to the term immediately before it. 
+
+
+\vskip \baselineskip
+
+\example{ex_01_01_05}{Applying an Exponent}{Evaluate \begin{equation*} 2+3^3 \end{equation*}. }{ 
+	\begin{equation}\label{eqn:applying_exponent}
+		\begin{split}
+			2+3^3 & = 2 + 27 \\
+			      & = 29
+		\end{split}
+	\end{equation}
+
+	Notice we only cubed the $3$ and not the expression $2+3$. 
+}\\
+
+This looks relatively straight-forward, but there's a special case where it's easy to get confused, and it relates to implied parentheses.
+
+\vskip \baselineskip
+
+\example{ex_01_01_06}{Applying an Exponent When there is a Negative}{Evaluate \begin{equation*} -4^2 \end{equation*}. }{ 
+	\begin{equation}\label{eqn:applying_exponent_negative}
+		\begin{split}
+			-4^2 & = - (4^2) \\
+			      & = - (16) \\
+			      &=-16
+		\end{split}
+	\end{equation} }\\
+
+Notice where we placed the implied parenthesis in the problem. Since exponents only apply to the term immediately before them, only the $4$ is squared, not $-4$. Taking the extra step to include these implied parentheses will help reinforce this concept for you; it forces you to make a clear choice to show how the exponent is being applied. If we wanted to square $-4$, we would write $(-4)^2$ instead of $-4^2$.
+
+Note that we don't take this to the extreme; $12^2$ still means ``take $12$ and square it,'' rather than $1\times (2^2)$.
+
+It's also important to note that all root operations, like square roots, count as exponents, and should be done after parentheses but before multiplication and division.
+
+
+
+
+\vskip \baselineskip
+\noindent\textbf{\large Multiplication and Division}\\
+
+In our original list for the order of operations, we listed multiplication and then division. However, this is not 100\% accurate; mathematicians consider multiplication and division to be on the same level, meaning that one does not take precedence over the other. This means you should not do \emph{all} multiplication steps and then \emph{all} division steps. Instead, you should do multiplication/division from left to right. 
+
+\vskip \baselineskip
+\example{ex_01_01_07}{Multiplication/Division: Left to Right}{Evaluate \begin{equation*}\label{eqn:mult_div} 6\div 2 \times 3  + 1 \times 8 \div 4 \end{equation*} } { 
+	\begin{equation}
+		\begin{split}
+			6 \div 2 \times 3  + 1 \times 8 \div 4 & = 3 \times 3  + 1 \times 8 \div 4 \\
+							       & = 9 + 1 \times 8 \div 4 \\
+							       & = 9 + 8 \div 4 \\
+							       & = 9 + 2 \\
+							       & = 11
+		\end{split}
+	\end{equation}
+	Since this expression doesn't have any parentheses or exponents, we look for multiplication or division, starting on the left. First, we find $6\div 2$, which gives $3$. Next, we have $3 \times 3$, giving 9. The next operation is an addition, so we skip it until we have no more multiplication or division. That means that we have $1 \times 8=8$ next. Our last step at this level is $8 \div 4=2$. Now, we only have addition left: $9+2 = 11$. 
+}\\
+
+Note that we get a different, incorrect, answer of 3 if we do all the multiplication first and then all the division.
+
+\vskip \baselineskip
+\noindent\textbf{\large Addition and Subtraction}\\
+
+Just like with multiplication and division, addition and subtraction are on the same level and should be performed from left to right:
+
+
+\vskip \baselineskip
+\example{ex_01_01_08}{Addition/Subtraction: Left to Right}{Evaluate \begin{equation*} 1-3+6 \end{equation*}.}{ \begin{equation}
+	\begin{split}
+		1-3+6 & = -2 + 6 \\
+		      & = 4
+	\end{split}
+	\end{equation}
+}\\
+
+Again, note that if we do all the addition and then all the subtraction, we get an incorrect answer of $-8$.
+
+\vskip \baselineskip
+\noindent\textbf{\large Summary: Order of Operations}\\
+
+Now that we've refined some of the ideas about the order of operations, let's summarize what we have:
+ 
+\begin{description}
+\item[1.] Parentheses (including implied parentheses)
+\item[2.] Exponents
+\item[3.] Multiplication/Division (left to right)
+\item[4.] Addition/Subtraction (left to right)
+\end{description}
+
+Let's walk through one example that uses all of our rules.
+
+\vskip \baselineskip
+
+\example{ex_01_01_09}{Order of Operations}{Evaluate \begin{equation*} -2^2 + \sqrt{6-2} - 2 (8 \div 2 \times (1+1)) \end{equation*}}{ Since this is more complicated than our earlier examples, let's make a table showing each step on the left, with an explanation on the right:
+
+	\vspace{12pt} \noindent
+	\begin{tabular}{| l | p{2.1in} | } \hline
+		$-2^2 + \sqrt{6-2} - 2 (8 \div 2 \times (1+1))$ = & We have a bit of everything here, so let's write down any implied parentheses first. \\ \hline
+		$= -2^2 + \sqrt{(6-2)} - 2 (8 \div 2 \times (1+1))$ & We have nested parentheses on the far right, so let's work on the inside set.  \\ \hline
+		$= -2^2 + \sqrt{(6-2)} - 2 (8 \div 2 \times 2)$ & There aren't any more nested parentheses, so let's work on the set of parentheses on the far left. \\ \hline
+		$= -2^2 + \sqrt{4} - 2 (8 \div 2 \times 2)$ & Now, we'll work on the other set of parentheses. They only have multiplication and division, so we'll work from left to right inside of the parentheses.\\ \hline
+		$= -2^2 + \sqrt{4} - 2 (4 \times 2)$ & Now, we'll complete that set of parentheses. \\ \hline
+		$= -2^2 + \sqrt{4} - 2 (8)$ & Let's rewrite slightly to completely get rid of all parentheses. \\ \hline
+		$= -2^2 + \sqrt{4} - 2 \times 8$ & Now, we'll work on exponents from left to right. \\ \hline
+		$= -4 + \sqrt{4} - 2 \times 8$ & We only squared 2, and not $-2$. Square roots are really exponents, so we'll take care of that next. \\ \hline
+		$= -4 + 2 - 2 \times 8$ & We're done with exponents; time for multiplication/division. \\ \hline
+		$= -4 + 2 - 16 $ & Now, only addition and subtraction are left, so we'll work from left to right. \\ \hline
+		$= -2 - 16 $ & Almost there! \\ \hline
+		$=-18$ & \\ \hline
+\end{tabular}
+	
+} \\
+
+
+
+In the next section we'll talk about how to make specialized rules through the use of functions. In the following exercises, we continue our work with order of operations and practice these rules in situations with a bit more context.\\
+
+\printexercises{exercises/real_nums_exercises}
+
+%\clearpage

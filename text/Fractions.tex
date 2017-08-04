@@ -1,0 +1,319 @@
+\section{Fractions and Partial Fractions Decomposition}\label{sec:fractions}
+
+In calculus, you will run into many situations where you need to simplify fractions; in differential calculus, when you take a derivative of a quotient of two functions, the result will be an even more complicated quotient that will require simplification. Additionally, when working with rational functions (functions that are a quotient of two polynomials), simplifying can help identify key features of the function. In integral calculus and when working with inverse Laplace transforms in differential equation, you will need to take a fraction and split it into several simpler fractions through a process called partial fraction decomposition. In this section, we will discuss many of the skills you will need when working with fractions in calculus.
+
+\vskip \baselineskip
+\noindent\textbf{\large Simplifying Fractions}
+
+When mathematicians talk about simplifying fractions they can be referring to combining fractions that are being added into a single fraction, removing any common factors from the numerator and denominator, and/or rewriting fractions that have nested fractions in the numerator or denominator. First, we'll discuss how to combine multiple fractions.
+
+When adding or subtracting any fractions, the first step is to get a common denominator. This builds off of the ideas we learn about fractions as a child; the denominator tells us how many pieces we split the item into and the numerator tells us how many pieces we are using. For example, $\frac{2}{3}$ means we split the item into 3 pieces and are using 2 of them. Before we can combine fractions, we need to make sure all of the pieces are the same size by having the same denominator. To make sure that are denominators are the same, we can multiply by 1 in a sneaky way;  for example if we want to add $\frac{2}{3}$ and $\frac{1}{8}$, we can multiply by $\frac{8}{8}$ and by $\frac{3}{3}$ respectively. Since we are multiplying by the ``missing'' factor for each, both will have the same denominator: $\frac{16}{24}$ and $\frac{3}{24}$. We can do the same even when our fraction contains variables.
+
+\vskip \baselineskip
+
+\example{ex_adding_fractions}{Combining Fractions}{Simplify $\displaystyle \frac{3}{x+2} - \frac{x+1}{x-2}$.}{First, we will multiply by the missing factors. We will multiply the first term by $\displaystyle \frac{x-2}{x-2}$ and the second term by $\displaystyle \frac{x+2}{x+2}$. This gives us:
+
+\begin{equation*}
+	\begin{split}
+		\frac{3}{x+2} - \frac{x+1}{x-2} & = \frac{3}{x+2}\times\frac{x-2}{x-2} - \frac{x+1}{x-2}\times\frac{x+2}{x+2} \\
+						& = \frac{3(x-2)}{(x+2)(x-2)} - \frac{(x+1)(x+2)}{(x-2)(x+2)} \\
+						& = \frac{3x-6}{x^2-4} - \frac{x^2+3x+2}{x^2-4}
+	\end{split}
+\end{equation*}
+Notice that when we multiplied we were careful to include parentheses since we know that we have implied parentheses when we work with fractions. Now that both fractions have the same denominator, we can combine them. We must do this carefully; we are subtracting so we will need to distribute the negative correctly.
+
+\begin{equation*}
+	\begin{split}
+		\frac{3x-6}{x^2-4} - \frac{x^2+3x+2}{x^2-4} & = \frac{3x-6-(x^2+3x+2)}{x^2-4} \\
+							    & = \frac{-x^2-8}{x^2-4}
+	\end{split}
+\end{equation*}}\\
+
+
+
+Simplifying a fraction can also mean that we are looking for common factors of the numerator and the denominator. If we examine the result from our previous example, we see that the denominator can be factored: $x^2-4=(x+2)(x-2)$. However, the numerator is irreducible. This means that it has no linear factors, so the numerator and denominator have no factors in common and cannot be simplified any further.
+
+This type of simplifying can be confusing for students; it's really tempting to see a fraction like $\dfrac{x^2+1}{x+1}$ and to ``simplify'' it by crossing out the ones. However, this is not correct because it ignores the implied parentheses: $\dfrac{(x^2+1)}{(x+1)}$. The one is tied to the rest of the terms and cannot be separated in this manner. This becomes a bit clearer if you try substituting in a number for $x$, such as $x=2$. Let's look at an example where we do have common factors.
+
+\vskip \baselineskip
+
+\example{ex_common_factors}{Simplifying a Fraction}{Simplify $\dfrac{2x^3+10x^2+12x}{2x^3-8x}$.}{The first step here is to factor both the numerator and the denominator. We won't show those steps here, but you should verify our result. Once we have factored both, we will see if we have any common factors; if we do we can remove them from both the numerator and the denominator.
+
+\begin{equation*}
+	\begin{split}
+		\frac{2x^3+10x^2+12x}{2x^3-8x} & = \frac{2x(x+3)(x+2)}{2x(x+2)(x-2)} \\
+						& = \frac{x+3}{x-2}\text{, } x \neq0,-2
+	\end{split}
+\end{equation*}
+
+We see that both the numerator and the denominator have $2x$ and $x+2$ as factors; this means we can eliminate these terms. Notice that we have to add a domain restriction. The original form of the fraction is not defined at $x=0$ or $x=2$ since both values make the denominator $0$. In order to truly have the same meaning as the original function, we need to note that we cannot use these values of $x$. This is why we have the additional note of $x\neq0,-2$ as part of our solution. There are no other common factors, so we are done.}\\
+
+Now, let's take a look at simplifying when we have complex fractions. Here, complex does not mean that we are working with imaginary numbers, rather that we have a fraction nested inside of a fraction. When we have complex fractions, the first step is to make sure the entire numerator is as simplified as possible and that the entire denominator is as simplified as possible. We'll work three different examples that already have simplified numerators and simplified denominators, but do not neglect this first step as it is critical in working these problems correctly.
+
+\vskip \baselineskip
+
+\example{ex_nested_fractions1}{Complex Fractions}{Simplify $\displaystyle \frac{x+1}{\frac{x-1}{x^2}}$.}{Again, note that both the numerator and denominator are as simplified as possible. Here, the nested fraction is in the denominator. When dividing by a fraction, we can instead multiply by the reciprocal (think about dividing a number by $\frac{1}{2}$; it is equivalent to multiplying by $\frac{2}{1}$).
+
+\begin{equation*}
+	\begin{split}
+		\frac{x+1}{\frac{x-1}{x^2}} & = (x+1) \div \frac{x-1}{x^2} \\
+					    & = (x+1) \times \frac{x^2}{x-1} \\
+					    & = \frac{(x+1)(x^2)}{x-1} \\
+					    & = \frac{x^3+x^2}{x-1}
+	\end{split}
+\end{equation*}
+
+There are no common factors, so we are done.}\\
+
+\vskip \baselineskip
+
+\example{ex_nested_fractions2}{Complex Fractions}{Simplify $\displaystyle \frac{\frac{2}{x+1}}{x+2}$.}{Here, the nested fraction is in the numerator. For this case, we can simply rewrite a little bit; instead of dividing by $x+2$, we can multiply by $\frac{1}{x+2}$. This is analogous to multiplying by one half instead of dividing by 2; both have the same meaning.
+
+\begin{equation*}
+	\begin{split}
+		\frac{\frac{2}{x+1}}{x+2} & = \frac{2}{x+1} \div (x+2) \\
+					  & = \frac{2}{x+1} \times \frac{1}{x+2} \\
+					  & = \frac{2(1)}{(x+1)(x+2)} \\
+					  & = \frac{2}{x^2+3x+2}
+	\end{split}
+\end{equation*}
+There are no common factors, so we are done.}\\
+
+\vskip \baselineskip
+
+\example{ex_nested_fractions3}{Complex Fractions}{Simplify $\displaystyle \dfrac{\phantom{x} \frac{x}{x+1}\phantom{x}}{\frac{x-2}{x-1}}$.}{Here we will use the ideas from both of the previous examples. We will multiply the numerator by the reciprocal of the denominator:
+
+\begin{equation*}
+	\begin{split}
+		\frac{\phantom{x} \frac{x}{x+1} \phantom{x}}{\frac{x-2}{x-1}} & = \frac{x}{x+1} \div \frac{x-2}{x-1} \\
+						      & =\frac{x}{x+1} \times \frac{x-1}{x-2} \\
+						      & = \frac{(x)(x+1)}{(x-1)(x-2)} \\
+						      & = \frac{x^2+1}{x^2-3x+2}
+	\end{split}
+\end{equation*}
+
+There are no common factors, so we are done.}\\
+
+\vskip \baselineskip
+\noindent\textbf{\large Partial Fraction Decomposition}\\
+
+Our next topic is partial fraction decomposition. With partial fraction decomposition, our goal is to take a fraction with a polynomial numerator and a polynomial denominator and write it as the sum of several fractions that have simpler denominators. For example, we can write $\frac{6x+16}{x^2+5x+6}$ as $\frac{2}{x+3} + \frac{4}{x+2}$ (this is a good place to practice your fraction combining skills by verifying that these are equal). In many situations, particularly when performing integration, this second form is much easier to work with. To do this, our first step is to factor the denominator. When we factor, we will end up with linear factors and/or irreducible quadratic factors. These factors may only appear once, or may be repeated (for example, for $x^2+2x+1$, we say $x+1$ is repeated twice since $x^2+2x+1 = (x+1)^2$).
+
+With our decomposition, we want to write the original fraction as the sum of many fractions; we will need one fraction for each factor. If a factor is repeated, it will need one fraction for each time it is repeated. The factors will be the denominators of the new fractions. Remember, the factors used to make the new fraction denominators must combine, through multiplication, to give us the original denominator. For linear factors, the numerator will be a constant and for quadratic factors the numerator will be linear. Once we have determined how we are splitting up (``decomposing'') our original fraction, we will use our algebra skills to determine exactly what the numerators look like. Let's look at some examples; in all of our examples the denominator will already be factored; in practice you will often need to do the factorization as your first step.
+
+\vskip \baselineskip
+
+\example{ex_partial_frac1}{Partial Fraction Decomposition: Linear Factors}{Perform a partial fraction decomposition on $\displaystyle \frac{3}{(x+1)(x-2)}$.}{Since the denominator has two factors, we will be decomposing into two fractions. Each term is linear, so each of our new fractions will have a constant numerator. We'll use $A$ and $B$ as the numerators for now, and we will solve for these two values later. So far, we have:
+
+\begin{equation}\label{eqn:pf1}
+	\frac{3}{(x+1)(x-2)}  = \frac{A}{x+1} + \frac{B}{x-2}
+\end{equation}
+
+It does not matter which fraction comes first, nor does it matter what letters we use in the numerators, so long as we don't use the same letter twice. Our next step is to determine the appropriate values for $A$ and $B$. To make this easier, we will multiply everything in equation \ref{eqn:pf1} by $(x+1)$ and by $(x-2)$. This will eliminate all of the fractions.
+
+\begin{equation*}
+	\begin{split}
+		(x+1)(x-2)\Bigg[\frac{3}{(x+1)(x-2)} \Bigg]& = (x+1)(x-2)\Bigg[\frac{A}{x+1} + \frac{B}{x-2}\Bigg] \\[2ex]
+		 \frac{3(x+1)(x-2)}{(x+1)(x-2)}& = \frac{A(x+1)(x-2)}{x+1} + \frac{B(x+1)(x-2)}{x-2} \\[2ex]
+		 3 & = A(x-2) + B(x+1)
+	\end{split}
+\end{equation*}
+
+You might be tempted to distribute on the right side, but it will be easier to solve for $A$ and $B$ if we don't. If we have the right values of $A$ and $B$, this last statement, $3=A(x-2) + B(x+1)$, is true for all values of $x$. We will exploit this. Right now, we are multiplying $A$ by $(x-2)$. We can make this $A$ term disappear if we substitute in $x=2$. When we do this, we get:
+
+\begin{equation*}
+	\begin{split}
+		3 &= 0 + B(2+1) \\
+		3 &= 3B \\
+		B &= 1
+	\end{split}
+\end{equation*}
+
+We can do a similar magic trick by substituting in $x=-1$ and making $B$ disappear:
+
+\begin{equation*}
+	\begin{split}
+		3 &= A(-1-2) + 0 \\
+		3 &= A(-3) \\
+		A &= -1
+	\end{split}
+\end{equation*}
+
+Now that we have the values of $A$ and $B$, we can complete the decomposition:
+
+\begin{equation*}
+	\frac{3}{(x+1)(x-2)}  = \frac{-1}{x+1} + \frac{1}{x-2}
+\end{equation*}
+}\\
+
+With partial fraction decomposition, the order of the times is up to you. We could have started out this problem with
+
+\begin{equation*}
+	\frac{3}{(x+1)(x-2)}  = \frac{A}{x-2} + \frac{B}{x+1}
+\end{equation*}
+
+\noindent
+instead of
+
+\begin{equation*}
+	\frac{3}{(x+1)(x-2)}  = \frac{A}{x+1} + \frac{B}{x-2}
+\end{equation*}
+
+\noindent
+The values for $A$ and $B$ would be different, but the final answer would be the same.
+
+As we noted above, we may have repeated factors in our denominator, and when we do we will need a separate fraction for each time it is repeated. These fractions will all have this repeated factor in the denominator, but raised to a higher power each time: in the first fraction we will just have the factor, in the second fraction we will have the factor squared, in the third we will have the factored cubed, etc. Let's take a look at an example.
+
+\vskip \baselineskip
+
+\example{ex_pf2}{Partial Fraction Decomposition: Repeated Factors}{Perform a partial fraction decomposition on $\displaystyle \frac{5x^3+16x^2+16x+6}{(x+2)(x+1)^3}$.}{Here, the denominator is already factored for us, so the first step is already complete. We see that we have one factor that is only repeated once, $x+2$, and another factor that is repeated three times, $x+1$. This means we will decompose into four fractions, with denominators of $x+2$, $x+1$, $(x+1)^2$, and $(x+1)^3$. Since both factors are linear, each fraction will have a constant in the numerator. So, the decomposition will look like:
+
+\begin{equation*}
+	\frac{5x^3+16x^2+16x+6}{(x+2)(x+1)^3} = \frac{A}{x+2} + \frac{B}{x+1} + \frac{C}{(x+1)^2} + \frac{D}{(x+1)^3}
+\end{equation*}
+
+As in the previous example, we will multiply both sides by the denominator of the original fraction, $(x+2)(x+1)^3$. This will eliminate the fractions.
+
+\begin{equation*}
+	\begin{split}
+		(x+2)(x+1)^3 \Bigg[ \frac{5x^3+16x^2+16x+6}{(x+2)(x+1)^3} \Bigg]&= (x+2)(x+1)^3\Bigg[\frac{A}{x+2} + \frac{B}{x+1} + \frac{C}{(x+1)^2} + \frac{D}{(x+1)^3}\Bigg] \\[2ex]
+		\frac{(5x^3+16x^2+16x+6)(x+2)(x+1)^3 }{(x+2)(x+1)^3} & = \frac{A(x+2)(x+1)^3 }{x+2} + \frac{B(x+2)(x+1)^3 }{x+1} + \frac{C(x+2)(x+1)^3 }{(x+1)^2} + \frac{D(x+2)(x+1)^3 }{(x+1)^3} \\[2ex]
+		5x^3 + 16x^2+16x+6 &= A(x+1)^3 + B(x+2)(x+1)^2 + C(x+2)(x+1) + D(x+2)
+	\end{split}
+\end{equation*}
+
+Now, we'll use the same method we used in the previous example; by choosing appropriate values of $x$ to substitute into our equation, we will be able to eliminate terms. Every term except for the $A$ term is being multiplied by $(x+2)$, so if we substitute $x=-2$, the $B$, $C$, and $D$ terms will all become zero:
+
+\begin{equation*}
+	\begin{split}
+		5(-2)^3 + 16(-2)^2 + 16(-2) + 6 & = A(-2+1) \\
+		5(-8) + 16(4) +16(-2) + 6 & = A(-1) \\
+		-40+64-32+6 &= -A \\
+		-2 & = -A \\
+		A &= 2
+	\end{split}
+\end{equation*}
+
+Next, by substituting $x=-1$, we can find the value for $D$:
+
+\begin{equation*}
+	\begin{split}
+		5(-1)^2+16(-1)^2 + 16(-1)+6 & = D(-1+2) \\
+		5(-1) + 16(1) + 16(-1) + 6 &= D(1) \\
+		-5+16-16+6 & = D \\
+		1 & = D
+	\end{split}
+\end{equation*}
+
+We now have values for $A$ and for $D$, but unfortunately our method will not work to help us find $B$ and $C$ since each of these terms is multiplied by both factors. We'll take a similar approach, however. We noted that these statements are true for all values of $x$, so we can choose some easy-to-work-with values to substitute in. Currently, we have
+
+\begin{equation*}
+	5x^3+16x^2+16x+6 = 2(x+1)^3 + B(x+2)(x+1)^2 + C(x+2)(x+1) + (x+2)
+\end{equation*}
+
+\noindent
+We'll start by substituting in $x=0$ since this keeps the arithmetic easy. We get
+
+\begin{equation*}
+	\begin{split}
+		5(0)^3 + 16(0)^2 + 16(0) + 6 &= 2(0+1)^3 + B(0+2)(0+1)^2 + C(0+2)(0+1) + (0+2) \\
+		6 & = 2(1)^3 + B(2)(1)^2 + C(2)(1) + 2 \\
+		6 & = 2 +2B + 2C + 2 \\
+		2 &= 2B + 2C \\
+		1 & = B + C
+	\end{split}
+\end{equation*}
+
+This doesn't give us enough information to find values for $B$ and $C$, so we will need another equation. To get this equation, we will substitute $x=1$:
+
+\begin{equation*}
+	\begin{split}
+		5(1)^3 + 16(1)^2 + 16(1) + 6 & = 2(1+1)^3 + B(1+2)(1+1)^2 + C(1+2)(1+1) + (1+2) \\
+		5+16+16+6 & = 2(2^3) + B(3)(2)^2 + C(3)(2) + 3 \\
+		43 & = 16 + 12B + 6C + 3 \\
+		24 & = 12B + 6C \\
+		4 & = 2B + C
+	\end{split}
+\end{equation*}
+
+Now, we have two equations: $1 = B+C$ and $4=2B+C$. We can now use the methods we learned when finding points of intersection; we have two equations with 2 values that we need to find. We will use elimination to solve since both equations have $C$ with the same coefficient, but you can use any of the methods we learned. We will subtract $1=B+C$ from $4=2B+C$ to get $3=B$. We can substitute $B=3$ into $1=B+C$ and solve for $C$ to get $C=-2$. Finally, we have:
+
+\begin{equation*}
+		\frac{5x^3+16x^2+16x+6}{(x+2)(x+1)^3} = \frac{2}{x+2} + \frac{3}{x+1} + \frac{-2}{(x+1)^2} + \frac{1}{(x+1)^3}
+\end{equation*}
+
+}\\
+
+As you can see, partial fraction decomposition can be a tedious process. The biggest issues people encounter when performing a partial fraction decomposition are algebra/arithmetic mistakes and copy errors. These errors tend to be caused by rushing; with a process like partial fractions, it is better to work slowly, carefully, and methodically to avoid these errors, lest you have to start over from the beginning.
+
+We're not quite done with partial fraction decompositions yet. We've covered how to deal with linear factors, even with repetitions, but we haven't yet seen how to work with irreducible quadratic factors. As with linear factors, we will decompose into one fraction per factor. The difference is in the numerator. For the irreducible quadratic factors, the numerators need to be linear. Let's take a look:
+
+\vskip \baselineskip
+
+\example{ex_pf3}{Partial Fraction Decomposition: Quadratic Factors}{Perform a partial fraction decomposition on $\displaystyle \frac{5x^2-x+2}{(x-1)(x^2+1)}$.}{Let's dive right in and start our decomposition. We have two factors, so we will decompose into two fractions:
+\begin{equation*}
+	\frac{5x^2-x+2}{(x-1)(x^2+1)} = \frac{A}{x-1} + \frac{Bx+C}{x^2+1}
+\end{equation*}
+
+As always, the linear factor gets a constant in the numerator. The quadratic factors get a linear numerator. We'll multiply by the original fraction's denominator to eliminate the fractions:
+
+\begin{equation*}
+	\begin{split}
+		(x-1)(x^2+1) \Bigg[ \frac{5x^2-x+2}{(x-1)(x^2+1)} \Bigg] &= (x-1)(x^2+1) \Bigg[ \frac{A}{x-1} + \frac{Bx+C}{x^2+1} \Bigg] \\[2ex]
+		\frac{(5x^2-x+2)(x-1)(x^2+1)}{(x-1)(x^2+1)} &= \frac{A(x-1)(x^2+1)}{x-1} + \frac{(Bx+C)(x-1)(x^2+1)}{x^2+1}\\[2ex]
+		5x^2-x+2 &= A(x^2+1) + (Bx+C)(x-1)
+	\end{split}
+\end{equation*}
+
+Notice the parentheses around $Bx+C$ in the last line; without these parentheses we would not be multiplying correctly. We'll start off with our favorite method and substitute $x=1$ to eliminate the $Bx+C$ term:
+
+\begin{equation*}
+	\begin{split}
+		5(1)^2-(1)+2 & = A((1)^2 +1) +(B(1)+C)(1-1) \\
+		5(1)-1+2 & = A(1+1) + 0 \\
+		6 & = 2A \\
+		A &= 3
+	\end{split}
+\end{equation*}
+
+Finding $B$ and $C$ will be fairly quick. We already have a value for $A$, and if we substitute $x=0$, we can eliminate $B$ (since it is multiplied by $x$). Let's take a look:
+
+\begin{equation*}
+	\begin{split}
+		5(0)^2 -(0) + 2 & = A(0^2 +1) + (B(0) + C)(0-1) \\
+		2 & = A(1) +(C)(-1) \\
+		2 & = A-C
+	\end{split}
+\end{equation*}
+
+Since we know $A=3$, we get $C=1$. Now that we know $A$ and $C$, we can substitute in a third value for $x$ to find $B$, or we can simplify both sides to find $B$. We'll show this second method.
+
+\begin{equation*}
+	\begin{split}
+		5x^2-x+2 &= A(x^2+1) + (Bx+C)(x-1) \\
+		5x^2-x+2 &= (3)(x^2+1) + (Bx+(1))(x-1) \\
+		5x^2-x+2 & = 3x^2+3 + Bx^2 - Bx +x -1 \\
+		5x^2-x+2 &= (3+B)x^2 + (-B+1)x + 2
+	\end{split}
+\end{equation*}
+
+Using the $x^2$ terms, we have $5x^2 = (3+B)x^2$, so $5=3+B$, or $B=2$. We get the same result if we match the $x$ terms. Altogether, we have:
+
+\begin{equation*}
+	\frac{5x^2-x+2}{(x-1)(x^2+1)} = \frac{3}{x-1} + \frac{2x+1}{x^2+1}
+\end{equation*}
+
+
+}\\
+
+Lastly, we could have a fraction with repeated irreducible quadratics. We won't show the full solution for one of these, but we will show the initial setup. Just like with repeated linear factors we will need a fraction for each time the quadratic is repeated, and just like the previous example, they will each have a linear numerator. For example, we would have the following decomposition:
+
+\begin{equation*}
+	\frac{2x+6}{(x^2+4)^2(x+1)} = \frac{A}{x+1} + \frac{Bx+C}{x^2+4} + \frac{Dx+E}{(x^2+4)^2}
+\end{equation*}
+
+We would then solve for $A$, $B$, $C$, $D$, and $E$ using the same methods we have used in our other examples.
+
+\printexercises{exercises/fractions_exercises}
+
+%\clearpage

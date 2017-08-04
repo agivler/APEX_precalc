@@ -1,0 +1,139 @@
+% Calc 1 C 10737424946
+% Calc 1 BW 10737424947
+% Calc 2 C 10737424948
+% Calc 2 BW 10737424949
+% Calc C 10737424952
+% Calc BW 10737424951
+
+\RequirePackage{ifthen}
+\newboolean{longpage}
+\setboolean{longpage}{false}
+\ifthenelse{\boolean{longpage}}%
+{\documentclass[10pt]{article}}%
+{\documentclass[10pt]{book}}
+
+\newboolean{printlabelname}
+\setboolean{printlabelname}{false}
+\ifthenelse{\boolean{printlabelname}}{\usepackage[notref,notcite]{showkeys}}{}
+
+
+
+%% end detour
+%\usepackage{amsmath}
+
+\input{headers/Page_Size_Calculus}
+\usepackage{APEX_format}
+\input{headers/Header_Calculus}
+\usepackage{pgfplots}
+\usepackage{gensymb}
+\usepackage{verbatim}
+\usepackage{float}
+\pgfplotsset{compat=1.8}
+
+%\printexercisenames
+
+\ifthenelse{\boolean{xetex}}%
+	{\sffamily
+	%%\usepackage{fontspec}
+	\usepackage{mathspec}
+	\setallmainfonts[Mapping=tex-text]{Carlito}
+	\setmainfont[Mapping=tex-text]{Carlito}
+	\setsansfont[Mapping=tex-text]{Carlito}
+	\setmathsfont(Greek){[cmmi10]}}
+	{}
+	
+	\ifthenelse{\boolean{luatex}}%
+	{\sffamily
+	\usepackage{fontspec}
+	\usepackage{unicode-math}
+	%\usepackage{mathspec}
+	%\setallmainfonts[Mapping=tex-text]{Carlito}
+	\setmainfont{Carlito}
+	%\setsansfont[Mapping=tex-text]{Carlito}
+	\setmathfont[range=\mathup]{Carlito}
+	\setmathfont[range=\mathit]{Carlito Italic}
+	}
+	{}
+
+\makeindex
+
+%\renewcommand{\contentsname}{Contents of Calculus I \& II}
+
+%%%\tracingonline=1
+\begin{document}
+
+%\printincolor
+\printinblackandwhite
+\printallanswers
+
+\usethreeDgraphics
+%\usetwoDgraphics
+
+\input{text/front_matter_and_cover}
+
+\chapter{Numbers and Functions}\label{chapter:numbers_functions}
+\thispagestyle{empty}
+%
+\input{text/Real_Numbers_and_Relationships}
+\input{text/Functions}
+\input{text/Domains}
+\input{text/Lines}
+\input{text/Graphing}
+
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\chapter{Working with Equations}\label{chapter:equations}
+\thispagestyle{empty}
+
+\input{text/Factoring_Expanding}
+\input{text/Complete_Square}
+\input{text/Solving_for_Variables}
+\input{text/Intersections}
+\input{text/Fractions}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\chapter{Specialty Functions}\label{chapter:equations}
+\thispagestyle{empty}
+
+\input{text/Inequalities}
+\input{text/Exponents}
+\input{text/Logarithms}
+\input{text/Intro_Trig}
+\input{text/Trig_Triangles}
+
+\appendix
+\clearpage{\pagestyle{empty}\cleardoublepage}
+%%%%%
+%%%%\makeexercisesection{Solutions To Selected Problems}
+\pagenumbering{arabic}\renewcommand{\thepage}{A.\arabic{page}}
+\makeexercisesection{Solutions To Selected Problems}
+%%%\printexercisesection
+
+
+%
+%
+%%%%
+%%%%%%%%%
+%%%%%%%		 The following makes the index and includes
+%%%%%%%		it in the file
+%%%%%%%%%
+%%%
+%%%\clearpage{\pagestyle{empty}\cleardoublepage}
+%%%\phantomsection
+%%%\addcontentsline{toc}{chapter}{\indexname}
+%%%\printindex
+%%
+%
+\qendheader
+\eendgeometry
+
+\phantomsection
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\indexname}
+\printindex
+
+%\cleardoublepage
+%\input{text/Inside_Cover_Of_The_Text_Material_Complete}
+
+
+\end{document}

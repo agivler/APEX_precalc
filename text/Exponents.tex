@@ -1,0 +1,145 @@
+\section{Radicals and Exponents}\label{sec:exponents}
+
+In this section, we will look at properties of exponents. Here, these rules apply to any type of function that involves exponents, namely power functions and exponential functions. However, this section will mostly focus on power functions, functions where the base is the variable and the exponent is a constant. We'll discuss several exponent rules, show you how to use them, and explain the reasoning behind these rules. Before we dive into the different rules, we need to have a solid understanding of what exponents are and what they mean.
+
+When we first start learning math, we often start with addition. We then quickly see that repeated addition can be useful. We run into problems like: ``You have 4 dogs and want to give each dog 3 treats. How many treats do you need?'' We solve these with repeated addition: $3+3+3+3 = 12$, or three treats for each of the four dogs. We then learn that repeated addition happens often, so we develop a new notation, multiplication. For our example problem, we would do $3 \times 4$ to say we need to add three, four times. Exponents take this one step further. When we need to do repeated multiplication, like if we need to find the volume of a cube, we can shorten the notation by using exponents. To find our volume, we would multiply the side length by itself three times to get length times width times height, but with a cube these lengths are all the same. We can write $V(x) = (x)(x)(x)=x^3$. Here, the exponent tells us how many times to do the multiplication.
+
+The first exponent rule we will examine is
+
+\begin{equation}\label{eqn:add_exponents}
+	x^ax^b=x^{a+b}
+\end{equation}
+
+\noindent Here, the first term, $x^a$ tells us to multiply $x$ by itself $a$ times and the second term tells us to multiply it $b$ times. Together, that says we need to multiply $x$ a total of $a+b$ times, giving us $x^{a+b}$. As an example, $x^2x^3 = x^{2+3} = x^5$.
+
+Next, let's look at
+
+\begin{equation}
+	x^{-a} = \frac{1}{x^a}
+\end{equation}
+
+\noindent
+This rule build off of our last rule. If we have $x^5x^{-2}$, rule \ref{eqn:add_exponents} tells us we really have $x^{5+(-2)} = x^{5-2} = x^3$. We went from having $x$ multiplied 5 times to having $x$ multiplied only 3 terms, meaning we have removed two of the multiplications. We removed a multiplication through a division: 
+\begin{equation*}
+	\frac{x^5}{x^2} = \frac{(x)(x)(x)(x)(x)}{(x)(x)} = (x)(x)(x) = x^3
+\end{equation*}
+\noindent
+This shows us that a negative exponent tells us we have division rather than multiplication. We can also combine this rule with some of our rules from fractions. If we have $\frac{1}{x^{-a}}$, we can start by replacing $x^{-a}$ with $\frac{1}{x^a}$. This gives us
+
+\begin{equation*}
+	\frac{1}{x^{-a}} = \frac{1}{\frac{1}{x^a}}
+\end{equation*}
+
+\noindent
+From our fractions rules, we know that dividing by a fraction is the same as multiplying by its reciprocal, so we have
+
+\begin{equation*}
+	\begin{split}
+		\frac{1}{x^{-a}} &= \frac{1}{\frac{1}{x^a}} \\
+				 & = 1 \times \frac{x^a}{1} \\
+				 & = x^a
+	\end{split}
+\end{equation*}
+
+
+The third rule we will discuss is
+
+\begin{equation}\label{eqn:mult_exponents}
+	(x^a)^b = x^{ab}
+\end{equation}
+
+\noindent
+This rule builds directly off of our first rule as well. $(x^a)^b$ tells us we need to multiply $x^a$ by itself $b$ times. Since $x^a$ multiplies $x$ by itself $a$ times, $(x^a)^b$ tells us to multiply $x$ by itself a total of $ab$ times. For example, $(x^2)^3 = (x^2)(x^2)(x^2) = x^{2+2+2} = x^{(2)(3)} = x^6$. We can also use this rule when there is a product or quotient inside the parentheses, but not if there is an addition or subtraction. For example, we can say that $(x^2y^3)^2 = (x^2)^2(y^3)^2 = x^4 y^6$, and that $\displaystyle \Bigg (\frac{x^2}{y^4}\Bigg) ^2 = \frac{(x^2)^2}{(y^3)^2} = \frac{x^4}{y^6}$, but we cannot apply this rule to $(x^2+y^3)^2$. Here, we would need to rewrite as $(x^2+y^3)(x^2+y^3)$ and distribute.
+
+Our last rule focuses on the inverse function, or how to ``undo'' an exponent. We've seen these functions before. These are our root functions. A square root ``undoes'' squaring and a cube root ``undoes'' cubing. In general, we have
+
+\begin{equation}
+	(x^a)^{1/a} = x
+\end{equation}
+
+and 
+
+\begin{equation}
+	(x^{1/a})^a = x
+\end{equation}
+
+\noindent
+Both of these come from rule \ref{eqn:mult_exponents}. Additionally, you might see $x^{1/a}$ written as $\sqrt[a]{x}$. Mathematicians call $\sqrt[a]{x}$ the \emph{radical} form. Both of these have the same meaning, they just look a bit different. Anytime you see $\sqrt[a]{x}$, you can replace it with $x^{1/a}$ and vice versa.
+
+These rules will all be quite handy in calculus. In both integral and differential calculus, we will have rules that work well when we have a power function, but won't work for other forms of functions. By being able to rewrite functions like $f(x) = \frac{1}{x^2}$, as power functions ($f(x) = x^{-2}$ here), other calculations will be simplified. Our rules are summarized below:
+
+
+\begin{itemize}
+	\item $x^ax^b=x^{ab}$\\
+	\item $x^{-a} = \frac{1}{x^a}$\\
+	\item $(x^a)^b = x^{ab}$ \\
+	\item $x^{1/a} = \sqrt[a]{w}$
+\end{itemize}
+
+Let's look at a few examples of working with exponent rules.
+
+\vskip \baselineskip
+
+\example{ex_exponents1}{Simplifying Exponents}{Simplify $\displaystyle \Bigg( \frac{x^2 y^4}{x\sqrt{y}}\Bigg)^2$}{Anytime we simplify, we need to remember our order of operations. The order of operations tells us to start with terms that are inside of parentheses, so we will work on simplifying the fraction before we worry about the exponent on the outside. First, we will write everything using exponents rather than radicals so we can use our exponent rules more easily in the rest of the problem.
+
+
+\begin{equation*}
+	\Bigg( \frac{x^2 y^4}{x\sqrt{y}}\Bigg)^2 = \Bigg( \frac{x^2 y^4}{xy^{1/2}}\Bigg)^2
+\end{equation*}
+
+Next, we will eliminate the fraction by using negative exponents on the terms that are in the denominator. After rewriting, we will combine any like terms.
+
+\begin{equation*}
+	\begin{split}
+		\Bigg( \frac{x^2 y^4}{xy^{1/2}}\Bigg)^2 & = \Big( x^2 y^4 x^{-1} y^{-1/2} \Big)^2 \\
+							& = \Big( x^2 x^{-1} y^4 y^{-1/2} \Big)^2 \\
+							& = \Big( x^{2-1} y^{4-1/2} \Big)^2 \\
+							& = \Big( x^1 y^{8/2-1/2}\Big)^2 \\
+							& = \Big( x y^{7/2})^2
+	\end{split}
+\end{equation*}
+
+Now that everything inside the parentheses is simplified as much as possible, we will use our third exponent rule to finish simplifying. Our third rule says that $(x^a)^b = x^{ab}$. We need to make sure we distribute the exponent that is outside of the parentheses to each term inside of the parentheses. This give us
+
+\begin{equation*}
+	\begin{split}
+		\Big( x y^{7/2}\Big)^2 &= (x)^2 (y^{7/2})^2 \\
+					 &= x^2 y^{14/2} \\
+					 & = x^2y^7
+	\end{split}
+\end{equation*}
+}\\
+
+\vskip \baselineskip
+
+\example{ex_exponents2}{Simplifying Exponents}{Simplify $\displaystyle \Big( \sqrt{y} + \sqrt{x}\Big)^2$.}{We'll start again by focusing on the terms inside the parentheses and rewriting all radicals as exponents. This gives us
+
+\begin{equation*}
+	\Big( \sqrt{y} + \sqrt{x} \Big)^2 = \Big( y^{1/2} + x^{1/2} \Big)^2
+\end{equation*}
+
+There is nothing that we can simplify inside the parentheses, so we now need to apply the exponent on the outside of the parentheses. Inside the parentheses we have two terms that are added, so we can't apply an exponent rule here. We will need to rewrite and then expand.
+
+\begin{equation*}
+	\begin{split}
+		\Big(y^{1/2} + x^{1/2} \Big)^2 & = \Big(y^{1/2} + x^{1/2} \Big)\Big(y^{1/2} + x^{1/2} \Big) \\
+					       & = (y^{1/2})^2 + 2 y^{1/2}x^{1/2} + (x^{1/2})^2 \\
+					       & = y + 2 y^{1/2}x^{1/2} + x
+	\end{split}
+\end{equation*}
+
+We don't have any like terms, so we can't simplify any further. We could rewrite slightly, but this is a matter of personal preference. We have three other ways we could write this final answer. We could use exponent rules to rewrite the middle term since $y^{1/2}x^{1/2}=(yx)^{1/2}$, giving us $y+2(yx)^{1/2} + x$. We could also use radicals and write either $y + 2\sqrt{y}\sqrt{x} + x$ or $y+2\sqrt{yx} + x$. All of these four answers are fully simplified, and are equally valid.}\\
+
+Many people struggle with evaluating radicals or fractional exponents by hand. Let's take a look at how we can evaluate these types of terms.
+
+\vskip \baselineskip
+
+\example{ex_exponents3}{Evaluating Radicals}{Evaluate $8^{2/3}$.}{As first glance, this looks like we won't be able to do much with it. However, we can use our exponent rules to help us evaluate it. We can rewrite this as $(8^2)^{1/3}$ or as $(8^{1/3})^2$. We prefer the second version. With the first version we would have $(8^2)^{1/3} = (64)^{1/3}$, but this is tricky to deal with by hand because not many people have perfect cubes memorized, so we would need to factor 64.
+
+If we use the second version, $(8^{1/3})^2$, we would start by finding the cube root of 8. When we factor, we get $8=2\times2\times2$, which show us that $2=8^{1/3}$. This gives us $(8^{1/3})^2 = (2)^2 = 4$.}\\
+
+
+\printexercises{exercises/exponents_exercises}
+
+
+%\clearpage

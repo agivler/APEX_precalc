@@ -1,0 +1,216 @@
+\section{Logarithms and Exponential Functions}\label{sec:logarithms}
+
+In this section, we will discuss logarithmic functions and exponential functions. The exponent rules we learned last section also apply to the exponents we see in exponential functions, so here we will focus on the relationship between exponential and logarithmic functions. As we mentioned previously, these functions are inverses of each other, in the same sense that square roots and squaring are inverses of each other.
+
+Logarithmic functions and exponential functions are both used to describe many applications such as population growth and value of investments over time. Logarithmic are very prevalent in later courses like differential equations, so a solid understanding of their properties now will help you prepare for this course.
+
+\vskip \baselineskip
+\noindent\textbf{\large The Relationship Between Logarithmic and Exponential Functions}\\
+
+We saw earlier, that an exponential function is any function of the form $f(x)=b^x$, where $b>0$ and $b\neq1$. A logarithmic function is any function of the form $g(x)=\log_b{(x)}$, where $b>0$ and $b\neq1$. It is no coincidence that both forms have the same restrictions on $b$ because they are inverses of each other. This means that, for the same value of $b$, $b^{\log_b{(x)}}=x$ for $x>0$ and $\log_b{b^x}=x$.
+
+Let's look at some concrete examples to help illustrate this relationship. Let's look at $b=2$. For $b=2$, $f(x)=2^x$. Then, we can see that $f(3)=2^3 = 8$. Since they are inverse functions, $g(8) = \log_2{(8)} =3$. In general this is explained as:
+
+\begin{equation}\label{eqn:log_def}
+	\text{If }a=b^c \text{, then }c=\log_b{(a)}.
+\end{equation}
+
+Another way of thinking about it is to use the question ``y is b raised to what power?'' when you see $\log_b{(y)}$. For example, when we see $\log_2{(16)}$, we ask ``16 is 2 raised to what power?'' Through a bit of guess and check, we get $2^1=2$, $2^2=4$, $2^3=8$, and $2^4=16$. This tells us that 2 raised to the 4$^{th}$ power gives us 16, so $\log_2{(16)}=4$. Let's look at a few more examples.
+
+\vskip \baselineskip
+
+\example{ex_evaluating_logs}{Evaluating Logarithmic Functions}{Evaluate each of the following statements:\\
+\noindent\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}
+		\item	$\log_3{(9)}$	
+		\item	$\log_4{(64)}$
+		\item	$\log_{2}{\Big( \frac{1}{2} \Big)}$				
+		\end{enumerate}
+		\end{minipage}
+		\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}\addtocounter{enumi}{3}
+		\item	$\log_{2}{(2)}$	
+		\item	$\log_{10}{(10000)}$				
+		\item	$\log_{3}{\Big( \frac{1}{9} \Big)}$	
+		\end{enumerate}	
+		\end{minipage}
+}{We'll work on these one at a time. 
+\begin{enumerate}
+	\item For this statement, we are answering the question ``9 is 3 raised to what power?'' We can see through a little bit of trial and error that $3^2=9$, so we get that $\log_3{(9)}=2$.
+	\item For this statement, we are answering the question ``64 is 4 raised to what power?'' We get that $4^3=64$, so we get that $\log_4{(64)}=3$.
+	\item For this statement, we are answering the question ``$\frac{1}{2}$ is 2 raised to what power?'' This one is a bit tricky. We know that $\frac{1}{2}$ is smaller than 2, so the answer to our question cannot be a positive number. If we try zero, we have that $2^0=1$, so it can't be zero either. This leaves negative numbers. If we try $2^{-1}$, we get $\frac{1}{2}$. This tells us that $\log_2{\Big( \frac{1}{2} \Big)} = -1$.
+	\item For this statement, we are answering the question ``2 is 2 raised to what power?'' We can quickly see that $2^1=2$, so we get that $\log_2{(2)}=1$.
+	\item For this statement, we are answering the question ``10000 is 10 raised to what power?'' We get that $10^4=10000$, so we get that $\log_{10}{(10000)}=4$.
+	\item For this statement, we are answering the question ``$\frac{1}{9}$ is 3 raised to what power?'' This is similar to $\log_2{\Big(\frac{1}{2} \Big)}=-1$; here we get that $\log_3{\Big(\frac{1}{9})}=-2$ since $3^{-2} = \frac{1}{9}$.
+\end{enumerate}
+}\\
+
+\vskip \baselineskip
+\noindent\textbf{\large Logarithm Rules}\\
+
+We have five main rules that we will need to use when working with logarithms. These rules are all based off of the rules we have for exponents. Be sure to be careful of the details in each of these rules; in some of them all of the logarithms have the same base, but in others the base changes to show the relationship between different logarithmic functions. As we have already seen, the base plays a big role in the specific meaning of the function, so be aware of the rules that have the same base everywhere and the rules where the base changes.
+
+\begin{itemize}
+	\item $\log_b{(x^a)} = a \log_b{(x)}$
+	\item $\log_b{(xy)} = \log_b{(x)} + \log_b{(y)}$
+	\item $\displaystyle \log_b{\Bigg( \frac{x}{y} \Bigg)} = \log_b{(x)} - \log_b{(y)}$
+	\item $\displaystyle \log_a{(b)} = \frac{1}{\log_b{(a)}}$
+	\item $\displaystyle \log_b{(x)} = \frac{\log_c{(x)}}{\log_c{(b)}}$
+\end{itemize}
+
+All of these rules can be used in either direction; you can start with the form on the left and rewrite as the form on the right or you can start with the form on the right and rewrite as the form on the left. We won't explain all of these in detail, but we will illustrate examples for the first two.
+
+With the first rule, we can get insight from the question we used earlier to evaluate our logarithms. We'll look at a concrete example rather than a general case. Suppose we want to evaluate $\log_2{(8^4)}$. Before we get to our question, let's rewrite this a bit. We can write $\log_2{(8^4)}=\log_2{((2^3)^4)}$ since $8=2^3$. Next, we can use our exponent rules to get $\log_2{((2^3)^4)} = \log_2{(2^{12})}$. Now, answering our question `` $2^{12}$ is 2 raised to what power?,'' we get 12. So, overall, we have $\log_2{(8^4)} = 12$. Now, working on the other side, we have 
+\begin{equation*}
+	\begin{split}
+		12 &= 4 \times 3 \\
+		   &= 4 \log_2{(8)}
+	\end{split}
+\end{equation*}
+\noindent
+Putting both pieces together, we have $\log_2{(8^4)} = 4\log_2{(8)}$.
+
+The second rule also follows from exponent rules. Let's take a look:
+
+\begin{equation*}
+	\begin{split}
+		\log_2{(2^3)} + \log_2{(2^4)}  & = 3 + 4 \text{ from the definition of log base 2}\\
+					       & = 7 \\
+					       & = \log_2{(2^7)} \\
+					       & =  \log_2{(2^3\times 2^4)} \text{ from our exponent rules}
+	\end{split}
+\end{equation*}
+
+We illustrated each of these rules using some easy to work with values, but they are true for all values. The other rules can all be illustrated in similar ways. (Note: you may want to try to come up with your own examples for these rules to help you understand why these rules are true.) Let's look at an example where we put these rules to use.
+
+\vskip \baselineskip
+
+\example{ex_log_rules}{Combining Logarithms}{Write $5\log_2{(x)} + 3\log_2{(2y)}$ as a single logarithm.}{Currently, this term is the sum of two logarithms and we want to write it as a single logarithm. It looks like we may want to start with the second rule, $\log_b{(xy)} =\log_b{(x)} + \log_b{(y)}$. It looks like we are already in the form on the right side. However, there is one issue. Currently, both of our logarithms are multiplied by a constant, and the second rule doesn't have coefficients on the logarithms. We'll need to use the first rule to move these coefficients inside of the logarithms before we use the second rule. We get
+
+\begin{equation*}
+	\begin{split}
+		5\log_2{(x)} + 3\log_2{(2y)} & = \log_2{(x^5)} + \log_2{((2y)^3)} \\
+					     & = \log_2{(x^5)} + \log_2{(8y^3)} \\
+					     & = \log_2{[(x^5)(8y^3)]} \\
+					     & = \log{(8x^5y^3)}
+	\end{split}
+\end{equation*}
+Notice that when the 3 on the second term came inside, we were careful to apply it as an exponent to everything inside of the logarithm, and not just the $y$. 
+}\\
+
+Sometimes we will want to go in the opposite direction and split a single logarithm into the sum or different of many logarithms. Let's take a look at an example.
+
+\vskip \baselineskip
+
+\example{ex_split_log}{Splitting Logarithms}{Split $\displaystyle \ln{\Bigg( \frac{2x^3y^3}{wz^5}\Bigg)}$ into the sum and/or difference of multiple logarithms.}{Here, we want to rewrite as many simpler logarithms. First, we see that the logarithms has a quotient inside, so we can use the third rule to split it:
+
+\begin{equation*}
+	\ln{\Bigg( \frac{2x^3y^3}{wz^5}\Bigg)} = \ln{(2x^3y^3)} - \ln{(wz^5)}
+\end{equation*}
+
+Now, we have products inside of both terms, so we can use the second rule to split these:
+
+\begin{equation*}
+	\begin{split}
+		\ln{(2x^3y^3)} - \ln{(wz^5)} &= \ln{(2)} + \ln{(x^3y^3)} - \ln{(wz^5)} \\
+					    & = \ln{(2)} + \ln{(x^3)} + \ln{(y^3)} - \ln{(wz^5)} \\
+					    & = \ln{(2)} + \ln{(x^3)} + \ln{(y^3)} - [\ln{(w)} + \ln{(z^5)}] \\
+					    & = \ln{(2)} + \ln{(x^3)} + \ln{(y^3)} - \ln{(w)} - \ln{(z^5)}
+	\end{split}
+\end{equation*}
+
+Now, for the last step, we can bring the exponents to the outside of each term, giving us
+
+\begin{equation*}
+	= \ln{(2)} + 3\ln{(x)} + 3\ln{(y)} - \ln{(w)} -5\ln{(z)}
+\end{equation*}
+
+Notice that we were careful to use parentheses around $\ln{(wz^5)}$ when we split it because of the negative sign. In the original form we are dividing by w and by $z^3$ so we need to make sure both of these terms are subtracted when we split the logarithms. Also, we did not evaluate $\ln{(2)}$. Since $\ln{(2)}$ is really $\log_e{(2)}$ and 2 is not made by raising $e$ to an integer or fraction, $\ln{(2)}$ is a non-repeating decimal. This means it is better to leave $\ln{(2)}$ in our answer than to use a calculator to evaluate it because this form is more precise.}\\
+
+\vskip \baselineskip
+\noindent\textbf{\large Solving Exponential Statements}\\
+
+Logarithms are also used to solve exponential statements, statements where the variable is part of an exponent. When solving an exponential statement, we first need to isolate the exponential term. Once we have isolated the exponential term, we can take a logarithm of both sides. We don't want to take just any logarithm, we want to use a logarithm that has the same base as the exponent. This will allow us to use our logarithm rules to bring the exponent (which has the variable) outside of the logarithm so that we can solve for the variable. Let's take a look.
+
+\vskip \baselineskip
+
+\example{ex_solving_exponential}{Solving an Exponential Statement}{Solve $5^{3x-1} - 2 =0$ for x.}{First, we will need to isolate the exponential term, $5^{3x-1}$. Then, we will take log base 5 of both sides since the exponent has 5 as its base.
+
+\begin{equation*}
+	\begin{split}
+		5^{3x-1} - 2 & = 0 \\
+		5^{3x-1} & = 2 \\
+		\log_5{\Big( 5^{3x-1} \Big)} & = \log_5{(2)} \\
+	\end{split}
+\end{equation*}
+
+Now, we will use our logarithm rules to bring x outside of the logarithm. This gives
+
+\begin{equation*}
+	\begin{split}
+		(3x-1)\log_5{(5)} & = \log_5{(2)} \\
+		(3x-1)(1) & = \log_5{(2)} \\
+		3x-1 & = \log_5{(2)} \\
+		3x & = \log_5{(2)} \\
+		x & = \frac{\log_5{(2)}}{3}
+	\end{split}
+\end{equation*}
+
+Notice that when we brought the exponent outside of the logarithm, we kept the entire exponent inside of parentheses. This is to make sure that we do not incorrectly distribute terms. Additionally, notice that our final answer still includes a logarithm term. This is because $\log_5{(2)}$ does not evaluate to a ``nice'' number, so it is more precise to write our final answer this way rather than using a calculator or computer to evaluate that term.}\\
+
+Notice that in this example, we end up with $\log_5{(5)}$ as part of our work. We know that this simply evaluates to 1. This is why we used log base 5, and not a different logarithm. Any logarithm would allow us to solve for $x$, but using log base 5 makes it easier to simplify our final answer.
+
+Sometimes you will need to solve for a statement that has two exponential terms. When this happens, you may be able to employ a useful technique to solve. Let's take a look at an example.
+
+\vskip \baselineskip
+
+\example{ex_solve_exp_trick}{Solving an Exponential Statement}{Solve $4^{2y+1} = 2^{y-1}$ for $y$.}{With these types of problems, we want to look at both bases and see if they are related in any way. Here, we have a base of 2 on the right and a base of 4 on the left. You'll probably notice that $4=2^2$; we can use this to our advantage when solving. Let's start by rewriting our statement using this fact.
+
+\begin{equation*}
+	\begin{split}
+		4^{2y+1} &= 2^{y-1} \\
+		(2^2)^{2y+1} & = 2^{y-1} \\
+		2^{2(2y+1)} & = 2^{y-1} \\
+		2^{4y+2} & = 2^{y-1}
+	\end{split}
+\end{equation*}
+
+Notice that we are using our exponent rules here, specifically the rule $(x^a)^b=x^{ab}$. This allows us to rewrite the statement so that both terms have the same base. Since the two terms have the same base and are equal to each other, we know that they must have equal exponents. This gives us
+
+\begin{equation*}
+	\begin{split}
+		4y+2 &= 2y-1 \\
+		2y &=-3 \\
+		y&= \frac{-2}{3}
+	\end{split}
+\end{equation*}}\\
+
+We could solve this problem without using this technique. We would want to take either log base 2 of both side or log base 4 of both sides. Then, we would need to use logarithm rules to simplify and bring the $y$ terms outside of the logarithm before we solve. Both methods result in the same answer; you can practice your logarithm skills by using this alternative method and comparing your final answer to the one above; they should be identical.
+
+\vskip \baselineskip
+\noindent\textbf{\large Solving Logarithmic Statements}\\
+
+A logarithmic statement is a statement in which the variable of interest is an input to a logarithm. As we know, logarithms and exponential functions are closely related, so it's no surprise that we will use exponential functions to help solve logarithmic statements. Here, we will again use the fact that they are inverse functions, as shown by our definition of a logarithm. Let's look at an example.
+
+\vskip \baselineskip
+
+\example{ex_solving_log}{Solving a Logarithmic Statement}{Solve $\log_5{(2x+3)}=2$ for $x$.}{Here, the logarithm is already isolated on one side, so we can start by taking each side and using it as an exponent on a base of 5. Then, we will use the definition of logarithms shown in equation \ref{eqn:log_def} to remove the logarithm from our equation.
+
+\begin{equation*}
+	\begin{split}
+		\log_5{(2x+3)} & = 2 \text{, then, from our definition,} \\
+%		5^{\log_5{(2x+3)}} &= 5^2 \\
+		2x+3 &= 5^2 \\
+		2x+3 &= 25 \\
+		2x & = 22 \\
+		x &= 11
+	\end{split}
+\end{equation*}}\\
+
+Remember when working with either logarithms or exponential functions that they are strongly tied together: when solving a logarithmic statement we need to use exponents and when solving exponential statements we need to use logarithms.
+
+
+\printexercises{exercises/logs_exercises}
+
+
+%\clearpage

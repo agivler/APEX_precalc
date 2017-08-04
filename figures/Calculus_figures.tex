@@ -1,0 +1,732 @@
+\documentclass[10pt]{article}
+
+
+%%
+% slight detour to create the proper text/paper size.
+% Depends on the ifthen package, needed before loading
+% the geometry package
+%%
+
+\usepackage{ifthen}
+\newboolean{tabletsize}
+\setboolean{tabletsize}{false}
+
+\usepackage{lipsum}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+\pgfplotsset{colormap={coloronemap}{rgb=(.4,.4,1); rgb=(.8,.8,1)}}
+\pgfplotsset{colormap={colortwomap}{rgb=(1,.4,.4); rgb=(1,.8,.8)}}
+%\pgfplotsset{compat=1.3}
+\usepackage{eso-pic,calc}
+\usepackage[font=small]{caption}
+\usepgfplotslibrary{external}
+\usetikzlibrary{calc}
+\usetikzlibrary{shadings}
+
+\usepackage[h]{esvect}
+
+	%\newcounter{chapter}
+	%\newcommand{\chapter}{\refstepcounter{chapter}\Huge Chapter \thechapter \vskip 2\baselineskip\normalsize}
+%%%%%%\tikzexternalize[prefix=figures/]
+
+
+%
+
+
+%\pgfplotsset{width=\marginparwidth+1pt,compat=1.3}
+%\pgfplotsset{compat=1.8}
+
+%
+%	Note how the tablet version differs from the booksize only in 
+% the size of the margins.
+%
+% Changing the following isn't hard but should be done with 
+% practice and care, making sure to get the margins right for a 
+% particular page size and printing format
+%
+%% Layout for printed book through Amazon CreateSpace, perfect bound,
+%% 8.5 x 11 paper size, 1in inner margin, 1/2in (roughly) outer margin
+%\newboolean{longpage}
+%\setboolean{longpage}{false}
+
+%\ifthenelse{\boolean{tabletsize}}{\usepackage[paperheight=11in,paperwidth=8.5in, inner=1in,includeheadfoot,textheight=9in,textwidth=345pt,marginparwidth=150pt]{geometry}
+%}{\usepackage[paperheight=11in,paperwidth=8.5in, inner=1in,includeheadfoot,textheight=9in,textwidth=345pt,marginparwidth=150pt]{geometry}
+%}
+
+\usepackage[paperheight=11in,paperwidth=3in,%inner=1in,includeheadfoot,
+textheight=10in,%textwidth=345pt,
+marginparwidth=150pt]{geometry}
+%% end detour
+%%
+\usepackage{amsmath}
+\usepackage{pifont}
+%\usepackage{APEX_format}
+%\input{../headers/Header_Calculus}
+
+
+
+%\pgfrealjobname{Calculus}
+
+\ifthenelse{\boolean{xetex}}%
+	{\sffamily
+	%%\usepackage{fontspec}
+	\usepackage{mathspec}
+	\setallmainfonts[Mapping=tex-text]{Carlito}
+	\setmainfont[Mapping=tex-text]{Carlito}
+	\setsansfont[Mapping=tex-text]{Carlito}
+	\setmathsfont(Greek){[cmmi10]}}
+	{}
+
+\newboolean{colorprint}
+\setboolean{colorprint}{true}
+%\setboolean{colorprint}{false}
+
+\ifthenelse{\boolean{colorprint}}{%
+\newcommand{\colorone}{blue}
+\newcommand{\colortwo}{red}
+\newcommand{\coloronefill}{blue!15!white}
+\newcommand{\colortwofill}{red!15!white}
+\newcommand{\colornamesuffix}{}
+\newcommand{\mysettikzname}[1]{\tikzsetnextfilename{#1}}
+\newcommand{\myincludegraphics}[2][]{\includegraphics[#1]{#2}}
+\newcommand{\colormapone}{rgb=(.4,.4,1); rgb=(.8,.8,1)}
+\newcommand{\colormaptwo}{rgb=(1,.4,.4); rgb=(1,.8,.8)}
+\newcommand{\colormapplaneone}{rgb=(.7,.7,1); rgb=(.9,.9,1)}
+\definecolor{colormaponebottom}{rgb}{.4,.4,1}
+\definecolor{colormaponetop}{rgb}{.8,.8,1}
+\definecolor{colormaptwobottom}{rgb}{1,.4,.4}
+\definecolor{colormaptwotop}{rgb}{1,.8,.8}
+}% ends color
+{% not color
+\newcommand{\colorone}{black}
+\newcommand{\colortwo}{black!50!white}
+\newcommand{\coloronefill}{black!15!white}
+\newcommand{\colortwofill}{black!05!white}
+\newcommand{\colornamesuffix}{BW}
+\newcommand{\mysettikzname}[1]{\tikzsetnextfilename{#1\colornamesuffix}}
+\newcommand{\myincludegraphics}[2][]{\includegraphics[#1]{#2\colornamesuffix}}
+\newcommand{\colormapone}{rgb=(ineq_num_line7.4,.4,.4); rgb=(.7,.7,.7)}
+\newcommand{\colormaptwo}{rgb=(.6,.6,.6); rgb=(.9,.9,.9)}
+\newcommand{\colormapplaneone}{rgb=(.8,.8,.8); rgb=(.95,.95,.95)}
+\definecolor{colormaponebottom}{rgb}{.4,.4,.4}
+\definecolor{colormaponetop}{rgb}{.7,.7,.7}
+\definecolor{colormaptwobottom}{rgb}{.6,.6,.6}
+\definecolor{colormaptwotop}{rgb}{.9,.9,.9}
+}%
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\ensuremath{\vec #1 \cdot \vec #2}}
+\newcommand{\proj}[2]{\ensuremath{\text{proj}_{\,\vec #2}{\,\vec #1}}}
+
+\newcommand{\fp}{\ensuremath{f\,'}}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+\newcommand{\threedlines}[4][]{\draw [dashed,#1] (axis cs: #2,#3,#4) -- (axis cs: #2,#3,0) -- (axis cs: #2,0,0)  (axis cs: #2,#3,0)--(axis cs:0,#3,0);}
+
+\newcommand{\mydraw}{\draw (axis cs:0,0,0) -- (axis cs:1,1,0);}
+\newcommand{\ds}{\displaystyle}
+
+
+\newboolean{editmode}
+%\setboolean{editmode}{true}
+\setboolean{editmode}{false}
+
+\ifthenelse{\boolean{editmode}}% edit mode: don't do anything here
+{} %nothing
+{% else, only print existing pdf's
+\tikzexternalize
+\tikzset{external/system call={%
+  xelatex \tikzexternalcheckshellescape
+  -halt-on-error -interaction=batchmode
+  -jobname "\image" "\texsource"}}
+}% ends editmode check 
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifthenelse{\boolean{editmode}}% if in edit mode, do not print the followin
+{} %i.e., do nothing
+{%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig03_05_ex_14}
+%\input{fig_03_05_ex_14}
+
+%Image File Name: \texttt{\detokenize{fig03_05_ex_14}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_05_ex_14}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig03_05_ex_13}
+%\input{fig_03_05_ex_13}
+
+%Image File Name: \texttt{\detokenize{fig03_05_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_05_ex_13}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig03_05_ex_12}
+%\input{fig_03_05_ex_12}
+
+%Image File Name: \texttt{\detokenize{fig03_05_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_05_ex_12}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig03_04_ex_17}
+%\input{fig_03_04_ex_17}
+
+%Image File Name: \texttt{\detokenize{fig03_04_ex_17}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_04_ex_17}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig03_04_ex_16}
+%\input{fig_03_04_ex_16}
+
+%Image File Name: \texttt{\detokenize{fig03_04_ex_16}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_04_ex_16}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figunitcircle}
+%\input{fig_unitcircle}
+
+%Image File Name: \texttt{\detokenize{figunitcircle}}\par
+%TeX File Name: \texttt{\detokenize{fig_unitcircle}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figineq_num_line7}
+%\input{fig_ineq_num_line7}
+
+%Image File Name: \texttt{\detokenize{figineq_num_line7}}\par
+%TeX File Name: \texttt{\detokenize{fig_ineq_num_line7}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figineq_num_line6}
+%\input{fig_ineq_num_line6}
+
+%Image File Name: \texttt{\detokenize{figineq_num_line6}}\par
+%TeX File Name: \texttt{\detokenize{fig_ineq_num_line6}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figineq_num_line5}
+%\input{fig_ineq_num_line5}
+
+%Image File Name: \texttt{\detokenize{figineq_num_line5}}\par
+%TeX File Name: \texttt{\detokenize{fig_ineq_num_line5}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figineq_num_line4}
+%\input{fig_ineq_num_line4}
+
+%Image File Name: \texttt{\detokenize{figineq_num_line4}}\par
+%TeX File Name: \texttt{\detokenize{fig_ineq_num_line4}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figineq_num_line3}
+%\input{fig_ineq_num_line3}
+
+%Image File Name: \texttt{\detokenize{figineq_num_line3}}\par
+%TeX File Name: \texttt{\detokenize{fig_ineq_num_line3}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figineq_num_line2}
+%\input{fig_ineq_num_line2}
+
+%Image File Name: \texttt{\detokenize{figineq_num_line2}}\par
+%TeX File Name: \texttt{\detokenize{fig_ineq_num_line2}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figineq_num_line1}
+%\input{fig_ineq_num_line1}
+
+%Image File Name: \texttt{\detokenize{figineq_num_line1}}\par
+%TeX File Name: \texttt{\detokenize{fig_ineq_num_line1}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_04_ex_22}
+%\input{fig_02_04_ex_22}
+
+%Image File Name: \texttt{\detokenize{fig02_04_ex_22}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_04_ex_22}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_04_ex_21}
+%\input{fig_02_04_ex_21}
+
+%Image File Name: \texttt{\detokenize{fig02_04_ex_21}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_04_ex_21}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_04_ex_20}
+%\input{fig_02_04_ex_20}
+
+%Image File Name: \texttt{\detokenize{fig02_04_ex_20}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_04_ex_20}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_04_ex_19}
+%\input{fig_02_04_ex_19}
+
+%Image File Name: \texttt{\detokenize{fig02_04_ex_19}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_04_ex_19}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_02_ex_29}
+%\input{fig_02_02_ex_29}
+
+%Image File Name: \texttt{\detokenize{fig02_02_ex_29}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_29}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_02_ex_28}
+%\input{fig_02_02_ex_28}
+
+%Image File Name: \texttt{\detokenize{fig02_02_ex_28}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_28}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_02_ex_27}
+%\input{fig_02_02_ex_27}
+
+%Image File Name: \texttt{\detokenize{fig02_02_ex_27}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_27}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_02_ex_26}
+%\input{fig_02_02_ex_26}
+
+%Image File Name: \texttt{\detokenize{fig02_02_ex_26}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_26}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_02_ex_25}
+%\input{fig_02_02_ex_25}
+
+%Image File Name: \texttt{\detokenize{fig02_02_ex_25}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_25}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_02_ex_24}
+%\input{fig_02_02_ex_24}
+
+%Image File Name: \texttt{\detokenize{fig02_02_ex_24}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_24}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_02_ex_23}
+%\input{fig_02_02_ex_23}
+
+%Image File Name: \texttt{\detokenize{fig02_02_ex_23}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_23}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mysettikzname{fig02_02_ex_22}
+\input{fig_02_02_ex_22}
+
+Image File Name: \texttt{\detokenize{fig02_02_ex_22}}\par
+TeX File Name: \texttt{\detokenize{fig_02_02_ex_22}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_01_ex_28}
+%\input{fig_02_01_ex_28}
+
+%Image File Name: \texttt{\detokenize{fig02_01_ex_28}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_28}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_01_ex_30}
+%\input{fig_02_01_ex_30}
+
+%Image File Name: \texttt{\detokenize{fig02_01_ex_30}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_30}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig02_01_ex_29}
+%\input{fig_02_01_ex_29}
+
+%Image File Name: \texttt{\detokenize{fig02_01_ex_29}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_29}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\mysettikzname{fig01_05_ex_23}
+%\input{fig_01_05_ex_23}
+
+%Image File Name: \texttt{\detokenize{fig01_05_ex_23}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_05_ex_23}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig01_05_ex_22}
+%\input{fig_01_05_ex_22}
+
+%Image File Name: \texttt{\detokenize{fig01_05_ex_22}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_05_ex_22}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig01_05_ex_15}
+%\input{fig_01_05_ex_15}
+
+%Image File Name: \texttt{\detokenize{fig01_05_ex_15}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_05_ex_15}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig01_05_ex_14}
+%\input{fig_01_05_ex_14}
+
+%Image File Name: \texttt{\detokenize{fig01_05_ex_14}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_05_ex_14}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig01_05_ex_13}
+%\input{fig_01_05_ex_13}
+
+%Image File Name: \texttt{\detokenize{fig01_05_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_05_ex_13}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig01_05_ex_12}
+%\input{fig_01_05_ex_12}
+
+%Image File Name: \texttt{\detokenize{fig01_05_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_05_ex_12}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig01_05_ex_11}
+%\input{fig_01_05_ex_11}
+
+%Image File Name: \texttt{\detokenize{fig01_05_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_05_ex_11}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig01_05_ex_09}
+%\input{fig_01_05_ex_09}
+
+%Image File Name: \texttt{\detokenize{fig01_05_ex_09}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_05_ex_09}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig01_05_ex_10}
+%\input{fig_01_05_ex_10}
+
+%Image File Name: \texttt{\detokenize{fig01_05_ex_10}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_05_ex_10}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig01_05_ex_08}
+%\input{fig_01_05_ex_08}
+
+%Image File Name: \texttt{\detokenize{fig01_05_ex_08}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_05_ex_08}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig01_05_ex_07}
+%\input{fig_01_05_ex_07}
+
+%Image File Name: \texttt{\detokenize{fig01_05_ex_07}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_05_ex_07}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig01_05_ex_06}
+%\input{fig_01_05_ex_06}
+
+%Image File Name: \texttt{\detokenize{fig01_05_ex_06}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_05_ex_06}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+2x
+%\mysettikzname{figpiecewise2}
+%\input{fig_piecewise2}
+
+%Image File Name: \texttt{\detokenize{figpiecewise2}}\par
+%TeX File Name: \texttt{\detokenize{fig_piecewise2}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figpiecewise1}
+%\input{fig_piecewise1}
+
+%Image File Name: \texttt{\detokenize{figpiecewise1}}\par
+%TeX File Name: \texttt{\detokenize{fig_piecewise1}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figquadratic_transformation4}
+%\input{fig_quadratic_transformation4}
+
+%Image File Name: \texttt{\detokenize{figquadratic_transformation4}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadratic_transformation4}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figquadratic_transformation3}
+%\input{fig_quadratic_transformation3}
+
+%Image File Name: \texttt{\detokenize{figquadratic_transformation3}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadratic_transformation3}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figquadratic_transformation2}
+%\input{fig_quadratic_transformation2}
+
+%Image File Name: \texttt{\detokenize{figquadratic_transformation2}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadratic_transformation2}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figquadratic_transformation1}
+%\input{fig_quadratic_transformation1}
+
+%Image File Name: \texttt{\detokenize{figquadratic_transformation1}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadratic_transformation1}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figquadratic_shift_shrink}
+%\input{fig_quadratic_shift_shrink}
+
+%Image File Name: \texttt{\detokenize{figquadratic_shift_shrink}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadratic_shift_shrink}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figquadratic_shift}
+%\input{fig_quadratic_shift}
+
+%Image File Name: \texttt{\detokenize{figquadratic_shift}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadratic_shift}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig2sine_shifted}
+%\input{fig_2sine_shifted}
+
+%Image File Name: \texttt{\detokenize{fig2sine_shifted}}\par
+%TeX File Name: \texttt{\detokenize{fig_2sine_shifted}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig2sine}
+%\input{fig_2sine}
+
+%Image File Name: \texttt{\detokenize{fig2sine}}\par
+%TeX File Name: \texttt{\detokenize{fig_2sine}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figvertical_flip}
+%\input{fig_vertical_flip}
+
+%Image File Name: \texttt{\detokenize{figvertical_flip}}\par
+%TeX File Name: \texttt{\detokenize{fig_vertical_flip}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figvertical_shrink}
+%\input{fig_vertical_shrink}
+
+%Image File Name: \texttt{\detokenize{figvertical_shrink}}\par
+%TeX File Name: \texttt{\detokenize{fig_vertical_shrink}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figvertical_shift}
+%\input{fig_vertical_shift}
+
+%Image File Name: \texttt{\detokenize{figvertical_shift}}\par
+%TeX File Name: \texttt{\detokenize{fig_vertical_shift}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figtangent_fnct}
+%\input{fig_tangent_fnct}
+
+%Image File Name: \texttt{\detokenize{figtangent_fnct}}\par
+%TeX File Name: \texttt{\detokenize{fig_tangent_fnct}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figcosine}
+%\input{fig_cosine}
+
+%Image File Name: \texttt{\detokenize{figcosine}}\par
+%TeX File Name: \texttt{\detokenize{fig_cosine}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figsine}
+%\input{fig_sine}
+
+%Image File Name: \texttt{\detokenize{figsine}}\par
+%TeX File Name: \texttt{\detokenize{fig_sine}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figlog}
+%\input{fig_log}
+
+%Image File Name: \texttt{\detokenize{figlog}}\par
+%TeX File Name: \texttt{\detokenize{fig_log}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figexp}
+%\input{fig_exp}
+
+%Image File Name: \texttt{\detokenize{figexp}}\par
+%TeX File Name: \texttt{\detokenize{fig_exp}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figodd_poly}
+%\input{fig_odd_poly}
+
+%Image File Name: \texttt{\detokenize{figodd_poly}}\par
+%TeX File Name: \texttt{\detokenize{fig_odd_poly}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figeven_poly}
+%\input{fig_even_poly}
+
+%Image File Name: \texttt{\detokenize{figeven_poly}}\par
+%TeX File Name: \texttt{\detokenize{fig_even_poly}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%	
+	
+%\mysettikzname{figcubic}
+%\input{fig_cubic}
+
+%Image File Name: \texttt{\detokenize{figcubic}}\par
+%TeX File Name: \texttt{\detokenize{fig_cubic}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+	
+%\mysettikzname{figquadratic}
+%\input{fig_quadratic}
+
+%Image File Name: \texttt{\detokenize{figquadratic}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadratic}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figplot_line_c}
+%\input{fig_plot_line_c}
+
+%Image File Name: \texttt{\detokenize{figplot_line_c}}\par
+%TeX File Name: \texttt{\detokenize{fig_plot_line_c}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figplot_line_b}
+%\input{fig_plot_line_b}
+
+%Image File Name: \texttt{\detokenize{figplot_line_b}}\par
+%TeX File Name: \texttt{\detokenize{fig_plot_line_b}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figplot_line_a}
+%\input{fig_plot_line_a}
+
+%Image File Name: \texttt{\detokenize{figplot_line_a}}\par
+%TeX File Name: \texttt{\detokenize{fig_plot_line_a}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%	
+
+%\mysettikzname{figline_x_int}
+%\input{fig_x_int}
+
+%Image File Name: \texttt{\detokenize{figline_x_int}}\par
+%TeX File Name: \texttt{\detokenize{fig_line_x_int}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%	
+
+%\mysettikzname{figline_y_int}
+%\input{fig_line_y_int}
+
+%Image File Name: \texttt{\detokenize{figline_y_int}}\par
+%TeX File Name: \texttt{\detokenize{fig_line_y_int}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%	
+	
+%\mysettikzname{figperpend_lines}
+%\input{fig_perpend_lines}
+
+%Image File Name: \texttt{\detokenize{figperpend_lines}}\par
+%TeX File Name: \texttt{\detokenize{fig_perpendlines}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%%	
+	
+%\mysettikzname{figparallel_lines}
+%\input{fig_parallel_lines}
+
+%Image File Name: \texttt{\detokenize{figparallel_lines}}\par
+%TeX File Name: \texttt{\detokenize{fig_parallel_lines}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figline_zero_slope}
+%\input{fig_line_zero_slope}
+
+%Image File Name: \texttt{\detokenize{figline_zero_slope}}\par
+%TeX File Name: \texttt{\detokenize{fig_line_zero_slope}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figline_neg_slope}
+%\input{fig_line_neg_slope}
+
+%Image File Name: \texttt{\detokenize{figline_neg_slope}}\par
+%TeX File Name: \texttt{\detokenize{fig_line_neg_slope}}\par
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{figline_pos_slope}
+%\input{fig_line_pos_slope}
+
+%Image File Name: \texttt{\detokenize{figline_pos_slope}}\par
+%TeX File Name: \texttt{\detokenize{fig_line_pos_slope}}\par
+
+}% ends editmode check
+
+\end{document}

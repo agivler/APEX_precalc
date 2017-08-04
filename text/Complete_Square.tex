@@ -1,0 +1,123 @@
+\section{Completing the Square}\label{sec:completing_square}
+
+In this section, we will discuss another way of writing a quadratic function through a process called completing the square. Completing the square lets us write any quadratic function in the form $(x+a)^2+b$. This particular form is quite handy; not only will this making graphing quadratics easier since it allows us to use graph transformations, it's also a commonly used form in calculus. In integral calculus, there are special rules that allow us to more easily integrate rational functions if their denominator is in the form, but we aren't always given the function in that form. It also gets used when working with Laplace Transforms in differential equations. Since it appears so frequently in later courses, it's a good idea to master this skill now.
+
+The ideas behind the techniques we will use for completing the square build off of our ideas from expanding. We looked at common patterns, and one of the ones we discussed was
+
+\begin{equation*}
+	(u+v)^2 = u^2+2uv+v^2
+\end{equation*}
+
+\noindent
+We will use this pattern to help us change quadratic functions of $x$ into the form $(x+a)^2 +b$. If we use this expansion pattern, we see that
+
+\begin{equation}\label{eqn:complete_square}
+	(x+a)^2 = x^2 + 2ax + a^2
+\end{equation}
+
+\noindent
+We will use the coefficient on the $x$ term of our quadratic function to help us find $a$. Once we have $a$, we can calculate $a^2$ and use it to help us determine what $b$ needs to be to write our quadratic in the form $(x+a)^2 + b$. Let's give it a try.
+
+\vskip \baselineskip
+
+\example{ex_complete_square1}{Completing the Square}{Write $f(x)=x^2+4x+6$ in the form $(x+a)^2+b$.}{We saw in equation \ref{eqn:complete_square} that $(x+a)^2 = x^2 + 2ax + a^2$. We'll use the coefficient on $x$ from our function to determine $a$.
+
+In $f(x)$, $x$ has a coefficient of $4$ and in the expanded pattern $x$ has a coefficient of $2a$. We want these to match, so we get $4=2a$, or $a=2$. Let's see what our pattern looks like with $a=2$:
+
+\begin{equation*}
+	(x+2)^2=x^2+4x+4
+\end{equation*}
+
+\noindent
+This is pretty close to what $f(x)$ looks like; the only difference is the constant term. Remember, our end goal is to write $f(x)$ in the form $(x+a)^2+b$. We've already figured out $a$; now we need to figure out $b$. With the addition of $b$, we can expand our goal form to get 
+
+\begin{equation*}
+	(x+a)^2+b = x^2 + 2ax + a^2 +b
+\end{equation*}
+
+\noindent
+This tells us that $b$ influences our constant term. We want the constant terms to match, so we have $6=a^2+b$. We know $a=4$, so really we have $6=4+b$, giving us that $b=2$. That means we have $f(x)=(x+2)^2+2$.}\\
+
+This example shows the line of thinking we used with this problem, but is a fairly wordy explanation. Mathematicians like to keep things concise, so let's see how we could show this work mathematically, without using much of a verbal description. Typically, you will see work like this:
+
+\begin{equation}
+	\begin{split}
+		f(x) & = x^2 + 4x + 6 \\
+		     & = x^2 + 2(2x) +6 \\
+		     & = x^2 + 2(2x)+ (2^2) - (2^2) + 6 \\
+		     & = (x+2)^2 -(2^2) + 6 \\
+		     & = (x+2)^2 -4 + 6 \\
+		     & = (x+2)^2 +2
+	\end{split}
+\end{equation}
+
+\noindent
+This work shows the same steps we did above, but in a different form, and without explicitly saying what $a$ and $b$ are. However, you can see that these steps are working towards the form we want by using our pattern. In the second line, we write $2(2x)$ instead of $4x$ to figure out $a$. Then, since we know we have $a^2$ as part of our constant, we add $2^2$ and subtract $2^2$ in the same step. Why? Well, this makes sure we add zero, that we don't change the meaning of the function, just the way it's written. Then, we have the correct pattern to write the first three terms as $(x+2)^2$. Lastly, we simplify the constants outside of the parentheses to find $b$.
+
+In practice, most mathematicians may combine a couple of the steps into one, but until you really get comfortable with this line of thinking it's best to write out all the steps. 
+
+Most people learn completing the square as an algorithm, a set of steps that must be performed exactly as described and in the correct order to get the final answer. We are intentionally avoiding such an algorithm here; algorithms can be difficult to memorize, but are easy to forget. If you instead think of this as a puzzle where you figure out one part at a time, it's more likely that you will still be able to accurately complete the square in later courses. 
+
+We've looked at one example of completing the square that had all ``nice'' numbers in it, now let's take a look at one that's a bit messier.
+
+\vskip \baselineskip
+
+\example{ex_complete_square2}{Completing the Square}{Complete the square for $g(t) = t^2 -7t + 10$.}{There is one big difference between this problem and our previous example: our input variable has changed. That means instead of our goal looking like $(x+a)^2+b$, our goal looks like $(t+a)^2+b$. Regardless, we'll follow the same thought process we used in the previous example. We know that if we expand our goal form, we get $(t+a)^2+b = t^2+2at+a^2+b$. Like before, we'll figure out a value for $a$ first, and then a value for $b$. To find $a$, we will use the $t$ term. The expanded goal form has $2at$ and $g(t)$ has $-7t$. This tells us that $2a=-7$, or $a=-\frac{7}{2}$. In the expanded goal form, the constant term is $a^2+b$; we know $a$ now, so really we have $\frac{49}{2}+b$. Note that when we square $a$ we get a positive number (think back to the invisible parentheses we talked about earlier). In $g(t)$, our constant term is $10$. Matching our constant terms gives us the equality $\frac{49}{2} + b = 10$. If we subtract $\frac{49}{2}$ from both sides, we get $b=-\frac{29}{2}$.
+
+Altogether, we have $a=-\frac{7}{2}$ and $b=-\frac{29}{2}$, so we have $g(t) = (t-\frac{7}{2}) - \frac{29}{2}$.}\\
+
+
+
+\vskip \baselineskip
+\noindent\textbf{\large A Variation on Completing the Square}\\
+
+In all of the examples we have discussed in this section, the squared term has a coefficient of 1. However, sometimes we will run into situations where this coefficient isn't 1, and we will need to be able to work with these situations. When a quadratic in $x$ (meaning a quadratic function that has $x$ as its variable) has a leading coefficient (the coefficient on the highest power term) other than 1, we can write it as $c(x+a)^2 +b$. This means that we will have three parameters we need to find: $a$, $b$, and $c$. In our earlier examples we found $a$ first because only it showed up on the $x$ term, and the $x^2$ term was already taken care of since it automatically had a coefficient of 1. Here, we will want to find $c$ first since it shows up in the quadratic term and affects the linear term. This is a common solution technique in mathematics: start by working with the highest power terms first, and then move onto the lower degree terms. Before we look at an example problem, let's see what this modified form looks like after expansion. We have
+
+%\begin{equation}\label{eqn:complete_square_variation1}
+%	(cx+a)^2 + b = c^2x^2 + 2acx + a^2 + b
+%\end{equation}\\
+
+%\noindent
+
+%Our second variation looks like
+\begin{equation}\label{eqn:complete_square_variation2}
+	\begin{split}
+		c(x+a)^2 + b & = c(x^2 + 2ax + a^2) + b \\
+			     & = cx^2 + 2acx + ca^2 +b
+	\end{split}
+\end{equation}
+
+There are some key features we need to note that will be handy when dealing with these types of quadratics. In this form $c$ impacts the $x^2$ and $x$ terms. For this form, we will start by ``matching'' coefficients with the $x^2$ term, then the $x$ term, and then the constant term. Let's take a look:
+
+%\vskip \baselineskip
+
+%\example{ex_complete_square_var1}{Completing the Square- Variation}{Write $f(x) = 4x^2+12x-3$ in the form $(cx+a)^2 +b$.}{Since we want our answer in the form $(cx+a)^2+b$, we will use equation \ref{eqn:complete_square_variation1}. In equation \ref{eqn:complete_square_variation1}, we see that the coefficient on $x^2$ in the expanded form is $c^2$. For $f(x)$, the $x^2$ coefficient is $4$, so we have $c^2=4$. This gives us two possibilities for $c$: $c=2$ and $c=-2$. How do we pick? We will use $c=2$ so that we don't have to worry about the negative, but using $c=-2$ would also work. Our final answer would look slightly different, but would be equally valid.
+
+%Next, we'll work with the $x$ term. In equation \ref{eqn:complete_square_variation1}, the $x$ term has a coefficient of $2ac$. We are using $c=2$, so really this coefficient is $2a(2)=4a$. For $f(x)$, the $x$ coefficient is $12$, so we get $4a=12$, or $a=3$.
+
+%Lastly, we'll work with the constant terms. In equation \ref{eqn:complete_square_variation1}, the constant is $a^2+b$. Since we have $a=3$, this constant really is $(3)^2+b=9+b$. In $f(x)$, the constant is $-3$, so we have $9+b=-3$, or $b=-12$. 
+
+%We've now found all three parameters, so we are done and have that $f(x)=(2x+3)^2-12$.}\\
+
+%Now, let's see what this same function would look like if we rewrite it to look like the second form.
+
+\vskip \baselineskip
+
+\example{ex_complete_square_var2}{Completing the Square- Variation}{Write $f(x) = 4x^2+12x-3$ in the form $c(x+a)^2 +b$.}{Since we want our answer in the form $c(x+a)^2+b$, we will use equation \ref{eqn:complete_square_variation2}. In equation \ref{eqn:complete_square_variation2}, we see that the coefficient on $x^2$ in the expanded form is $c$. For $f(x)$, the $x^2$ coefficient is $4$, so we have $c=4$. 
+
+Next, we'll work with the $x$ term. In equation \ref{eqn:complete_square_variation2}, the $x$ term has a coefficient of $2ac$. We are using $c=4$, so really this coefficient is $2a(4)=8a$. For $f(x)$, the $x$ coefficient is $12$, so we get $8a=12$, or $a=\frac{3}{2}$.
+
+Lastly, we'll work with the constant terms. In equation \ref{eqn:complete_square_variation2}, the constant is $ca^2+b$. Since we have $a=\frac{3}{2}$ and $c=4$, this constant really is $4(\frac{3}{2})^2+b=9+b$. In $f(x)$, the constant is $-3$, so we have $9+b=-3$, or $b=-12$. 
+
+We've now found all three parameters, so we are done and have that $f(x)=4(x+\frac{3}{2})^2-12$.}\\
+
+%Notice that for both forms $b$ is the same, but $a$ and $c$ are different. There is a relationship between the values of $a$ and $c$ for each form, but this is left to the reader. (This is another common remark from an author that means you should try to find the relationship on your own. You may find it handy to look at a couple of other examples to help you figure out the relationship between the values in the two different forms.)
+
+When trying to rewrite a function into a different form, it's very important to pay close attention to how the form is written, particularly if that form is used as part of a rule that you need to fully solve the problem you are working on. The parameters may not always be in alphabetical order and mixing up the parameter values could drastically change your final answer. Additionally, some books do not always use the same letters in the same positions, even if it's the same rule. Many rules will reuse the same letters as parameters, but they quite often are filling different roles.
+
+
+
+\printexercises{exercises/complete_square_exercises}
+
+
+%\clearpage

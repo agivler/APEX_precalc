@@ -1,0 +1,39 @@
+\small \raggedright \begin {multicols}{2}
+\thispagestyle {empty}
+\noindent {\Large \bf Chapter 1} \vskip \baselineskip 
+\noindent {\bf Section 1.1} \vskip \baselineskip 
+
+\printanswers {exercises/real_nums_exercises}
+\noindent {\bf Section 1.2} \vskip \baselineskip 
+\printanswers {exercises/fncts_exercises}
+\noindent {\bf Section 1.3} \vskip \baselineskip 
+\printanswers {exercises/domains_exercises}
+\noindent {\bf Section 1.4} \vskip \baselineskip 
+\printanswers {exercises/lines_exercises}
+\noindent {\bf Section 1.5} \vskip \baselineskip 
+\printanswers {exercises/graphs_exercises}
+\noindent {\Large \bf Chapter 2} \vskip \baselineskip 
+\noindent {\bf Section 2.1} \vskip \baselineskip 
+
+\printanswers {exercises/factoring_exercises}
+\noindent {\bf Section 2.2} \vskip \baselineskip 
+\printanswers {exercises/complete_square_exercises}
+\noindent {\bf Section 2.3} \vskip \baselineskip 
+\printanswers {exercises/solve_vars_exercises}
+\noindent {\bf Section 2.4} \vskip \baselineskip 
+\printanswers {exercises/intersect_exercises}
+\noindent {\bf Section 2.5} \vskip \baselineskip 
+\printanswers {exercises/fractions_exercises}
+\noindent {\Large \bf Chapter 3} \vskip \baselineskip 
+\noindent {\bf Section 3.1} \vskip \baselineskip 
+
+\printanswers {exercises/inequalities_exercises}
+\noindent {\bf Section 3.2} \vskip \baselineskip 
+\printanswers {exercises/exponents_exercises}
+\noindent {\bf Section 3.3} \vskip \baselineskip 
+\printanswers {exercises/logs_exercises}
+\noindent {\bf Section 3.4} \vskip \baselineskip 
+\printanswers {exercises/intro_trig_exercises}
+\noindent {\bf Section 3.5} \vskip \baselineskip 
+\printanswers {exercises/trig_triangles_exercises}
+\end {multicols}\normalsize 
