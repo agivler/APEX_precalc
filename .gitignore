@@ -1,0 +1,11 @@
+*.un~
+*.swp
+*~
+*.bak
+*.out
+*.idx
+*.aux
+*.log
+*.swo
+*.md5
+*.dpth
