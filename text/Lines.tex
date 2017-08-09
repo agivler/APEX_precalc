@@ -1,3 +1,8 @@
+In this chapter, we will look at several basic skills and topics that will be used often in calculus: linear functions, solving inequalities, function domains, graphs and graphing, and completing the square. Lines and linear functions appear quite often in calculus. Secant lines are used to determine how fast a function is changing over an interval, tangent lines are used to determine how fast a function is changing at a single point, and linear functions are used to approximate more complicated functions. You will need to solve inequalities to help determine key characteristics of a function, such as when it is increasing and when it is decreasing. Function domains will be useful in working with applied problems to make sure your model has both real world and mathematical meaning. Graphs and graphing will help you identify key features of functions like maximum and minimum values. Completing the square will show up in integral calculus when you need to have your function in a particular form.
+
+%ways that we can take an expression or function and write it in a different form. Just like we saw with point-slope and slope-intercept form of lines, we can write general functions in many different ways. Sometimes, one of these forms will be more useful to us than another form, particularly in integral calculus where we will have rules that only work for certain function forms. We will mostly focus on polynomials in this chapter since they are commonly used functions in scientific fields. We will also look at how to solve an equation for a variable, and how being able to write the equation in different ways can help with this.
+
+
 \section{Linear Functions}\label{sec:lines}
 
 In this section, we will discuss linear functions. A \emph{linear function} is a polynomial with degree 1. In calculus, you will learn how to use lines to approximate more complicated functions in order to better understand their behavior at or near a point. These linear approximations can help us evaluate nearby points on the complicated function more easily and can tell us how quickly the function is changing. Linear approximations can also be used to help us determine the area of irregular shapes.
@@ -42,7 +47,15 @@ The symbol $\Delta$ (the capital Greek letter ``delta'') tells us we are looking
 					   & = \frac{-5}{-7} \\
 					   & = \frac{5}{7}
 	\end{split}
-\end{equation*} }\\
+\end{equation*} 
+Therefore, the slope of the line in Figure \ref{fig:line_pos_slope} is
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle m= \frac{5}{7}$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 Earlier, we talked about how a line is defined by its slope and a point, but slope itself is determined by two points on the line. This means that we can also uniquely define a line from two points that are on the line. We can take both to find the slope, and then use either of the points as our anchor.
 
@@ -58,10 +71,9 @@ If two lines have the same slope, we say they are \emph{parallel}. Parallel line
 When we look at a line, we can use any two points to describe it, but there are two points that mathematicians are more likely to use. The first (and most commonly used) is the \emph{y-intercept}. This is the point where the line crosses (``intercepts'') the y-axis. Since $x=0$ on the y-axis, this point looks like $(0,y_{int})$. Similarly, the \emph{x-intercept} is frequently used. The x-intercept is the point where the line crosses the x-axis, so it has $y=0$ and looks like $(x_{int},0)$. These two points are commonly used because they are easier to work with since one of the coordinates is 0.
 
 \vskip \baselineskip
-\vskip \baselineskip
 \noindent\textbf{\large Expressing Linear Functions}\\
 
-There are two common ways of expressing linear functions, point-slope form and slope-intercept form. As you can probably guess from the names, both of these forms will require that you first know the slope. Slope-intercept form requires knowing the y-intercept of the function, and point-slope form allows you to use any point on the line. It's good to comfortable working with both forms and with switching between them because sometimes one form will be more useful than the other. In calculus, point-slope form often comes in handy because we will be looking at lines over a small region that won't always contain the y-intercept of the line. Slope-intercept form is:
+There are two common ways of expressing linear functions, point-slope form and slope-intercept form. As you can probably guess from the names, both of these forms will require that you first know the slope. Slope-intercept form requires knowing the y-intercept of the function, and point-slope form allows you to use any point on the line. It's good to be comfortable working with both forms and with switching between them because sometimes one form will be more useful than the other. In calculus, point-slope form often comes in handy because we will be looking at lines over a small region that won't always contain the y-intercept of the line. Slope-intercept form is:
 
 \begin{equation}\label{eqn:slope_intercept_form}
 	y=mx+b
@@ -79,28 +91,23 @@ where $m$ is the slope and $(x_1,y_1)$ is any point on the line. Let's take a lo
 
 \vskip \baselineskip
 
-\example{ex_line_forms}{Writing an Equation for a Line}{Write the equation for the line that passes through $(2,4)$ and is parallel to $3x+y=6$ in slope-intercept form.}{Let's analyze the information we have to work with. First, we know that our line goes through the point $(2,4)$. We know we also need its slope.
+\example{ex_line_forms}{Writing an Equation for a Line}{Write the equation for the line that passes through $(2,4)$ and is parallel to $3x+y=6$ in slope-intercept form.}{Let's analyze the information we so far. First, we know that our line goes through the point $(2,4)$. We know we also need its slope.
 
-We're told it's parallel to $3x+y=6$, so it will have the same slope as that line has. However, this line isn't in either of our forms, so it's not immediately clear what the slope is. We'll start by putting this line, $3x+y=6$ into slope-intercept form (because it requires less algebra than putting it into point-slope form would). To put it into slope-intercept form, we need to isolate $y$. We'll do that by subtracting $3x$ from both sides. That gives
-
+We're told it's parallel to $3x+y=6$, so it will have the same slope as that line. However, this line isn't in either of our forms, so it's not immediately clear what the slope is. We'll start by putting this line, $3x+y=6$ into slope-intercept form (because it requires less algebra than putting it into point-slope form would). To put it into slope-intercept form, we need to isolate $y$. We'll do that by subtracting $3x$ from both sides. That gives
 \begin{equation*}
 	y=6-3x
 \end{equation*}
 
-
 \noindent
-If we rearrange the right side, we get $y=-3x+6$. Now, it's it slope-intercept form and we can see that the slope is $-3$.\\
+If we rearrange the right side, we get $y=-3x+6$. Now, it's in slope-intercept form and we can see that the slope is $-3$.
 
 Now, we have the slope of our line, $m=-3$, and a point on our line, $(2,4)$, and our goal is to express the line in slope-intercept form. There's a slight problem with this- we don't know the y-intercept. Luckily, we do have enough information to express the line in point-slope form, so we'll start with that and use algebra to get it into slope-intercept form. In point-slope form, we have:
-
 \begin{equation*}
 	y-4=-3(x-2)
 \end{equation*}
 
-
 \noindent
-Now, we'll use algebra to rewrite it into slope-intercept form (i.e., we'll isolate y):
-
+We'll use algebra to rewrite this in slope-intercept form (i.e., we'll isolate y):
 \begin{equation*}
 	\begin{split}
 	y-4 & = -3x+6 \\
@@ -110,28 +117,32 @@ Now, we'll use algebra to rewrite it into slope-intercept form (i.e., we'll isol
 \end{equation*}
 
 \noindent
-So, in slope-intercept form, the line is $y=-3x+10$. This also tells us that the y-intercept of this line is $(0,10)$.}\\
+So, in slope-intercept form, the line is $y=-3x+10$. This also tells us that the y-intercept of this line is $(0,10)$. Our final answer, in slope-intercept form, is
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle y=-3x+10 $ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 This isn't the only way to answer this question, so let's try a second method. The two methods will always give you the same result, so it's entirely a matter of preference when choosing which method to use.
 
 \vskip \baselineskip
 
 \example{ex_line_forms_v2}{Writing an Equation for a Line- A Second Method}{Write the equation for the line that passes through $(2,4)$ and is parallel to $3x+y=6$ in slope-intercept form.}{From our previous work on this problem, we know that our line goes through the point $(2,4)$ and that it has a slope of $-3$. We also know that slope-intercept form looks like
-
 \begin{equation*}
 	y=mx+b
 \end{equation*}
 
 \noindent
-and that this statement holds for every $(x,y)$ pair that are on the line. We know $m$, but are missing $b$. However, we do know that $(2,4)$ is on the line, so 
-
+and that this statement holds for every $(x,y)$ pair that are on the line. We know $m$, but we are missing $b$. However, we do know that $(2,4)$ is on the line, so 
 \begin{equation*}
 	y=-3x+b
 \end{equation*}
 
 \noindent
 needs to be true for $x=2$ and $y=4$. We'll substitute these values into our equation and solve for $b$:
-
 \begin{equation}
 	\begin{split}
 		4 & =-3(2)+b\\
@@ -141,16 +152,30 @@ needs to be true for $x=2$ and $y=4$. We'll substitute these values into our equ
 \end{equation}
 
 \noindent
-Now, we know $b$, so our final answer, in slope-intercept form, is $y=-3x+10$.}\\
+Now, we know $b$, so our final answer, in slope-intercept form, is again
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle y= -3x+10$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 \noindent
 Let's look at one more example, this time working with a perpendicular line.
 
 \vskip \baselineskip
 
-\example{ex_perpendicular_line}{Perpendicular Line}{In slope-intercept form, write the equation of a line with a y-intercept of 5 that is perpendicular to $y-4=6(x-2)$.}{Let's look at the information we have so far. We are told that the line we are interested in has a y-intercept of 5. We know that $x=0$ for the y-intercept, so this really means that the y-intercept is the point $(0,5)$. Next, we know that we are perpendicular to the line $y-4=6(x-2)$, a line with a slope of 6.
+\example{ex_perpendicular_line}{Perpendicular Line}{In slope-intercept form, write the equation of a line with a y-intercept of 5 that is perpendicular to $y-4=6(x-2)$.}{Let's look at the information we have so far. We are told that the line we are interested in has a y-intercept of 5. We know that $x=0$ for the y-intercept, so this really means that the y-intercept is the point $(0,5)$. Next, we know that we are perpendicular to the line $y-4=6(x-2)$. This line is given in point-slope form and has a slope of 6.
 
-The slope of our line has to be $-\frac{1}{6}$ since it's perpendicular to a line with a slope of 6. Overall, that gives us that the equation of our line, in slope-intercept form, is $y=-\frac{1}{6} x +5$.
+The slope of our line has to be $-\frac{1}{6}$ since it's perpendicular to a line with a slope of 6. Overall, that gives us that the equation of our line, in slope-intercept form, is 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle y= -\frac{1}{6} x + 5$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}
 
 }\\
 

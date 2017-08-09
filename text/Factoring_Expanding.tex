@@ -1,6 +1,3 @@
-In this chapter, we will look at several ways that we can take an expression or function and write it in a different form. Just like we saw with point-slope and slope-intercept form of lines, we can write general functions in many different ways. Sometimes, one of these forms will be more useful to us than another form, particularly in integral calculus where we will have rules that only work for certain function forms. We will mostly focus on polynomials in this chapter since they are commonly used functions in scientific fields. We will also look at how to solve an equation for a variable, and how being able to write the equation in different ways can help with this.
-
-
 \section{Factoring and Expanding}\label{sec:factoring_expanding}
 
 First, we will look at how to correctly expand a product of polynomials. Once we have discussed this skill, we will look at factoring polynomials. Expanding and factoring are inverse ideas; both work with the same two forms and help us switch back and forth between these two forms. Expanding works off of the ideas we saw when we looked at order of operations, but typically involves variables or parameters in such a way that we can't write the expression without using addition or subtraction. 
@@ -12,7 +9,7 @@ When we learn how to multiply two two-digit numbers together, we are using the s
 
 \vskip \baselineskip
 
-\example{ex_multiplying_numbers}{Multiplying Two Two-Digit Numbers}{Evaluated $(40+2)(30+1)$.}{Typically, we would start this problem by looking at our order of operations. Our order of operations tells us to do everything inside the parentheses first, which would give us $(42)(31)$, and then we would multiply these. However, we are going to use the \emph{distributive property} instead. The distributive property tells us that every term in the first set of parentheses must get multiplied with the second set of parentheses:
+\example{ex_multiplying_numbers}{Multiplying Two Two-Digit Numbers}{Evaluate $(40+2)(30+1)$.}{Typically, we would start this problem by looking at our order of operations. Our order of operations tells us to do everything inside the parentheses first, which would give us $(42)(31)$, and then we would multiply these. However, we are going to use the \emph{distributive property} instead. The distributive property tells us that every term in the first set of parentheses must get multiplied with the second set of parentheses:
 
 \begin{equation}\label{eqn:distributive_prop}
 	\begin{split}
@@ -24,14 +21,20 @@ When we learn how to multiply two two-digit numbers together, we are using the s
 \end{equation}
 
 \noindent
-After multiplying the second set of parentheses by every term in the first set, we then use the distributive property again. In this second step, we distributed 40 to both 30 and 1 and distributed 2 to both 30 and 1. After these multiplications are formed, we end up with four terms. Here, all four terms are just numbers and can be added together to get the final answer.}\\
+After multiplying the second set of parentheses by every term in the first set, we then use the distributive property again. In this second step, we distributed 40 to both 30 and 1 and distributed 2 to both 30 and 1. After these multiplications are formed, we end up with four terms. Here, all four terms are just numbers and can be added together to get the final answer:
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle (40+2)(30+1)= 1302$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 Clearly, for this problem, this is not the easiest way to get the final answer, but it illustrates how we can correctly use the distributive property. Use of the distributive property becomes very important when we have variables or parameters involved and can't simplify inside of the parentheses. 
 
 \vskip \baselineskip
 
 \example{ex_distribute}{Expanding the Product of Linear Functions}{Expand $f(x)g(x)$, where $f(x)=2x-1$ and $g(x)=x+5$.}{First, we need to make sure we are correctly using parentheses in this problem. We want to expand the product of $f(x)$ and $g(x)$, each of which has two terms. This means that we need to include a set of parentheses around $f(x)$ and a set around $g(x)$ to make sure the we multiply with the whole function. After that, we will use the distributive property, just like we did in the previous example.
-
 \begin{equation}\label{eqn:distribute}
 	\begin{split}
 		f(x)g(x) & = (2x-1)(x+5)\\
@@ -42,14 +45,20 @@ Clearly, for this problem, this is not the easiest way to get the final answer, 
 \end{equation}
 
 \noindent
-Just like in our previous example, we distributed by first multiplying each term from the first set of parentheses to the second set of parentheses. In the end, we were able to combine like-terms because we had two linear terms: $10x$ and $-x$. No other terms could be combined because there was only one quadratic term and only one constant term.}\\
+Just like in our previous example, we distributed by first multiplying each term from the first set of parentheses to the second set of parentheses. In the end, we were able to combine like-terms because we had two linear terms: $10x$ and $-x$. No other terms could be combined because there was only one quadratic term and only one constant term, giving us a final answer of
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle f(x)g(x)= 2x^2+9x-5$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 Many people will skip the step of writing out $2x(x+5) -1(x+5)$ and will jump directly to $2x^2+10x-x-5$. One way you can make this jump is by using the acronym FOIL. FOIL stands for First, Outside, Inside, Last. It says that you should multiply the first term from each set of parentheses together, then the ``outside'' terms, then the ``inside'' terms, and then the last terms. This works very well when each set of parentheses only has two terms in it. However, if the parentheses have more than two terms each, FOIL can be a bit misleading. Instead, we like to think about starting with the first term in the first set of parentheses and multiplying it by the first term of the second set, then the second term of the second set, then the third term of the second set, etc. Then, we move to the second term in the first set, and do the same thing. Let's see this in action:
 
 \vskip \baselineskip
 
-\example{ex_distribute_three_terms}{Expanding the Product of Quadratic Functions}{Expand $g(t)h(t)$ for $g(t)=2t^2+3t+4$ and $h(t)=t^2-t-3$.}{Like before, we need to make sure to put parentheses around the entire function before we multiply; this gives us:
-
+\example{ex_distribute_three_terms}{Expanding the Product of Quadratic Functions}{Expand $g(t)h(t)$ for $g(t)=2t^2+3t+4$ and $h(t)=t^2-t-3$.}{Like before, we need to make sure to put parentheses around each of the functions before we multiply; this gives us:
 \begin{equation}
 	\begin{split}
 		g(t)h(t) & = (2t^2+3t+4)(t^2-t-3) \\
@@ -60,7 +69,14 @@ Many people will skip the step of writing out $2x(x+5) -1(x+5)$ and will jump di
 \end{equation}
 
 \noindent
-Here we had a fair bit of combining of like-terms to take care of after we finished multiplying; there was one $t^4$ term, two $t^3$ terms, three $t^2$ terms, two $t$ terms, and one constant term.}\\
+Here we had a fair bit of combining of like-terms to take care of after we finished multiplying; there was one $t^4$ term, two $t^3$ terms, three $t^2$ terms, two $t$ terms, and one constant term. After combining the like-terms, we get
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle g(t)h(t)= 2t^4+t^3-5t^2-13t-12$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 In each of our examples so far, we've only worked with two sets of parentheses. We can expand on this process to work in situations where we have three or more sets of parentheses. Personally, we like working from left to right, so we start by expanding the first two sets of parentheses. Then, we take that result and expand it with the next set. We continue until everything has been expanded. We make sure to combine like terms as part of each expansion because otherwise the numbers of terms gets really big, really fast. As we saw in our expansion of quadratics, we had nine terms before we combined like-terms; after combining, we only had five.
 
@@ -76,9 +92,21 @@ In each of our examples so far, we've only worked with two sets of parentheses. 
 			     & = -2x^3-x^2+14x^2+7x-24x-12 \\
 			     & = -2x^3 + 13x^2 - 17x -12
 	\end{split}
-\end{equation} }\\
+\end{equation} 
 
-These methods will all work, no matter how many sets of parentheses you are working with and no matter how many terms are in each set. There are a few other situations where we will need to use these techniques that may not be obvious. For example, if we have $f(x)=x+3$ and $g(x)=x^2$, we know that we could combine these two functions in many ways. If we do the composition of $g$ with $f$, we would have $g(f(x))=(x+3)^2$. We could leave the function in this form, but there may be situations where we want to expand it. Here we would need to remember that $(x+3)^2$ is the same as $(x+3)(x+3)$, since squaring means we should multiply the term by itself. Similarly, if we have $h(x)=x^3$ and want to find the composition of $h$ with $f$, we would have $h(f(x))=(x+3)^3$, or $h(f(x))=(x+3)(x+3)(x+3)$. Be careful in these situations to work one step at a time; many students are tempted to write things like $(x+3)^2 = x^2 + 3^2$ or $(x+3)^3 = x^3 + 3^3$, but through the process of expanding, you can see that this shortcut is no good because it gives us a false statement.
+Notice that we did not show every single step of the process here. Realistically, this is the level of detail you would typically see on this type of problem. Until you are fully confident with the process we do recommend showing every step, but once you are comfortable with the ideas, you can show work like we did in this problem. Notice that we did combine any like terms after the first distribution step, and then again at the very end, giving us a final answer of
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle f(x)g(x)h(x)= -2x^3+13x^2-17x-12$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
+
+These methods will work, no matter how many sets of parentheses you are working with and no matter how many terms are in each set. There are a few other situations where we will need to use these techniques that may not be obvious. For example, if we have $f(x)=x+3$ and $g(x)=x^2$, we know that we could combine these two functions in many ways. If we do the composition of $g$ with $f$, we would have $g(f(x))=(x+3)^2$. We could leave the function in this form, but there may be situations where we want to expand it. Here we would need to remember that $(x+3)^2$ is the same as $(x+3)(x+3)$, since squaring means we should multiply the term by itself. Similarly, if we have $h(x)=x^3$ and want to find the composition of $h$ with $f$, we would have $h(f(x))=(x+3)^3$, or $h(f(x))=(x+3)(x+3)(x+3)$. Be careful in these situations to work one step at a time; many students are tempted to write things like $(x+3)^2 = x^2 + 3^2$ or $(x+3)^3 = x^3 + 3^3$, but through the process of expanding, you can see that this shortcut is no good because it gives us a false statement.
+
+\vskip \baselineskip
+\noindent\textbf{Common Expansion Patterns}\\
 
 There are some expansions that show up very frequently in mathematics. You may find it useful to memorize some of these patterns, however be sure to expand each by hand at least once so that you can see and understand why these patterns are correct. Here are three expansions that you may see frequently:
 
@@ -101,7 +129,15 @@ In each of these patterns, $a$ and $b$ can be anything. Let's take a look at wor
 			       & = (2xy)(2xy) + 2(2xy)(-3xyz) + (-3xyz)(-3xyz) \\
 			       & = 4x^2y^2 -12x^2y^2z + 9 x^2y^2z^2
 	\end{split}
-\end{equation} }\\
+\end{equation} 
+Notice that we were very careful in the places where we were working with negative signs. A common mistake is to leave off a negative sign, but this can drastically change your final answer. Here, we can't combine any terms because the exponents on z are different for each of the terms, so our final answer is
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle (2xy-3xyz)^2 = 4x^2y^2-12x^2y^2z+9x^2y^2z^2 $ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 \vskip \baselineskip
 \noindent\textbf{\large Factoring}\\
@@ -118,7 +154,7 @@ In order to factor, it is important to be comfortable with expanding since they 
 \end{equation}
 
 \noindent
-Here, we are only looking at situations where $a$ and $b$ are both integers. They can be positive, negative, or zero. Let's identify some key characteristics of equation \ref{eqn:expanding_linear_factors}. We see that each linear term, $x$ has a coefficient of one. In the expanded form, the $x^2$ comes from multiplying the two $x$ terms together, so it also has a coefficient of one. In the expanded form, the constant term is a product of $a$ and $b$, and the $x$ term's coefficient is $a+b$. The combination of these facts will help us factor quadratics. We know that if we look at the constant term in the expanded version, it will be the product of the constants from the linear terms. This will give us a good starting point to look for factors. We can then limit the possibilities some by looking at the $x$ term in the expanded form. Its coefficient is the sum of these two constants. For example, if we have $x^2+5x+4$, we have several pairs of integers that could be multiplied together to give us 4. Let's look at how we can eliminate some of these pairs:
+Here, we are only looking at situations where $a$ and $b$ are both integers. They can be positive, negative, or zero. Let's identify some key characteristics of equation \ref{eqn:expanding_linear_factors}. We see that in each linear term, $x$ has a coefficient of one. In the expanded form, the $x^2$ comes from multiplying the two $x$ terms together, so it also has a coefficient of one. In the expanded form, the constant term is a product of $a$ and $b$, and the $x$ term's coefficient is $a+b$. The combination of these facts will help us factor quadratics. We know that if we look at the constant term in the expanded version, it will be the product of the constants from the linear terms. This will give us a good starting point to look for factors. We can then limit the possibilities some by looking at the $x$ term in the expanded form. Its coefficient is the sum of these two constants. For example, if we have $x^2+5x+4$, we have several pairs of integers that could be multiplied together to give us 4. Let's look at how we can eliminate some of these pairs:
 
 \vskip \baselineskip
 
@@ -146,7 +182,14 @@ Now, we'll look at the $x$ term in the quadratic. It has a coefficient of 5, so 
 \end{equation*}
 
 \noindent
-This verifies that our factors are correct.}\\
+This verifies that our factors are correct, and verifies that our final answer is
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle x^2 + 5x+4=(x+4)(x+1) $ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 Let's look at a few more examples so that we can compare them and look for some patterns that might help us factor more quickly.
 
@@ -164,9 +207,16 @@ Let's look at a few more examples so that we can compare them and look for some 
 \end{multicols}
 
 \noindent
-Out of these pairs, only -3 and -2 add to give us -5, the $x$ coefficient in the quadratic. This tells us that the factors are $x-3$ and $x-2$. So, we have $x^2-5x+6 = (x-3)(x-2)$.}\\
+Out of these pairs, only -3 and -2 add to give us -5, the $x$ coefficient in the quadratic. This tells us that the factors are $x-3$ and $x-2$. So, we have 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle x^2-5x+6=(x-3)(x-2) $ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
-\vskip \baselineskip
+\vskip 0.5\baselineskip
 
 \example{ex_factor_quadratic3}{Factoring a Quadratic}{Factor the quadratic function $h(x) = x^2 -7x -18$.}{ We'll start like we did in our last example by looking for pairs of integers that multiply to give us -18:
 
@@ -182,9 +232,16 @@ Out of these pairs, only -3 and -2 add to give us -5, the $x$ coefficient in the
 \end{multicols}
 
 \noindent
-Out of these pairs, only -9 and 2 add to give us -7, the $x$ coefficient in the quadratic. This tells us that the factors are $x-9$ and $x+2$. So, we have $x^2-7x-18 = (x-9)(x+2)$.}\\
+Out of these pairs, only -9 and 2 add to give us -7, the $x$ coefficient in the quadratic. This tells us that the factors are $x-9$ and $x+2$. So, we have 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle x^2-7x-18= (x-9)(x+2)$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
-\vskip \baselineskip
+\vskip 0.5\baselineskip
 
 \example{ex_factor_quadratic4}{Factoring a Quadratic}{Factor the quadratic function $m(x) = x^2 +3x -18$.}{ We'll start like we did in our last example by looking for pairs of integers that multiply to give us -18:
 
@@ -200,7 +257,14 @@ Out of these pairs, only -9 and 2 add to give us -7, the $x$ coefficient in the 
 \end{multicols}
 
 \noindent
-Out of these pairs, only -3 and 6 add to give us 3, the $x$ coefficient in the quadratic. This tells us that the factors are $x-3$ and $x+6$. So, we have $x^2+3x-18 = (x-3)(x+6)$.}\\
+Out of these pairs, only -3 and 6 add to give us 3, the $x$ coefficient in the quadratic. This tells us that the factors are $x-3$ and $x+6$. So, we have
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle x^2+3x-18= (x-3)(x+6)$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 \noindent
 Notice that in examples \ref{ex_factor_quadratic} and \ref{ex_factor_quadratic2}, the constant term in the quadratic is positive. This tells us that our integers in our pairs both need to have the same sign. What about in examples \ref{ex_factor_quadratic3} and \ref{ex_factor_quadratic4}? What relationship does the constant in the quadratic have with the integers in our pairs? In examples \ref{ex_factor_quadratic3} and \ref{ex_factor_quadratic4}, is there anything about the coefficient on x in the quadratic that relates to the signs of the integers in the pairs? You may find identifying some of these patterns useful, and it will help you understand the ideas in factoring more deeply. Don't feel like you have to memorize these patterns; it's much better to be comfortable with the process of factoring than to remember rules that you don't understand the application of.
@@ -210,14 +274,14 @@ Notice that in examples \ref{ex_factor_quadratic} and \ref{ex_factor_quadratic2}
 \noindent\textbf{Factors and Roots}\\
 
 When we find the factors of a polynomial, we are only a couple of steps away from finding the roots of the function. The \emph{roots} are the inputs of the function that have zero for their output. For example, $f(x)=x^2+5x+4$ from example \ref{ex_factor_quadratic} has $x=-1$ and $x=-4$ as roots because $f(-1)=0$ and $f(-4)=0$. We saw in example \ref{ex_factor_quadratic} that the factors of $f(x)$ are $x+1$ and $x+4$. We can use these factors to find the roots and vice versa. If we set each factor equal to 0 and solve for the input variable, $x$, we will get the roots of the function:
-
 \begin{multicols}{2}
+	\noindent
 \begin{equation*}
 	\begin{split}
 		& x+1  =0 \\
 		  & x  =-1
 	\end{split}
-\end{equation*}\\
+\end{equation*}
 \begin{equation*}
 	\begin{split}
 		& x+4  =0 \\
@@ -229,12 +293,13 @@ When we find the factors of a polynomial, we are only a couple of steps away fro
 \noindent
 Similarly, we can go backwards and find the factors from the roots:
 \begin{multicols}{2}
+	\noindent
 \begin{equation*}
 	\begin{split}
 		& x  =-1 \\
 		& x + 1 =0
 	\end{split}
-\end{equation*}\\
+\end{equation*}
 \begin{equation*}
 	\begin{split}
 		& x =-4 \\
@@ -264,15 +329,21 @@ The $\pm$ sign tells us that we will have two roots; one root we find by using $
 		  & = \frac{7 \pm 1}{12} \\
 	\end{split}
 \end{equation*}
-https://www.bayeradvanced.com/articles/what-to-plant-on-a-slope
 \noindent
-From here, we'll split into two formulas so we get both roots:\\
-
-$\displaystyle t = \frac{7 + 1}{12} = \frac{8}{12} = \frac{2}{3}$\\
+From here, we'll split into two formulas so we get both roots:
+\begin{center}
+$\displaystyle t = \frac{7 + 1}{12} = \frac{8}{12} = \frac{2}{3}$\\ \vskip \baselineskip
 
 $\displaystyle t = \frac{7 - 1}{12} = \frac{6}{12} = \frac{1}{2}$
-
-This tells us our two roots: $\frac{1}{2}$ and $\frac{2}{3}$. If we rewrite to find our factors, we get $t-\frac{1}{2}$ and $t- \frac{2}{3}$ as factors. However, These are not quite enough. If we multiply them out, $t^2$ only has a coefficient of 1, not 6, like in $h(t)$. This tells us that we also have 6 as a factor, so we should write $h(t) = 6 (t-\frac{1}{2})(t-\frac{2}{3})$. }\\
+\end{center}
+This tells us our two roots: $\frac{1}{2}$ and $\frac{2}{3}$. If we rewrite to find our factors, we get $t-\frac{1}{2}$ and $t- \frac{2}{3}$ as factors. However, These are not quite enough. If we multiply them out, $t^2$ only has a coefficient of 1, not 6, like in $h(t)$. This tells us that we also have 6 as a factor, so our final answer is
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle h(t)= 6\bigg(t-\frac{1}{2}\bigg)\bigg(t-\frac{2}{3}\bigg)$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 Many people might not like this final answer and may factor slightly differently. We could rewrite this answer a bit:
 
@@ -286,16 +357,13 @@ Many people might not like this final answer and may factor slightly differently
 \end{equation*}
 
 \noindent
-Both of these answers are equally valid; some prefer the second form because there are no fractions. Some prefer the first form because it's easier to identify the roots, $t=\frac{1}{2}$ and $t=\frac{2}{3}$. Either way, the function $h(t)$ is considered factored.https://www.bayeradvanced.com/articles/what-to-plant-on-a-slope
+Both of these answers are equally valid; some prefer the second form because there are no fractions. Some prefer the first form because it's easier to identify the roots, $t=\frac{1}{2}$ and $t=\frac{2}{3}$. Either way, the function $h(t)$ is considered factored.
 
 \vskip \baselineskip
 \noindent\textbf{Irreducible Quadratics}\\
 
-As we mentioned earlier, not all quadratics can be factored. If a quadratic cannot be factored, we say it is \emph{irreducible}, meaning it can't be ``reduced'' into the product of linear functions. These quadratics can be identified through use of the quadratic formula. If a quadratic is irreducible, we'll run into a problem using the quadratic function. The \emph{discriminant}, the part under the square root, will be negative. This will tell us that the function has no real number roots, only a pair of imaginary roots. If you are factoring a polynomial and run into an irreducible quadratic, just leave it alone. The irreducible quadratic would be considered one of the factors of the polynomial.
+As we mentioned earlier, not all quadratics can be factored. If a quadratic cannot be factored, we say it is \emph{irreducible}, meaning it can't be ``reduced'' into the product of linear functions. These quadratics can be identified through use of the quadratic formula. If a quadratic is irreducible, we'll run into a problem using the quadratic formula. The \emph{discriminant}, the part under the square root, will be negative. This will tell us that the function has no real number roots, only a pair of imaginary roots. If you are factoring a polynomial and run into an irreducible quadratic, just leave it alone. The irreducible quadratic would be considered one of the factors of the polynomial.
 
-\vskip \baselineskip
-\vskip \baselineskip
-\vskip \baselineskip
 \vskip \baselineskip
 \noindent\textbf{Factoring Cubic Functions}\\
 
@@ -312,7 +380,14 @@ Factoring cubic functions can be a bit tricky. There is a special formula for fi
 \end{itemize}
 
 \noindent
-Since $f(-2)=0$, we know that $x=-2$ is a root of $f(x)$, telling us that $x+2$ is a factor of $f(x)$.}\\
+Since $f(-2)=0$, we know that $x=-2$ is a root of $f(x)$, telling us that 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle x+2$ is a factor of $f(x)$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 \noindent
 Notice that in the previous example, we started with the easy numbers first. Also, we can eliminate half of these factors pretty quickly. In $f(x)$, every term has a positive coefficient. We know that if x is positive, $x^3$ and $x^2$ are also positive, and we can't add up a bunch of positive numbers and get 0, so we don't need to check any of the positive factors, only the negative factors. 
@@ -325,7 +400,8 @@ This gives us one factor, but it doesn't help us fully factor this polynomial. W
 
 \begin{equation*}
 \begin{array}{r@{}r@{}c@{}r@{}c@{}r@{}c@{}r} \cline{2-8}
-x+2  \vert & x^3 \phantom{)}& + \phantom{)} & 8x^2 \phantom{)}& + \phantom{)} & 21x \phantom{)}& + \phantom{)} & 18\\
+	 \vert & & & & & & & \\[-10pt]
+	x+2  \vert & x^3 \phantom{)}& + \phantom{)} & 8x^2 \phantom{)}& + \phantom{)} & 21x \phantom{)}& + \phantom{)} & 18\\
 \end{array}
 \end{equation*}
 
@@ -334,6 +410,7 @@ With polynomial long division, we will focus on the highest power of $x$ at each
 \begin{equation*}
 \begin{array}{r@{}r@{}c@{}r@{}c@{}r@{}c@{}r}
 & x^2 &  &  &  &  \phantom{x}& & \\ \cline{2-8}
+ \vert & & & & & & & \\[-10pt]
 x+2  \vert & x^3 \phantom{)}& + \phantom{)} & 8x^2 \phantom{)}& + \phantom{)} & 21x \phantom{)}& + \phantom{)} & 18\\
 & -(x^3 \phantom{)} & + \phantom{)} & 2x^2) & & & & \\ \cline{2-4}
  & & & 6x^2 \phantom{)} & + \phantom{)} & 21x \phantom{)} & & \\
@@ -346,6 +423,7 @@ When we do the subtraction, we are left with $6x^2$, and we bring down the next 
 \begin{equation*}
 \begin{array}{r@{}r@{}c@{}r@{}c@{}r@{}c@{}r}
 & x^2 & + & 6x &  &  \phantom{x}& & \\ \cline{2-8}
+ \vert & & & & & & & \\[-10pt]
 x+2  \vert & x^3 \phantom{)}& + \phantom{)} & 8x^2 \phantom{)}& + \phantom{)} & 21x \phantom{)}& + \phantom{)} & 18\\
 & -(x^3 \phantom{)} & + \phantom{)} & 2x^2) & & & & \\ \cline{2-4}
  & & & 6x^2 \phantom{)} & + \phantom{)} & 21x \phantom{)} & & \\
@@ -372,13 +450,58 @@ x+2  \vert & x^3 \phantom{)}& + \phantom{)} & 8x^2 \phantom{)}& + \phantom{)} & 
 \end{equation*}
 
 \noindent
-After we complete the subtraction, we get $0$ and we have no other terms left from our dividend. This means we are done with the polynomial long division. So far, we have that $f(x) = (x+2)(x^2+6x+9)$.
+After we complete the subtraction, we get $0$ and we have no other terms left from our dividend. This means we are done with the polynomial long division and have no remainder. The lack of remainder verifies that $x+2$ is a factor of $f(x)$; if there were a remainder, it would not be a factor. So far, we have that $f(x) = (x+2)(x^2+6x+9)$.
 
-We're not quite done yet, because we have a quadratic term, and we haven't checked to see if we can factor it or if it's irreducible. we'll try to factor it first. We see that the constant term is 9; our factor pairs of 9 are: 9 and 1, 3 and 3, -3 and -3, and -9 and -1. The pair 3 and 3 adds to 6, so we see that $x^2+6x+9 = (x+3)(x+3)$. We can condense this a little bit by writing $(x+3)^2$.
+We're not quite done yet, because we have a quadratic term, and we haven't checked to see if we can factor it or if it's irreducible. We'll try to factor it first. We see that the constant term is 9; our factor pairs of 9 are: 9 and 1, 3 and 3, -3 and -3, and -9 and -1. The pair 3 and 3 adds to 6, so we see that $x^2+6x+9 = (x+3)(x+3)$. We can condense this a little bit by writing $(x+3)^2$ instead of $(x+3)(x+3)$.
 
-Altogether, we have that $f(x)=(x+2)(x+3)^2$.}\\
+Altogether, we have that 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle f(x)= (x+2)(x+3)^2$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
-We won't show how to factor anything higher than a cubic function, but the process is very similar. You would start by trying to find a root; if you find a root that gives you a factor and you can do polynomial long division. Keep repeating those steps until you only have quadratic and linear factors.
+We won't show how to factor polynomial with a degree higher than 3, but the process is very similar. You would start by trying to find a root; once you find a root you can rewrite to get a factor and you can do polynomial long division. The polynomial long division will tell you a second factor. Keep repeating those steps until you only have quadratic and linear factors.
+
+\vskip \baselineskip
+\noindent\textbf{Factoring by Grouping}\\
+
+In some special circumstances, we can use a different method for factoring cubics, called factoring by grouping. With this method, we will ``group'' the $x^3$ and $x^2$ terms together and factor out any common terms, and we will ``group'' the $x$ and the constant terms together and factor any common terms from those. This method is fast and efficient when it works, but it does not always work. We'll look at an example where it does work and one where it doesn't.
+
+\vskip \baselineskip
+\example{ex_factor_by_grouping}{Factoring a Cubic Function}{Completely factor $f(t) = t^3 + t^2 -4t-4$.}{We will start by grouping and then factoring each group:
+
+\begin{equation*}
+	\begin{split}
+		f(t) = t^3 + t^2 -4t -4 & = (t^3+t^2) + (-4t-4) \\
+					& = t^2(t+1) + (-4)(t+1) \\
+					& = t^2(t+1) -4(t+1) \\
+					& = (t^2-4)(t+1)
+	\end{split}
+\end{equation*}
+Notice that after factoring each group, we were left with $t+1$ for each. This means that $t+1$ is a factor of $f(t)$. What we factored out, $t^2$ and $-4$, combine to give us another factor, $t^2-4$. This is a quadratic, so we need to see if it can be factored. The factor pairs of the constant, $-4$, are -4 and 1, -2 and 2, and -1 and 4. We see that -2 and 2 add to zero, telling us that the factors of $t^2-4$ are $t-2$ and $t+2$. In total, we get
+
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle f(t)= (t+1)(t-2)(t+2)$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}
+}\\
+
+To see an example where factoring by grouping doesn't work, let's look back at the function from Example \ref{ex_poly_long_division}, $f(x)=x^3+8x^2+21x+18$. We can start by grouping and factoring each group:
+\begin{equation*}
+	\begin{split}
+		f(x) = x^3+8x^2+21x+18 & = (x^3+8x^2) + (21x+18) \\
+				       & = x^2(x+8) + 3(7x+6)
+	\end{split}
+\end{equation*}
+
+Notice that what's left after pulling out the common factors are $x+8$ and $7x+6$. These are two very different terms, and neither looks like any of the factors we found earlier: $x+2$ and $x+3$. Since these are different, we are not able to find any factors of $f(x)$ this way. It can be a good idea to try out factoring by grouping before diving into the polynomial long division method, but factoring by grouping is not guaranteed to help you find the factors of your function. As we saw in Example \ref{ex_factor_by_grouping}, when factoring by grouping works, it works well and is very quick, but it's downfall is that it is not guaranteed to find a factor.
+
 
 \vskip \baselineskip
 \noindent\textbf{Common Patterns}\\
@@ -393,7 +516,7 @@ In our section on expanding, we saw some common patterns that can be used as sho
 	\item $a^3 - b^3 = (a-b)(a^2+ab+b^2)$
 \end{itemize}
 
-It's good to note here that $a$ and $b$ can be anything, integers or decimals, positive or negative, and they can include variables. For example, after completing the polynomial division, we ended up with $f(x)=(x+2)(x+6x+9)$. The quadratic fits one of our patterns: if we let $a=x$ and $b=3$, it fits the first pattern. This pattern then tells us that $x^2+6x+9=(x+3)^3$, which we were able to find with our earlier methods. Memorizing these patterns can be useful and save some time, but it's much more important to be comfortable with the methods in general. Let's take a look at an example where $a$ and $b$ are a bit more complicated.
+It's good to note here that $a$ and $b$ can be anything, integers or decimals, positive or negative, and they can include variables. For example, after completing the polynomial division, we ended up with $f(x)=(x+2)(x+6x+9)$. The quadratic fits one of our patterns: if we let $a=x$ and $b=3$, it fits the first pattern. This pattern then tells us that $x^2+6x+9=(x+3)^3$, which we were able to find with our earlier methods. Memorizing these patterns can be useful and save some time, but it's much more important to be comfortable with the other methods we discussed. Let's take a look at an example of using a pattern where $a$ and $b$ are a bit more complicated.
 
 \vskip \baselineskip
 

@@ -1,12 +1,71 @@
-In this chapter, we will look at several special types of functions that are commonly used in calculus: logarithmic functions, exponential functions, and trigonometric functions. Additionally, we will look at solving inequalities and at simplifying exponents. Each of these skills are quite important in calculus. Inequalities show up frequently in differential calculus when we want to determine where a function is increasing or decreasing from looking at the first derivative (a special type of function that is related to the original function of interest) or when we want to determine  the concavity of a function from its second derivative. You will need to be familiar with exponent rules in order to correctly simplify derivatives. Logarithmic functions, exponential functions and trigonometric functions are used in many places in calculus and differential equations. Logarithmic functions are used in many measurement scales such as the Richter scale that measures the strength of an earthquake and in decibels, which measures the loudness of sound. Exponential functions are used to describe growth rates, whether it's the number of animals living in an area or the amount of money in your retirement fund. Trigonometric functions help model natural phenomena such as sound and light waves, and are used in related rates to determine how quickly something, like an angle, is changing. Because of the varied applications you will see in calculus, familiarity with these functions is a must. 
+%In this chapter, we will look at several special types of functions that are commonly used in calculus: logarithmic functions, exponential functions, and trigonometric functions. Additionally, we will look at solving inequalities and at simplifying exponents. Each of these skills are quite important in calculus. Inequalities show up frequently in differential calculus when we want to determine where a function is increasing or decreasing from looking at the first derivative (a special type of function that is related to the original function of interest) or when we want to determine  the concavity of a function from its second derivative. You will need to be familiar with exponent rules in order to correctly simplify derivatives. Logarithmic functions, exponential functions and trigonometric functions are used in many places in calculus and differential equations. Logarithmic functions are used in many measurement scales such as the Richter scale that measures the strength of an earthquake and in decibels, which measures the loudness of sound. Exponential functions are used to describe growth rates, whether it's the number of animals living in an area or the amount of money in your retirement fund. Trigonometric functions help model natural phenomena such as sound and light waves, and are used in related rates to determine how quickly something, like an angle, is changing. Because of the varied applications you will see in calculus, familiarity with these functions is a must. 
 
 \section{Solving Inequalities}\label{sec:inequalities}
 
 In this section, we will look at solving inequalities. You will often work with inequalities in calculus, particularly when you work with derivatives. A derivative is a function that tells you how quickly a related function is changing. A positive derivative tells you the function is increasing and a negative derivative tells you the function is decreasing. This means you will need to be able to identify when the derivative is greater than zero and when it is less than zero.
 
-When solving inequalities, mathematicians express their answers using interval notation, just like we used to describe the domain of a function. The intervals will tell us when the inequality is a true statement, i.e., they tell us all the input values that make the inequality valid. You will also hear mathematicians use the phrase ``the inequality holds for...'; this is another way of saying that these are the inputs that make the inequality true. If you are feeling a bit rusty on interval notation, we recommend reviewing section \ref{sec:interval_notation}.
+When solving inequalities, mathematicians express their answers using interval notation, a special way of expressing an interval of numbers. The intervals will tell us when the inequality is a true statement, i.e., they tell us all the input values that make the inequality valid. You will also hear mathematicians use the phrase ``the inequality holds for...'; this is another way of saying that these are the inputs that make the inequality true. Let's familiarize ourselves with interval notation before we look at inequalities.
 
-For inequalities, our solution method will rely heavily on the skills we discussed in section \ref{sec:solving_for_variables}. Rather than building an entirely new set of methods, we will start all inequality problems by turning them into equality problems. The solution(s) to the equality problem will tell us the ``break points,'' the input values where the inequality may switch from being true to being false. We'll test values on both sides of each break point to see where the inequality is true. We will work carefully to make sure we find all the break points because we don't want to miss any places where the inequality could switch from true to false. Let's look at a few straightforward examples before we move onto the more complicated inequalities.
+\vskip \baselineskip
+\noindent\textbf{\large Interval Notation}\label{sec:interval_notation}\\
+
+Before we get to solving inequalities, we'll discuss interval notation. \emph{Interval notation} provides us with a way to describe ranges of numbers concisely. Unlike order of operations, with interval notation parentheses and brackets have different meaning. For example, $[1,4.5]$ is the range of numbers between 1 and 4.5, including those endpoints. For example, 1, 2, $\pi$, and 4.5 are all included in that interval, but -1.2, 85, and 4.5000001 are not. However, if we look at $(1,4.5)$, 2 and $\pi$ are still in this interval but 1 and 4.5 are not. Brackets tell us we include the endpoint and parentheses tell us that we don't.
+
+With interval notation, we can mix parentheses and brackets if we need to include one endpoint but not the other. For example, $[1,4.5)$ contains 1 but not 4.5 and $(1,4.5]$ contains 4.5 but not 1.
+
+\vskip \baselineskip
+
+\example{ex_01_03_01}{Interval Notation}{Determine if each of the following numbers is included in the interval $[-5, 27)$.
+\noindent\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}
+		\item	$2$	
+		\item	$\pi$	
+		\item	$-5$	
+		\item	$-8$	
+		\end{enumerate}
+		\end{minipage}
+		\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}\addtocounter{enumi}{4}
+		\item	$27$
+		\item	$32$	
+		\item	$-5.000001$	
+		\item	$-4.999999$	
+		\end{enumerate}	
+		\end{minipage}
+}{For each of these, we need to determine if the number is between the two numbers given in the interval.
+\noindent	\begin{enumerate}
+		\item	$2$ is bigger than $-5$ and smaller than $27$ so it is in the interval.
+		\item	$\pi$ is bigger than $-5$ and smaller than $27$ so it is in the interval.
+		\item	$-5$ is one of our endpoints, so we need to see if it has a bracket or a parenthesis on that end. It has a bracket, so it is included in the interval.
+		\item	$-8$ is smaller than $-5$, so it is \emph{not} included in the interval.
+		\item	$27$ is one of our endpoints, so we need to see if it has a bracket or a parenthesis on that end. It has a parenthesis, so it is \emph{not} included in the interval.
+		\item	$32$ is bigger than $27$, so it is \emph{not} included in the interval.
+		\item	$-5.000001$ is smaller than $-5$, so it is \emph{not} included in the interval.	
+		\item	$-4.999999$ is bigger than $-5$ and smaller than $27$ so it is in the interval.	
+		\end{enumerate}	
+			\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$2, \pi, -5,$ and $-4.999999$ are in the interval \\
+			$-8, 27, 32,$ and $-5.000001$ are not in the interval \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}
+}\\
+
+We can also use interval notation to express ranges that don't have an upper bound. For example, if we wanted to use interval notation to write the range for all positive numbers, we would write $(0,\infty)$. We know there's no limit to how big a positive number can get, so we use $\infty$ to indicate that we are just looking at numbers bigger than $0$. Similarly, we can write $(-\infty,0)$ to express the range for all negative numbers. Note that for both of these we use a parenthesis with the infinity symbol and not a bracket since infinity isn't a number.
+
+Additionally, we can use interval notation to express more complicated ranges of numbers. We can combine ranges using $\cup$, the shorthand mathematical way of writing ``or''. For example, $[1,3]\cup(4,\infty)$ means the range of values between 1 and 3, including the endpoints, as well as any numbers bigger than 4. So 2, 4.1, and 20 are all in this interval, but -2, 3.5, and 4 are not. We can also use notation to limit ranges using $\cap$, the shorthand mathematical way of writing ``and also.'' For example, if we have two ranges, say $(1,4]$ and $[2,8)$, and are only interested in the numbers that are in both ranges, we can write $(1,4] \cap [2,8)$. We can use this symbol to help show our work, but for our final answer we should always simplify so that we don't need to use the $\cap$ symbol (it's fine, and quite common, to use the $\cup$ symbol as part of your final answer). We said that $\cap$ means we only want the numbers that are in both intervals; the smallest number contained by both intervals is 2 and the largest is 4, so we can write $(1,4] \cap [2,8) = [2,4]$ instead.
+
+\vskip \baselineskip
+\noindent\textbf{\large Interval Notation and Inequalities}\\
+
+
+Interval notation also gives us another way of expressing an inequality. For example, $x\geq 2$ can be written as $x \in [2,\infty)$. Here the $\in$ symbol is read as the word ``in''. We would read this out loud by saying ``x is greater than or equal to 2''  is the same as ``x is in the range from 2, inclusive, to infinity.'' The statement $x \in (2,\infty)$ is a bit different; it's the same as $x > 2$ since we don't want to include 2 as part of our range. Here, we would read the range as ``x in 2, exclusive, to infinity.'' The symbols we learned earlier, $\cup$ and $\cap$ are read as ``union'' and ``intersect,'' respectively.
+
+
+%For inequalities, our solution method will rely heavily on the skills we discussed in section \ref{sec:solving_for_variables}. 
+When working with inequalities, we will start all inequality problems by turning them into equality problems. This will allow us to use some techniques we've already seen when we discussed factoring and roots of a function. The solution(s) to the equality problem will tell us the ``break points,'' the input values where the inequality may switch from being true to being false. We'll test values on both sides of each break point to see where the inequality is true. We will work carefully to make sure we find all the break points because we don't want to miss any places where the inequality could switch from true to false. Let's look at a few straightforward examples before we move onto the more complicated inequalities.
 
 \vskip \baselineskip
 
@@ -16,7 +75,7 @@ For inequalities, our solution method will rely heavily on the skills we discuss
 	x^2-6x+8 =0
 \end{equation*}
 
-Now, we can use any solution method we learned for quadratic functions to solve. Here we have a quadratic that factors nicely, so we will take that approach, but you could use the quadratic formula if you prefer.
+Now, we can use any solution method we learned for finding the roots of a quadratic function to solve. Here we have a quadratic that factors nicely, so we will take that approach, but you could use the quadratic formula if you prefer.
 
 \begin{equation*}
 	\begin{split}
@@ -46,10 +105,13 @@ We get a negative number, so the inequality is false for everything between 2 an
 \end{equation*}
 
 The result is positive, so the inequality is true. Now, we have that the inequality is true for numbers less than 2 and numbers greater than 4. It is not true for $x=2$ or $x=4$ since both of these make the left side 0 and we want the left side to be bigger than 0, not equal to it. In interval notation, we have:
-
-\begin{equation*}
- (-\infty,2)\cup(4,\infty)
-\end{equation*} }\\
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle x \in  (-\infty,2)\cup(4,\infty)$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 In this example, we have a \emph{strict inequality}. We say it is strict because it is $>$ and not $\geq$. Similarly, we would say an inequality with $<$ is strict. With strict inequalities, our final answer will not include the break points, so we will use parentheses at these break points because we do not want to include these points.
 
@@ -80,13 +142,13 @@ Value to check: & 0		& 3	  & 5 \\ \hline
 Any of these methods are appropriate for clearly showing your work; the one you choose is a matter of personal preference.
 
 \vskip \baselineskip
-\noindent\textbf{\large Incorporating Domain Restrictions}\\
+\noindent\textbf{\large Incorporating Undefined Points}\\
 
-We noted earlier that our inequality can change from true to false at our break points, the points where the equality statement is true. The inequality can also change from true to false at places where the function is undefined. For example, we know that the function $f(x) = \frac{1}{x}$ is positive when $x$ is positive and negative when $x$ is negative. This means that the inequality $\frac{1}{x}>0$ holds, or is true, only for $x \in (0,\infty)$. However, there are no places where $f(x)=0$. Since $f(x)$ is undefined at $x=0$, it introduces a different type of break point; one where the graph of the function ``breaks'' because it cannot be graphed where it is undefined. Let's take a look at an example where we have to incorporate a domain restriction by including additional break points.
+We noted earlier that our inequality can change from true to false at our break points, the points where the equality statement is true. The inequality can also change from true to false at places where the function is undefined. For example, we know that the function $f(x) = \frac{1}{x}$ is positive when $x$ is positive and negative when $x$ is negative. This means that the inequality $\frac{1}{x}>0$ holds, or is true, only for $x \in (0,\infty)$. However, there are no places where $f(x)=0$. Since $f(x)$ is undefined at $x=0$, it introduces a different type of break point; one where the graph of the function ``breaks'' because it cannot be graphed where it is undefined. Let's take a look at an example where we have to incorporate undefined points by including additional break points.
 
 \vskip \baselineskip
 
-\example{ex_ineq_undefined_points}{Solving a Rational Inequality}{Solve $\displaystyle \frac{x-5}{x^2-4} \geq 0$.}{We'll start by turning the inequality into an equality statement and solving for $x$.
+\example{ex_ineq_undefined_points}{Solving a Rational Inequality}{Solve $\displaystyle \frac{x-5}{x^2-4} \geq 0$.}{We'll start by turning the inequality into an equality statement and solving for $x$. To help solve for $x$, we will get rid of the fraction by multiplying both sides by the full denominator; this will allow us to cancel the denominator on the left side.
 
 \begin{equation*}
 	\begin{split}
@@ -113,7 +175,7 @@ We see that $\frac{x-5}{x^2-4}$ is undefined for $x=2$ and $x=-2$. This gives us
 \myincludegraphics{figures/figineq_num_line3}\label{fig:ineq_num_line3}
 \end{center}
 
-Now, we need to check values in each interval. First, we'll check something less than $-2$; we'll use $x=-3$. Substituting, gives $\frac{(-3)-5}{(-3)^2 -4} = \frac{-8}{5}<0$. This means we can place an x-mark over this interval:
+Now, we need to check values in each interval. First, we'll check something less than $-2$; we'll use $x=-3$. Substituting, gives $\frac{(-3)-5}{(-3)^2 -4} = \frac{-8}{5}$. This is less than 0; this means we can place an x-mark over this interval:
 
 \begin{center}
 \myincludegraphics{figures/figineq_num_line4}\label{fig:ineq_num_line4}
@@ -137,7 +199,14 @@ Lastly, we need to check a value greater than $5$. We'll use $x=6$. This gives $
 \myincludegraphics{figures/figineq_num_line7}\label{fig:ineq_num_line7}
 \end{center}
 
-We now have a mark over every interval, so we can determine our final answer. We can see that the inequality is true for $x \in (-2,2) \cup [5,\infty)$. Note that we included $x=5$ since it has a closed circle and excluded $x=-2$ and $x=2$ since they have open circles. }\\
+We now have a mark over every interval, so we can determine our final answer. We can see that the inequality is true for $x \in (-2,2) \cup [5,\infty)$. Note that we included $x=5$ since it has a closed circle and excluded $x=-2$ and $x=2$ since they have open circles. Our final answer is
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle \frac{x-5}{x^2-4} \geq 0$ holds for $x \in (-2,2) \cup [5, \infty)$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 \printexercises{exercises/inequalities_exercises}
 

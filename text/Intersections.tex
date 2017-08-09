@@ -1,6 +1,6 @@
 \section{Intersections}\label{sec:intersections}
 
-In many problems in integral calculus you will be finding the area enclosed by, or between, several functions. As part of finding the area, you will need to identify where the functions intersect each other, i.e., the $(x,y)$ coordinate pairs where the curves cross. The \emph{points of intersection} of two functions, $f(x)$ and $g(x)$, are the $(x,y)$ coordinator pairs for which the input, $x$, results in the same output value from both functions. In this section, we will address three different methods for finding the points of intersection for two graphs. The first two methods we will discuss rely heavily on this skills you learned in the previous section where you learned how to solve for variables. 
+In many problems in integral calculus you will be finding the area enclosed by, or between, several functions. As part of finding the area, you will need to identify where the functions intersect each other, i.e., the $(x,y)$ coordinate pairs where the curves cross. The \emph{points of intersection} of two functions, $f(x)$ and $g(x)$, are the $(x,y)$ coordinate pairs for which the input, $x$, results in the same output value from both functions. In this section, we will address three different methods for finding the points of intersection for two graphs. The first two methods we will discuss rely heavily on this skills you learned in the previous section where you learned how to solve for variables. 
 
 Note that while we have mostly been using function notation like $f(x)$, here we will often indicate the output of the function as $y$. One reason why we are using $y$ here is that some of our functions will be defined \emph{implicitly}. When a function is defined implicitly, it means that the output of the function is not isolated; we've seen this before with the point slope form of a line. When the output is isolated, we say our function is defined \emph{explicitly}, as in slope intercept form.
 
@@ -25,7 +25,6 @@ Additionally, in the second equation $y$ is already nearly isolated, so we will 
 \end{equation*}
 
 Now that we have $y$ isolated, we will replace every $y$ in the equation $4x^2+y^2 = 4$ with $2x-1$. As when we evaluated functions, we will be sure to put parentheses around the term, $(2x-1)$, so that we can simplify correctly.
-
 \begin{equation*}
 	\begin{split}
 		4x^2 + y^2 & = 4\\
@@ -37,13 +36,12 @@ Now that we have $y$ isolated, we will replace every $y$ in the equation $4x^2+y
 
 \noindent
 This doesn't look like it is likely to factor nicely, so we will use the quadratic formula:
-
 \begin{equation*}
 	\begin{split}
-		x & = \frac{-(-4) \pm \sqrt{(-4)^2-4(8)(-3)}}{2(8)} \\
-		  & = \frac{4 \pm \sqrt{16+96}}{16} \\
-		  & = \frac{4\pm \sqrt{112}}{16} \\
-		  & = \frac{4 \pm 4 \sqrt{7}}{16} \\
+		x & = \frac{-(-4) \pm \sqrt{(-4)^2-4(8)(-3)}}{2(8)} \\[6pt]
+		  & = \frac{4 \pm \sqrt{16+96}}{16} \\[6pt]
+		  & = \frac{4\pm \sqrt{112}}{16} \\[6pt]
+		  & = \frac{4 \pm 4 \sqrt{7}}{16} \\[6pt]
 		  & = \frac{1 + \sqrt{7}}{4}, \frac{1 - \sqrt{7}}{4}
 	\end{split}
 \end{equation*}
@@ -54,26 +52,35 @@ This only gives us the $x$ coordinates; we also need the $y$ coordinates. To get
 	\begin{split}
 		y & = 2x -1 \\
 		  & = 2\Bigg(\frac{1 + \sqrt{7}}{4}\Bigg) -1 \\
-		  & =\frac{1 + \sqrt{7}}{2} - \frac{2}{2} \\
-		  & = \frac{-1 + \sqrt{7}}{2}
+	\end{split}
+\end{equation*}
+\begin{equation*}
+	\begin{split}
+		\phantom{y} & =\frac{1 + \sqrt{7}}{2} - \frac{2}{2} \\[6pt]
+			    & = \frac{-1 + \sqrt{7}}{2}
 	\end{split}
 \end{equation*}
 
 \noindent
 The second $y$ coordinate is:
-
 \begin{equation*}
 	\begin{split}
 		y & = 2x -1 \\
-		  & = 2\Bigg(\frac{1 - \sqrt{7}}{4}\Bigg) -1 \\
-		  & =\frac{1 - \sqrt{7}}{2} - \frac{2}{2} \\
+		  & = 2\Bigg(\frac{1 - \sqrt{7}}{4}\Bigg) -1 \\[6pt]
+		  & =\frac{1 - \sqrt{7}}{2} - \frac{2}{2} \\[6pt]
 		  & = \frac{-1 - \sqrt{7}}{2}
 	\end{split}
 \end{equation*}
 
 \noindent
-Now, we have both of the points of intersection: $(\frac{1 + \sqrt{7}}{4}, \frac{-1 + \sqrt{7}}{2})$ and $(\frac{1 - \sqrt{7}}{4}, \frac{-1 - \sqrt{7}}{2})$.
-
+Now, we have both of the points of intersection: 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle (\frac{1 + \sqrt{7}}{4}, \frac{-1 + \sqrt{7}}{2})$ and $(\frac{1 - \sqrt{7}}{4}, \frac{-1 - \sqrt{7}}{2})$\\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}
 }\\
 
 Sometimes, we can be a bit creative about using substitution. Depending on the equations you are working with, it may sometimes be quicker to \emph{not} solve for a variable completely, but rather for a term that shows up in both equations. Let's take a look at an example.
@@ -87,6 +94,10 @@ Sometimes, we can be a bit creative about using substitution. Depending on the e
 		x^2-4x & = -y^2 \\
 		x^2 -4x & = -(x-4) \\
 		x^2 - 4x & = -x + 4 \\
+	\end{split}
+\end{equation*}
+\begin{equation*}
+	\begin{split}
 		x^2 -3x -4 & = 0 \\
 		(x-4)(x+1) & = 0 \\
 		x & =-1, 4
@@ -94,9 +105,13 @@ Sometimes, we can be a bit creative about using substitution. Depending on the e
 \end{equation*}
 
 Now that we have our $x$ coordinates, we need to find the corresponding $y$ coordinates. We'll use the first equation, since it's a bit simpler to work with. Substituting in $x=4$ gives us $0=y^2$, or $y=0$. Substituting in $x=-1$ gives $-5=y^2$. Here, this gives us an imaginary answer for $y$, so we do not get an additional intersection point. The only intersection point for these equations is 
-
-\begin{equation*} (4,0)
-\end{equation*}}\\
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle(4,0) $ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 \vskip \baselineskip
 \noindent\textbf{\large Equating the Functions}\\
@@ -105,8 +120,7 @@ The next method we will discuss works well when both functions are explicit, or 
 
 \vskip \baselineskip
 
-\example{ex_equating}{Points of Intersection: Equating}{Find all points of intersection of $f(x)=x^2+1$ and $g(x)=x+1$}{Here, both equations are given using function notation; this means that really $f(x)$ tells us the value of the $y$ coordinate at $x$, so we can replace it with $y$: $y=x^2+1$. Similarly, $g(x)$ tells us the value of the $y$ coordinate at $x$ for the other function: $y=x+1$. Since $y$ is isolated in both, we will set the two equal to each other and solve for $x$:
-
+\example{ex_equating}{Points of Intersection: Equating}{Find all points of intersection of $f(x)=x^2+1$ and $g(x)=x+1$}{Here, both equations are given using function notation; this means that really $f(x)$ tells us the value of the $y$ coordinate at $x$, so we can replace it with $y$: $y=x^2+1$. Similarly, $g(x)$ tells us the value of the $y$ coordinate at $x$ for the other function: $y=x+1$. Since $y$ is isolated in both, we will set the two equal to each other and solve for $x$:\\[-8pt]
 \begin{equation*}
 	\begin{split}
 		x^2+1 & = x + 1 \\
@@ -116,7 +130,14 @@ The next method we will discuss works well when both functions are explicit, or 
 	\end{split}
 \end{equation*}
 
-Now, we just need to find the $y$ coordinates. We can use either $f(x)$ or $g(x)$ to do this; $g(x)$ is simpler so we will use it. We get that $g(0) = 1$ and $g(1)=2$. Therefore, we have two points of intersection: $(0,1)$ and $(1,2)$.}\\
+Now, we just need to find the $y$ coordinates. We can use either $f(x)$ or $g(x)$ to do this; $g(x)$ is simpler so we will use it. We get that $g(0) = 1$ and $g(1)=2$. Therefore, we have two points of intersection: 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle (0,1) $ and $(1,2)$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 \vskip \baselineskip
 \noindent\textbf{\large Elimination}\\
@@ -126,16 +147,13 @@ The third method we will discuss is a bit different than the other methods we ha
 \vskip \baselineskip
 
 \example{ex_elimination1}{Points of Intersection: Elimination}{Find all points of intersection of $2x+3y=2$ and $-x+y=4$.}{We will first try to eliminate $x$ from both equations. The first equation has $2x$ and the second has $-x$. If we multiply the second equation by $2$ and add it to the first, the $x$ terms will cancel out:
-
 \begin{equation*}
 \begin{array}{r@{}r@{}c@{}r@{}c@{}r@{}c@{}r}
  & & 2x & + & 3y & = & 2 & \\ 
 + & 2( & -x &  + & y &  = & 4 & )\\ 
 \end{array}
-\end{equation*}
-
+\end{equation*}\\[-8pt]
 or:
-
 \begin{equation*}
 \begin{array}{r@{}r@{}c@{}r@{}c@{}r@{}c@{}r}
  & & 2x & + & 3y & = & 2 & \\ 
@@ -148,8 +166,14 @@ or:
 \noindent
 Notice that we lined up our variables and treated this like a big addition problem. Keeping the variables lined up makes our work easier to follow.
 
-Now, we can take the result and easily solve for $y$, getting $y=2$. We can now use $y$ to find $x$. Either equation will work, but we will use the second one: $-x+(2) = 4$, or $x=-2$. This gives use one point of intersection at $(-2,2)$.
-}\\
+Now, we can take the result and easily solve for $y$, getting $y=2$. We can now use $y$ to find $x$. Either equation will work, but we will use the second one: $-x+(2) = 4$, or $x=-2$. This gives use one point of intersection at 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle (-2,2) $ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 Elimination is a particularly flexible method. To illustrate this, we will solve the problem again, but this time we will eliminate $y$ first.
 
@@ -161,14 +185,22 @@ Elimination is a particularly flexible method. To illustrate this, we will solve
 \begin{equation*}
 \begin{array}{r@{}r@{}c@{}r@{}c@{}r@{}c@{}r}
 	 & -\frac{1}{3}( & 2x &  + & 3y &  = & 2 & )\\
-	+& (& -x & + & y & = & 4 & \\ \hline 
+	+& (& -x & + & y & = & 4 & )\\ \hline 
 	& & -\frac{5}{3} x &  &  & = & \frac{10}{3} & \\
  \end{array}
 \end{equation*}
 
-Solving $-\frac{5}{3}x = \frac{10}{3}$ gives us $x=-2$, and substituting into either equation gives us $y=2$. We get the same intersection point:$(-2,2)$.}\\
+Solving $-\frac{5}{3}x = \frac{10}{3}$ gives us $x=-2$, and substituting into either equation gives us $y=2$. We get the same intersection point:
+\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-12pt]
+			$\displaystyle (-2,2) $ \\[-12pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
-Additionally, we could have multiplied the second equation $-x+y=4$ by $3$ and subtracted from the first to eliminate $y$ first. With elimination, it is best to do a little planning to figure out what variable will be easiest to eliminate first, and what combinations will keep the numbers simple.
+
+Additionally, we could have multiplied the second equation, $-x+y=4$, by $3$ and subtracted from the first to eliminate $y$ first. With elimination, it is best to do a little planning to figure out what variable will be easiest to eliminate first, and what combinations will keep the numbers simple.
 
 \vskip \baselineskip
 \noindent\textbf{\large Graphing}\\

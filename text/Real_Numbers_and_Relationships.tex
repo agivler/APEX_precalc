@@ -1,13 +1,18 @@
 When we first start learning about numbers, we start with the counting numbers: 1, 2, 3, etc. As we progress, we add in 0 as well as negative numbers and then fractions and non-repeating decimals. Together, all of these numbers give us the set of \textit{real numbers}, denoted by mathematicians as $\mathbb R$, numbers that we can associate with concepts in the real world. These real numbers follow a set of rules that allow us to combine them in certain ways and get an unambiguous answer. Without these rules, it would be impossible to definitively answer many questions about the world that surrounds us.
 
-In this chapter, we will discuss these rules and how they interact. We will see how we can develop our own ``rules'' that we call functions. We will learn how to describe what numbers our functions can be applied to and how to visually represent our functions with graphing. In calculus, you will be manipulating functions to answer application questions such as optimizing the volume of a soda can while minimizing the material used to make it or computing the volume and mass of a small caliber projectile from an engineering drawing. However, in order to answer these complicated questions, we first need to master the basic set of rules that mathematicians use to manipulate numbers and functions.
+In this chapter, we will discuss these rules and how they interact. We will see how we can develop our own ``rules'' that we call functions. In calculus, you will be manipulating functions to answer application questions such as optimizing the volume of a soda can while minimizing the material used to make it or computing the volume and mass of a small caliber projectile from an engineering drawing. However, in order to answer these complicated questions, we first need to master the basic set of rules that mathematicians use to manipulate numbers and functions.
+
+Additionally, we will learn about some special types of functions: logarithmic functions and exponential functions. Logarithmic functions and exponential functions are used in many places in calculus and differential equations. Logarithmic functions are used in many measurement scales such as the Richter scale that measures the strength of an earthquake and are even used to measure the loudness of sound in decibels. Exponential functions are used to describe growth rates, whether it's the number of animals living in an area or the amount of money in your retirement fund. Because of the varied applications you will see in calculus, familiarity with these functions is a must.
+
+%Removed text
+%We will learn how to describe what numbers our functions can be applied to and how to visually represent our functions with graphing. 
 
 
 \section{Real Numbers}\label{sec:real_numbers}
 
 We begin our study of \textit{real numbers} by discussing the rules for working with these numbers and combining them in a variety of ways. In elementary school, we typically start by learning basic ways of combining numbers, such as addition, subtraction, multiplication, and division, and later more advanced operations like exponents and roots. We will not be reviewing each of these operations, but we will discuss how these operations interact with each other and how to determine which operations need to be completed first in complicated mathematical expressions.
 
-You are probably already familiar with the phrase ``order of operations.'' When mathematicians refer to the order of operations they are referring to a guideline for which operations need to be calculated first in complicated expressions:
+You are probably already familiar with the phrase ``order of operations.'' When mathematicians refer to the order of operations they are referring to a guideline for which operations need to be computed first in complicated expressions:
 
 \begin{multicols}{2}
 \begin{enumerate}
@@ -20,31 +25,36 @@ You are probably already familiar with the phrase ``order of operations.'' When 
 \end{enumerate}
 \end{multicols}
 
-Often we learn phrases such as ``Please Excuse My Dear Aunt Sally'' to help remember the order of these operations, but this guideline glosses over a few important details. Let's take a look at each of the operations in more detail.\\
+Often we learn phrases such as ``Please Excuse My Dear Aunt Sally'' to help remember the order of these operations, but this guideline glosses over a few important details. Let's take a look at each of the operations in more detail.
 
 \vskip \baselineskip
 \noindent\textbf{\large Parentheses}\\
 
-There are two important details to focus on with parentheses: nesting and ``implied parentheses.'' Let's take a look at an example of nested parentheses first:\\
+There are two important details to focus on with parentheses: nesting and ``implied parentheses.'' Let's take a look at an example of nested parentheses first:
 
 \vskip \baselineskip
 
-\example{ex_01_01_01}{Nested Parentheses}{Evaluate \begin{equation}\label{eqn:nested_parentheses_ex} 2\times(3+(4\times2)).\end{equation}}{Here we see a set of parentheses ``nested'' inside of a second set of parentheses. When we see this, we want to start with the inside parentheses first:
-
+\example{ex_01_01_01}{Nested Parentheses}{Evaluate \begin{equation}\label{eqn:nested_parentheses_ex} 2\times(3+(4\times2)).\end{equation}}{Here we see a set of parentheses ``nested'' inside of a second set of parentheses. When we see this, we want to start with the inside set of parentheses first:\\[-8pt]
 \begin{equation}\label{eqn:nested_parentheses_soln1}
 	2\times(3+(4\times2)) = 2\times(3+(8))
 \end{equation}
-
-
-Once we simplify the inside parentheses to where they contain only a single number, we can drop them. Then, it's time to start on the next parentheses layer:
-
+Once we simplify the inside set of parentheses to where they contain only a single number, we can drop them. Then, it's time to start on the next parentheses layer:
 \begin{equation}\label{eqn:nested_parentheses_soln2}
-	2\times(3+(8))=2\times(3+8) = 2\times (11) = 22
+	\begin{split}
+		2\times(3+(8)) & =2\times(3+8)\\
+			       & = 2\times (11) \\
+			       & = 22
+	\end{split}
 \end{equation}
-\vskip -\baselineskip
-}
+This gives our final answer:
+\begin{center}
+	\begin{tabular}{| c |} \hline
+		\\[-4pt]
+		$2 \times (3+(4 \times 2)) = 22$ \\[-4pt]
+		\\\hline
+	\end{tabular}
+\end{center}}\\
 
-\vspace{12pt}
 Sometimes this can get confusing when we have lots of layers of parentheses. Often, you will see mathematicians use both parentheses, ``('' and ``)'', and brackets, ``['' and ``]''. This can make it a bit easier to see where the parentheses/brackets start and where they end. Let's look at an example:
 
 \vskip \baselineskip
@@ -66,20 +76,26 @@ Sometimes this can get confusing when we have lots of layers of parentheses. Oft
 \end{equation}
 
 
-We started by finding the very inside set of parentheses: $(2-1)$. The next layer of parentheses we changed to brackets: $[4+(2-1)]$. We continued alternating between parentheses and brackets until we had found all layers. As before, we started with evaluating the inside parentheses first: $(2-1)=(1)=1$. The next layer was brackets: $[4+1]=[5]=5$. Next, we had more parentheses: $(3\times 5 -1)=(15-1)=(14)=14$. Then, we had our final layer: $[2+14]+2=[16]+2=16+2=18$.}\\
+We started by finding the very inside set of parentheses: $(2-1)$. The next layer of parentheses we changed to brackets: $[4+(2-1)]$. We continued alternating between parentheses and brackets until we had found all layers. As before, we started with evaluating the inside parentheses first: $(2-1)=(1)=1$. The next layer was brackets: $[4+1]=[5]=5$. Next, we had more parentheses: $(3\times 5 -1)=(15-1)=(14)=14$. Then, we had our final layer: $[2+14]+2=[16]+2=16+2=18$.
+
+This gives our final answer:
+\begin{center}
+	\begin{tabular}{| c |} \hline
+		\\[-4pt]
+		$(2+(3\times(4+(2-1)) -1)) +2 = 18$ \\[-4pt]
+		\\\hline
+	\end{tabular}
+\end{center}
+}\\
 
 When you are working these types of problems by hand, you can also make the parentheses bigger as you move out from the center:
-
 \begin{equation*}\label{eqn:sizes_of_parentheses}
 	(2+(3\times(4+(2-1)) -1)) +2  = \bigg[2+\Big(3\times \big[4+(2-1)\big] -1\Big)\bigg] +2
-\end{equation*}\\
+\end{equation*}
 
 This may make it easier to see which parentheses/brackets are paired. You never have to switch a problem from all parentheses to parentheses and brackets, but you can alternate between them as you please, as long as you match parentheses ``('' with parentheses ``)'' and brackets ``['' with brackets ``]''.
 
-\vskip \baselineskip
-
-There's one more thing that we have to be careful about with parentheses, and that is ``implied'' parenthesis. Implied parentheses are an easy way to run into trouble, particularly if you are using a calculator to help you evaluate an expression. So what are implied parentheses? They are parentheses that aren't necessarily written down, but are implied. For example, in a fraction, there is a set of implied parentheses around the numerator and a set of implied parentheses around the denominator:
-
+There's one more thing that we have to be careful about with parentheses, and that is ``implied'' parenthesis. Implied parentheses are an easy way to run into trouble, particularly if you are using a calculator to help you evaluate an expression. So what are implied parentheses? They are parentheses that aren't necessarily written down, but are implied. For example, in a fraction, there is a set of implied parentheses around the numerator and a set of implied parentheses around the denominator:\\[-8pt]
 \begin{equation}\label{eqn:implied_parentheses_fraction}
 	\frac{3+4}{2+5} = \frac{(3+4)}{(2+5)}
 \end{equation}
@@ -87,8 +103,7 @@ There's one more thing that we have to be careful about with parentheses, and th
 You will almost never see the second form written down, however the first form can you get into trouble if you are using a calculator. If you enter $3+4\div 2+5$ on a calculator, it will first do the division and then the two additions since it can only follow the order of operations (listed earlier). This would give you an answer of 10. However, the work to find the actual answer is shown below.
 
 \vskip \baselineskip
-
-\example{ex_01_01_03}{Invisible Parentheses in a Fraction}{Evaluate the expression in (\ref{eqn:implied_parentheses_fraction}).} {First, let's go back and find (\ref{eqn:implied_parentheses_fraction}). You may have noticed that the fractions above have (1.6) next to them on the right side of the page. This tells us that (\ref{eqn:implied_parentheses_fraction}) is referring to this expression. Now that we know what we are looking at, let's evaluate it:
+\example{ex_01_01_03}{Invisible Parentheses in a Fraction}{Evaluate the expression in (\ref{eqn:implied_parentheses_fraction}).} {First, let's go back and find (\ref{eqn:implied_parentheses_fraction}). You may have noticed that the fractions above have (1.6) next to them on the right side of the page. This tells us that (\ref{eqn:implied_parentheses_fraction}) is referring to this expression. Now that we know what we are looking at, let's evaluate it:\\[-8pt]
 \begin{equation}\label{eqn:implied_parentheses_fraction_solution}
 	\begin{split}
 		\frac{3+4}{2+5} & = \frac{(3+4)}{(2+5)} \\
@@ -97,8 +112,15 @@ You will almost never see the second form written down, however the first form c
 				& = 1
 	\end{split}
 \end{equation} 
-
-This reflects what we would get on a calculator if we entered $(3+4) \div (2+5)$.} \\
+This reflects what we would get on a calculator if we entered $(3+4) \div (2+5)$, giving us our final answer:\\[-10pt]
+\begin{center}
+	\begin{tabular}{| c |} \hline
+		\\[-4pt]
+		$\displaystyle \frac{3+4}{2+5} = 1$ \\[-4pt]
+		\\\hline
+	\end{tabular}
+\end{center}
+} \\
 
 As you can see, leaving off the implied parentheses drastically changes our answer. Another place we can have implied parentheses is under root operations, like square roots:
 
@@ -113,7 +135,17 @@ As you can see, leaving off the implied parentheses drastically changes our answ
 				& = 6-20\\
 				& = -14
 	\end{split}
-\end{equation} }\\
+\end{equation} 
+
+This gives our final answer:
+\begin{center}
+	\begin{tabular}{| c |} \hline
+		\\[-4pt]
+		$\sqrt{12\times3} -11 = -14$ \\[-4pt]
+		\\\hline
+	\end{tabular}
+\end{center}
+}\\
 
 Most calculators will display $\sqrt{(}$ when you press the square root button; notice that this gives you the opening parenthesis, but not the closing parenthesis. Be sure to put the closing parenthesis in the correct spot. If you leave it off, the calculator assumes that everything after $\sqrt{(}$ is under the root otherwise. This also applies to other kinds of roots, like cube roots. In the expression in Example 4, without a closing parenthesis, a calculator would give us $\sqrt{(}12\times 3 - 20 = \sqrt{(}36 -20 = \sqrt{(}16 = 4$.
 
@@ -135,7 +167,14 @@ With exponents, we have to be careful to only apply the exponent to the term imm
 		\end{split}
 	\end{equation}
 
-	Notice we only cubed the $3$ and not the expression $2+3$. 
+	Notice we only cubed the $3$ and not the expression $2+3$, giving us a final answer of 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$2  + 3^3= 29$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}
 }\\
 
 This looks relatively straight-forward, but there's a special case where it's easy to get confused, and it relates to implied parentheses.
@@ -149,16 +188,22 @@ This looks relatively straight-forward, but there's a special case where it's ea
 			      & = - (16) \\
 			      &=-16
 		\end{split}
-	\end{equation} }\\
+	\end{equation} 
+	
+	Here, our final answer is
+	\begin{center}
+	\begin{tabular}{| c |} \hline
+		\\[-4pt]
+		$-4^2 = -16$ \\[-4pt]
+		\\\hline
+	\end{tabular}
+\end{center}}\\
 
 Notice where we placed the implied parenthesis in the problem. Since exponents only apply to the term immediately before them, only the $4$ is squared, not $-4$. Taking the extra step to include these implied parentheses will help reinforce this concept for you; it forces you to make a clear choice to show how the exponent is being applied. If we wanted to square $-4$, we would write $(-4)^2$ instead of $-4^2$.
 
 Note that we don't take this to the extreme; $12^2$ still means ``take $12$ and square it,'' rather than $1\times (2^2)$.
 
 It's also important to note that all root operations, like square roots, count as exponents, and should be done after parentheses but before multiplication and division.
-
-
-
 
 \vskip \baselineskip
 \noindent\textbf{\large Multiplication and Division}\\
@@ -176,11 +221,22 @@ In our original list for the order of operations, we listed multiplication and t
 							       & = 11
 		\end{split}
 	\end{equation}
-	Since this expression doesn't have any parentheses or exponents, we look for multiplication or division, starting on the left. First, we find $6\div 2$, which gives $3$. Next, we have $3 \times 3$, giving 9. The next operation is an addition, so we skip it until we have no more multiplication or division. That means that we have $1 \times 8=8$ next. Our last step at this level is $8 \div 4=2$. Now, we only have addition left: $9+2 = 11$. 
+	Since this expression doesn't have any parentheses or exponents, we look for multiplication or division, starting on the left. First, we find $6\div 2$, which gives $3$. Next, we have $3 \times 3$, giving 9. The next operation is an addition, so we skip it until we have no more multiplication or division. That means that we have $1 \times 8=8$ next. Our last step at this level is $8 \div 4=2$. Now, we only have addition left: $9+2 = 11$. Our final answer is
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$ 6\div 2 \times 3  + 1 \times 8 \div 4 = 11$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}
 }\\
 
 Note that we get a different, incorrect, answer of 3 if we do all the multiplication first and then all the division.
 
+\vskip \baselineskip
+\vskip \baselineskip
+\vskip \baselineskip
+\vskip \baselineskip
 \vskip \baselineskip
 \noindent\textbf{\large Addition and Subtraction}\\
 
@@ -194,6 +250,14 @@ Just like with multiplication and division, addition and subtraction are on the 
 		      & = 4
 	\end{split}
 	\end{equation}
+By doing addition and subtraction on the same level, from left to right, we get a final answer of
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle 1-3+6 = 4$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}
 }\\
 
 Again, note that if we do all the addition and then all the subtraction, we get an incorrect answer of $-8$.
@@ -221,22 +285,188 @@ Let's walk through one example that uses all of our rules.
 		$-2^2 + \sqrt{6-2} - 2 (8 \div 2 \times (1+1))$ = & We have a bit of everything here, so let's write down any implied parentheses first. \\ \hline
 		$= -2^2 + \sqrt{(6-2)} - 2 (8 \div 2 \times (1+1))$ & We have nested parentheses on the far right, so let's work on the inside set.  \\ \hline
 		$= -2^2 + \sqrt{(6-2)} - 2 (8 \div 2 \times 2)$ & There aren't any more nested parentheses, so let's work on the set of parentheses on the far left. \\ \hline
-		$= -2^2 + \sqrt{4} - 2 (8 \div 2 \times 2)$ & Now, we'll work on the other set of parentheses. They only have multiplication and division, so we'll work from left to right inside of the parentheses.\\ \hline
+		$= -2^2 + \sqrt{4} - 2 (8 \div 2 \times 2)$ & Now, we'll work on the other set of parentheses. This set only has multiplication and division, so we'll work from left to right inside of the parentheses.\\ \hline
 		$= -2^2 + \sqrt{4} - 2 (4 \times 2)$ & Now, we'll complete that set of parentheses. \\ \hline
 		$= -2^2 + \sqrt{4} - 2 (8)$ & Let's rewrite slightly to completely get rid of all parentheses. \\ \hline
-		$= -2^2 + \sqrt{4} - 2 \times 8$ & Now, we'll work on exponents from left to right. \\ \hline
+		$= -2^2 + \sqrt{4} - 2 \times 8$ & Now, we'll work on exponents, from left to right. \\ \hline
 		$= -4 + \sqrt{4} - 2 \times 8$ & We only squared 2, and not $-2$. Square roots are really exponents, so we'll take care of that next. \\ \hline
 		$= -4 + 2 - 2 \times 8$ & We're done with exponents; time for multiplication/division. \\ \hline
 		$= -4 + 2 - 16 $ & Now, only addition and subtraction are left, so we'll work from left to right. \\ \hline
 		$= -2 - 16 $ & Almost there! \\ \hline
 		$=-18$ & \\ \hline
-\end{tabular}
+\end{tabular}\\
+
+Our final answer is
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle -2^2 + \sqrt{6-2} - 2 (8 \div 2 \times (1+1)) = -18$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}
 	
 } \\
 
+\vskip \baselineskip
+\noindent\textbf{\large Computations with Rational Numbers}\\
+
+\emph{Rational numbers} are real numbers that can be written as a fraction, such as $\frac{1}{2}$, $\frac{5}{4}$, and $-\frac{2}{3}$. You may notice that $\frac{5}{4}$ is a special type of rational number, called an \emph{improper fraction}. It's called improper because the value in the numerator, $5$, is bigger than the number in the denominator, $4$. Often, students are taught to write these improper fractions as mixed numbers: $\frac{5}{4} = 1\frac{1}{4}$. This does help give a quick estimate of the value; we can quickly see that it is between 1 and 2. However, writing as a mixed number can make computations more difficult and can lead to some confusion when working with complicated expressions; it may be tempting to see $1 \frac{1}{4}$ as $1\times \frac{1}{4}$ rather than $\frac{5}{4}$. For this reason, we will leave all improper fractions as improper fractions.
+
+With fractions, multiplication and exponents are two of the easier operations to work with, while addition and subtraction are more complicated. Let's start by looking at how to work with multiplication of fractions.
+
+\vskip \baselineskip
+
+\example{ex_01_01_10}{Multiplication of Fractions}{Evaluate \begin{equation*} \frac{1}{4} \times \frac{2}{3} \times 2 \end{equation*}}{With multiplication of fractions, we will work just like we do with any other type of real number and multiply from left to right. When multiplying two fractions together, we will multiply their numerators together (the tops) and we will multiply the denominators together (the bottoms).
+	\begin{equation*}
+		\begin{split}
+			\frac{1}{4} \times \frac{2}{3} \times 2 & = \frac{1\times 2}{4 \times 3} \times 2 \\
+							        & = \frac{2}{12} \times 2 \\
+								& = \frac{1}{6} \times 2 \\
+								& = \frac{1}{6} \times \frac{2}{1} \\
+								& = \frac{1\times 2}{6 \times 1} \\
+								& = \frac{2}{6} \\
+								& = \frac{1}{3}
+		\end{split}
+	\end{equation*}
+	
+After each step, we look to see if we can simplify any fractions. After the first multiplication, we get $\frac{2}{12}$. Both $2$ and $12$ have $2$ as a factor (are both divisible by $2$), so we can simplify by dividing each by 2, giving us $\frac{1}{6}$. Before doing the second multiplication, we transform the whole number, 2, into a fraction by writing it as $\frac{2}{1}$. Then, we can compute the multiplication of the two fractions, giving us $\frac{2}{6}$. We can simplify this because 2 and 3 have 2 as a common factor, so our final answer is 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle \frac{1}{4} \times \frac{2}{3} \times 2 = \frac{1}{3}$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 
-In the next section we'll talk about how to make specialized rules through the use of functions. In the following exercises, we continue our work with order of operations and practice these rules in situations with a bit more context.\\
+Next, let's look at exponentiation of a fraction.
+
+\vskip \baselineskip
+
+\example{ex_01_01_11}{Exponentiation of a Fraction}{Evaluate \begin{equation*} \bigg( \frac{1+2}{5} \bigg) ^2 \end{equation*}}{With exponentiation, we need to apply the exponent to both the numerator and the denominator. This gives
+	\begin{equation*}
+		\begin{split}
+			\bigg(\frac{1+2}{5} \bigg)^2 & = \bigg(\frac{(1+2)}{(5)}\bigg)^2 \\[6pt]
+						     & = \bigg(\frac{(3)}{(5)}\bigg)^2 \\[6pt]
+						     & = \bigg(\frac{3}{5} \bigg)^2 \\[6pt]
+						     & = \frac{3^2}{5^2} \\[6pt]
+						     & = \frac{9}{25}
+		\end{split}
+	\end{equation*}\\
+
+Notice that we were careful to include the implied parentheses around the numerator and around the denominator. This helps to guarantee that we are correctly following the order of operations by working inside of any parentheses first, before applying the exponent. We can't simplify our fraction at any point since 3 and 5 do not share any factors. This gives us our final answer of 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle \bigg( \frac{1+2}{5} \bigg)^2 = \frac{9}{25}$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}
+	}\\
+
+With division of fractions, we will build off of multiplication. For example, if we want to divide a number by 2, we know that we could instead multiply it by $\frac{1}{2}$ because dividing something into two equal pieces is the same as splitting it in half. These numbers are \emph{reciprocals}; 2 can be written as $\frac{2}{1}$ and if we flip it, we get $\frac{1}{2}$, its reciprocal. This works for any fractions; if we want to divide by $\frac{5}{6}$, we can instead multiply by its reciprocal, $\frac{6}{5}$.
+
+Addition and subtraction of fractions can be a bit more complicated. With a fraction, we can think of working with pieces of a whole. The denominator tells us how many pieces we split the item into, and the numerator tells us how many pieces we are using. For example, $\frac{3}{4}$ tells us that we split the item into 4 pieces and are using 3 of them. In order to add or subtract fractions, we need to work with pieces that are all the same size, so our first step will be getting a common denominator. We will do this by multiplying by 1 in a sneaky way. Multiplying by 1 doesn't change the meaning of our expression, but it will allow us to make sure all of our pieces are the same size.
+
+\vskip \baselineskip
+\example{ex_01_01_12}{Addition and Subtraction of Fractions}{Evaluate \begin{equation*} \frac{1}{2} - \frac{1}{3} + \frac{1}{4} \end{equation*}}{
+		Since we only have addition and subtraction, we will work from left to right. This means that our first step is to subtract $\frac{1}{3}$ from $\frac{1}{2}$. The denominators are different, so we don't yet have pieces that are all the same size. To make sure our pieces are all the same size, we will multiply each term by 1; we will multiply $\frac{1}{2}$ by $\frac{3}{3}$ and we will multiply $\frac{1}{3}$ by $\frac{2}{2}$. Since we are multiplying by the ``missing'' factor for each, both will have the same denominator. Once they have the same denominator, we can combine the numerators:
+		\begin{equation*}
+			\begin{split}
+				\frac{1}{2} - \frac{1}{3} + \frac{1}{4} & = \frac{1}{2} \times\frac{3}{3} - \frac{1}{3} \times \frac{2}{2} + \frac{1}{4} \\[6pt]
+									& = \frac{3}{6} - \frac{2}{6} + \frac{1}{4} \\[6pt]
+									& = \frac{3-2}{6} + \frac{1}{4} \\[6pt]
+			\end{split}
+		\end{equation*}
+		\begin{equation*}
+			\begin{split}
+				\phantom{\frac{1}{2} - \frac{1}{3} + \frac{1}{4}} & = \frac{1}{6} + \frac{1}{4} \\[6pt]
+									& = \frac{1}{6} \times \frac{2}{2} + \frac{1}{4} \times \frac{3}{3} \\[6pt]
+									& = \frac{2}{12} + \frac{3}{12} \\[6pt]
+									& = \frac{2+3}{12} \\[6pt]
+									& = \frac{5}{12}
+			\end{split}
+		\end{equation*}
+
+		After combining the first two fractions, we had to find a common denominator for the remaining two fractions. Here, we found the smallest possible common denominator. We did this by looking at each denominator and factoring them. The first denominator, 6, has 2 and 3 as factors; the second denominator, 4 has 2 as a repeated factor since $4=2\times2$. These means our common denominator needed to have 3 as a factor and 2 as a double factor: $3\times 2 \times 2 = 12$. We don't have to find the smallest common denominator, but it often keeps the numbers more manageable. We could have instead done:
+		\begin{equation*}
+			\begin{split}
+				\frac{1}{6} + \frac{1}{4} & = \frac{1}{6} \times \frac{4}{4} + \frac{1}{4} \times \frac{6}{6} \\[6pt]
+									& = \frac{4}{24} + \frac{6}{24} \\[6pt]
+									& = \frac{4+6}{24} \\[6pt]
+									& = \frac{10}{24} \\[6pt]
+									& = \frac{5}{12}
+			\end{split}
+		\end{equation*}
+
+		We still end up with the same final answer:
+
+
+		\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle \frac{1}{2} - \frac{1}{3} + \frac{1}{4} = \frac{5}{12} $ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
+
+Like fractions, decimals can also be difficult to work with. Note that all repeating decimals and all terminating decimals can be written as fractions: $0.\overline{333} = \frac{1}{3}$ and $2.1 = 2 + \frac{1}{10} = \frac{20}{10} + \frac{1}{10} = \frac{21}{10}$. You can convert these into fractions or you can work with them as decimals. When adding or subtracting decimals, make sure to align the numbers at the decimal point. When multiplying, first multiply as though there are no decimals, aligning the last digit of each number. Then, as your final step place the decimal point so that it has the appropriate number of digits after it. For example,\\[-10pt]
+\begin{equation*}\begin{array}{c}
+\phantom{\times999}1.2\\
+	\underline{\times\phantom{99}1.1\phantom{.}5}\\
+	\phantom{\times999.}6\phantom{.}0\\
+	\phantom{\times9}1\phantom{.}2 \\
+	\underline{\phantom{\times}1\phantom{.}2\phantom{.9.}}\\
+	\phantom{\times 1} 1.3\phantom{.}8 \phantom{.} 0
+\end{array}\end{equation*}\\[-10pt]
+Because 1.2 has one digit after the decimal place and 1.15 has 2 digits after the decimal place, we need a total of $1+2=3$ digits after the decimal place in our final answer, giving us 1.380, or 1.38. It is important to note that we placed the decimal point before dropping the zero on the end; our final answer would have quite a different meaning otherwise.
+
+
+\vskip \baselineskip
+\noindent\textbf{\large Computations with Units}\\
+
+So far, we have only looked at examples without any context to them. However, in calculus you will see many problems that are based on a real world problem. These types of problems will come with units, whether the problem focuses on lengths, time, volume, or area. With these problems, it is important to include units as part of your answer. When working with units, you first need to make sure all units are consistent; for example, if you are finding the area of a square and one side is measured in feet and the other side in inches, you will need to convert so that both sides have the same units. You could use measurements that are both in feet or both in inches, either will give you a meaningful answer. Let's look at a few examples.
+
+\vskip \baselineskip
+
+\example{ex_01_01_13}{Determining Volume}{Determine the volume of a rectangular solid that has a width of 8 inches, a height of 3 inches, and a length of 0.5 feet.}{First, we need to get all of our measurements in the same units. Since two of the dimensions are given in inches, we will start by converting the third dimension into inches as well. Since there are 12 inches in a foot, we get
+\begin{equation*}
+	\begin{split}
+		0.5 \text{ ft} \times \frac{12 \text{ in}}{1 \text{ft}} & = \frac{0.5 \times 12 \text{ ft} \times \text{ in}}{1 \text{ ft}}
+	\end{split}
+\end{equation*}
+\begin{equation*}
+	\begin{split}
+		\phantom{0.5 \text{ ft} \times \frac{12 \text{ in}}{1 \text{ft}}} & = \frac{6 \text{ ft} \times \text{ in}}{1 \text{ ft}} \\
+									          & = 6 \text{ in}
+	\end{split}
+\end{equation*}
+
+In the last step we simplify our fraction. We can simplify $\frac{6}{1}$ as $6$, and we can simplify $\frac{\text{ ft} \times \text{ in}}{\text{ft}}$ as in. This means that we know our rectangular solid is 8 inches wide, 3 inches tall, and 6 inches long. The volume is then
+
+\begin{equation*}
+	\begin{split}
+		V &= (8 \text{ in})\times (3 \text{ in}) \times (6 \text{ in})\\
+		  &= (8 \times 3 \times 6) \times (\text{ in} \times \text{ in} \times \text{ in}) \\
+		  & = (24 \times 6)\times (\text{ in} \times \text{ in} \times \text{ in}) \\
+		  & = 144 \text{ in}^3
+	\end{split}
+\end{equation*}
+
+
+Since all three measurements are in inches and are being multiplied, we end up with units of inches cubed, giving us a final answer of
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle V= 144 \text{ in}^3$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}
+	} \\
+
+Units can also give you hints as to how a number is calculated. For instance, the speed of a car is often measured in mph, or miles per hour. We write these units in fraction form as $\frac{\text{miles}}{\text{hour}}$, which tells us that in our computations we should be dividing a distance by a time. Sometimes, however, a problem will start with units, but the final answer will have no units, meaning it is unitless. We will run across examples of this when we discuss trigonometric functions. Trigonometric functions can be calculated as a ratio of side lengths of a right triangle. For example, in a right triangle with a leg of length 3 inches and a hypotenuse of 5 inches, the ratio of the leg length to the hypotenuse length is $\frac{3 \text{ in}}{5 \text{ in}}=\frac{3}{5}$. Since both sides are measured in inches, the units cancel when we calculate the ratio. We would see the same final answer if the triangle had a leg of 3 miles and a hypotenuse of 4 miles; they are similar triangles, so the ratios are the same.
+
+In this section, we have examined how to work with basic mathematical operations and how these operations interact with each other. In the next section we'll talk about how to make specialized rules or operations through the use of functions. In the exercises following this section, we continue our work with order of operations and practice these rules in situations with a bit more context. Note that answers to all example problems are available at the end of this book to help you gauge your level of understanding. If your professor allows it, it is a good idea to check the answer to each question as you complete it; this will allow you to see if you understand the ideas and will prevent you from practicing these rules incorrectly.\\
 
 \printexercises{exercises/real_nums_exercises}
 

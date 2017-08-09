@@ -36,7 +36,14 @@ This is pretty close to what $f(x)$ looks like; the only difference is the const
 \end{equation*}
 
 \noindent
-This tells us that $b$ influences our constant term. We want the constant terms to match, so we have $6=a^2+b$. We know $a=4$, so really we have $6=4+b$, giving us that $b=2$. That means we have $f(x)=(x+2)^2+2$.}\\
+This tells us that $b$ influences our constant term. We want the constant terms to match, so we have $6=a^2+b$. We know $a=2$, so really we have $6=4+b$, giving us that $b=2$. That means we have 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$f(x)=(x+2)^2+2$ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 This example shows the line of thinking we used with this problem, but is a fairly wordy explanation. Mathematicians like to keep things concise, so let's see how we could show this work mathematically, without using much of a verbal description. Typically, you will see work like this:
 
@@ -64,14 +71,21 @@ We've looked at one example of completing the square that had all ``nice'' numbe
 
 \example{ex_complete_square2}{Completing the Square}{Complete the square for $g(t) = t^2 -7t + 10$.}{There is one big difference between this problem and our previous example: our input variable has changed. That means instead of our goal looking like $(x+a)^2+b$, our goal looks like $(t+a)^2+b$. Regardless, we'll follow the same thought process we used in the previous example. We know that if we expand our goal form, we get $(t+a)^2+b = t^2+2at+a^2+b$. Like before, we'll figure out a value for $a$ first, and then a value for $b$. To find $a$, we will use the $t$ term. The expanded goal form has $2at$ and $g(t)$ has $-7t$. This tells us that $2a=-7$, or $a=-\frac{7}{2}$. In the expanded goal form, the constant term is $a^2+b$; we know $a$ now, so really we have $\frac{49}{2}+b$. Note that when we square $a$ we get a positive number (think back to the invisible parentheses we talked about earlier). In $g(t)$, our constant term is $10$. Matching our constant terms gives us the equality $\frac{49}{2} + b = 10$. If we subtract $\frac{49}{2}$ from both sides, we get $b=-\frac{29}{2}$.
 
-Altogether, we have $a=-\frac{7}{2}$ and $b=-\frac{29}{2}$, so we have $g(t) = (t-\frac{7}{2}) - \frac{29}{2}$.}\\
+Altogether, we have $a=-\frac{7}{2}$ and $b=-\frac{29}{2}$, so we have 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle g(t) = \Bigg(t-\frac{7}{2}\Bigg) - \frac{29}{2} $ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
 
 
 
 \vskip \baselineskip
 \noindent\textbf{\large A Variation on Completing the Square}\\
 
-In all of the examples we have discussed in this section, the squared term has a coefficient of 1. However, sometimes we will run into situations where this coefficient isn't 1, and we will need to be able to work with these situations. When a quadratic in $x$ (meaning a quadratic function that has $x$ as its variable) has a leading coefficient (the coefficient on the highest power term) other than 1, we can write it as $c(x+a)^2 +b$. This means that we will have three parameters we need to find: $a$, $b$, and $c$. In our earlier examples we found $a$ first because only it showed up on the $x$ term, and the $x^2$ term was already taken care of since it automatically had a coefficient of 1. Here, we will want to find $c$ first since it shows up in the quadratic term and affects the linear term. This is a common solution technique in mathematics: start by working with the highest power terms first, and then move onto the lower degree terms. Before we look at an example problem, let's see what this modified form looks like after expansion. We have
+In all of the examples we have discussed in this section, the squared term has a coefficient of 1. However, sometimes we will run into situations where this coefficient isn't 1, and we will need to be able to work with these situations. When a quadratic in $x$ (meaning a quadratic function that has $x$ as its variable) has a leading coefficient (the coefficient on the highest power term) other than 1, we can write it as $c(x+a)^2 +b$. This means that we will have three parameters we need to find: $a$, $b$, and $c$. In our earlier examples we found $a$ first because only it showed up on the $x$ term, and the $x^2$ term was already taken care of since it automatically had a coefficient of 1. Here, we will want to find $c$ first since it shows up in the quadratic term and affects the linear term and the constant term. This is a common solution technique in mathematics: start by working with the highest power terms first, and then move onto the lower degree terms. Before we look at an example problem, let's see what this modified form looks like after expansion. We have
 
 %\begin{equation}\label{eqn:complete_square_variation1}
 %	(cx+a)^2 + b = c^2x^2 + 2acx + a^2 + b
@@ -87,7 +101,7 @@ In all of the examples we have discussed in this section, the squared term has a
 	\end{split}
 \end{equation}
 
-There are some key features we need to note that will be handy when dealing with these types of quadratics. In this form $c$ impacts the $x^2$ and $x$ terms. For this form, we will start by ``matching'' coefficients with the $x^2$ term, then the $x$ term, and then the constant term. Let's take a look:
+There are some key features we need to note that will be handy when dealing with these types of quadratics. In this form $c$ impacts the $x^2$, $x$, and constant terms. For this form, we will start by ``matching'' coefficients with the $x^2$ term, then the $x$ term, and then the constant term. Let's take a look:
 
 %\vskip \baselineskip
 
@@ -109,7 +123,40 @@ Next, we'll work with the $x$ term. In equation \ref{eqn:complete_square_variati
 
 Lastly, we'll work with the constant terms. In equation \ref{eqn:complete_square_variation2}, the constant is $ca^2+b$. Since we have $a=\frac{3}{2}$ and $c=4$, this constant really is $4(\frac{3}{2})^2+b=9+b$. In $f(x)$, the constant is $-3$, so we have $9+b=-3$, or $b=-12$. 
 
-We've now found all three parameters, so we are done and have that $f(x)=4(x+\frac{3}{2})^2-12$.}\\
+We've now found all three parameters, so we are done and have that 
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle f(x)=4 \bigg( x+\frac{3}{2} \bigg)^2-12 $ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
+
+We could also solve this problem a bit differently. We could start by factoring out the coefficient on the $x^2$ term and then completing the square on what remains. Let's take a look:
+
+\vskip \baselineskip
+
+\example{ex_complete_square_var3}{Completing the Square- Variation}{Write $f(x) = 4x^2+12x-3$ in the form $c(x+a)^2 +b$.}{We'll start by factoring 4 out from the equation and completing the square on the remaining quadratic factor. By factoring out the 4, $x^2$ will have a coefficient of 1 and we can work like we did in our earlier examples.
+\begin{equation*}
+	\begin{split}
+		f(x) = 4x^2+12x-3 & = 4 \Bigg[x^2 + 3x-\frac{3}{4} \Bigg] \\
+				  & = 4 \Bigg[x^2 + 2\bigg( \frac{3}{2} \bigg)x + \bigg( \frac{3}{2} \bigg)^2 - \bigg( \frac{3}{2} \bigg)^2 -\frac{3}{4} \Bigg] \\
+				  & = 4 \Bigg[ \bigg( x + \frac{3}{2} \bigg)^2 - \frac{9}{4} - \frac{3}{4} \Bigg] \\
+				  & = 4 \Bigg[\bigg( x + \frac{3}{2} \bigg)^2 - \frac{12}{4}\Bigg] \\
+				  & = 4 \Bigg[\bigg( x + \frac{3}{2} \bigg)^2 - 3\Bigg] 
+	\end{split}
+\end{equation*}
+
+We're close to the form we want, but we have an extra set of parentheses. We will need to redistribute the 4 to the rest of the statement to be in the correct form. This gives us
+	\begin{center}
+		\begin{tabular}{| c |} \hline
+			\\[-4pt]
+			$\displaystyle f(x)=4\bigg(x+\frac{3}{2}\bigg)^2-12 $ \\[-4pt]
+			\\\hline
+		\end{tabular}
+	\end{center}}\\
+
+As you can see, we end up with the exact same answer either way, but used a different method. With the first method, we expanded the general form we wanted and found the values of a, b, and c one by one. With the second method, we started with our specific function $f(x)$, and rearranged it to look like the form we want. With the second method, the values of a, b, and c can be identified from our final answer.
 
 %Notice that for both forms $b$ is the same, but $a$ and $c$ are different. There is a relationship between the values of $a$ and $c$ for each form, but this is left to the reader. (This is another common remark from an author that means you should try to find the relationship on your own. You may find it handy to look at a couple of other examples to help you figure out the relationship between the values in the two different forms.)
 
