@@ -7,15 +7,17 @@ Logarithmic functions and exponential functions are both used to describe many a
 \vskip \baselineskip
 \noindent\textbf{\large The Relationship Between Logarithmic and Exponential Functions}\\
 
-We saw earlier, that an exponential function is any function of the form $f(x)=b^x$, where $b>0$ and $b\neq1$. A logarithmic function is any function of the form $g(x)=\log_b{(x)}$, where $b>0$ and $b\neq1$. It is no coincidence that both forms have the same restrictions on $b$ because they are inverses of each other. This means that, for the same value of $b$, $b^{\log_b{(x)}}=x$ for $x>0$ and $\log_b{b^x}=x$.
+We saw earlier that an exponential function is any function of the form $f(x)=b^x$, where $b>0$ and $b\neq1$. A logarithmic function is any function of the form $g(x)=\log_b{(x)}$, where $b>0$ and $b\neq1$. It is no coincidence that both forms have the same restrictions on $b$ because they are inverses of each other. This means that, for the same value of $b$, $b^{\log_b{(x)}}=x$ for $x>0$ and $\log_b{b^x}=x$. 
+
+We also discussed two commonly used logarithmic functions that have special notation. The logarithmic function $f(x)=\log{(x)}$ is a special way of writing $f(x)=\log_{10}{(x)}$ and $g(x)=\ln{x}$ is a special way of writing $g(x)=\log_e{(x)}$. These also have special names; $\log{(x)}$ is called the common logarithm and $\ln{(x)}$ is called the natural logarithm. Note that $e$ is just a number: $e \approx 2.71828$; $e$ is an irrational number, just like $\pi$, meaning it can't be written as a fraction of whole numbers.
 
 Let's look at some concrete examples to help illustrate this relationship. Let's look at $b=2$. For $b=2$, $f(x)=2^x$. Then, we can see that $f(3)=2^3 = 8$. Since they are inverse functions, $g(8) = \log_2{(8)} =3$. In general this is explained as:
 
 \begin{equation}\label{eqn:log_def}
 	\text{If }a=b^c \text{, then }c=\log_b{(a)}.
-\end{equation}
+\end{equation}newpage
 
-Another way of thinking about it is to use the question ``y is b raised to what power?'' when you see $\log_b{(y)}$. For example, when we see $\log_2{(16)}$, we ask ``16 is 2 raised to what power?'' Through a bit of guess and check, we get $2^1=2$, $2^2=4$, $2^3=8$, and $2^4=16$. This tells us that 2 raised to the 4$^{th}$ power gives us 16, so $\log_2{(16)}=4$. Let's look at a few more examples.
+Another way of thinking about it is to use the question ``y is b raised to what power?'' when you see $\log_b{(y)}$. For example, when we see $\log_2{(16)}$, we ask ``16 is 2 raised to what power?'' Through a bit of guess and check we get $2^1=2$, $2^2=4$, $2^3=8$, and $2^4=16$. This tells us that 2 raised to the 4$^{th}$ power gives us 16, so $\log_2{(16)}=4$. Let's look at a few more examples.
 
 \vskip \baselineskip
 
@@ -44,6 +46,7 @@ Another way of thinking about it is to use the question ``y is b raised to what 
 			\\\hline
 		\end{tabular}
 	\end{center}
+\drawexampleline
 \item For this statement, we are answering the question ``$\frac{1}{9}$ is 3 raised to what power?'' We saw in the previous question that $\log_3{(9)} = 2$ which gives us a hint that our answer is related to 2, but that we need $3^2$ to be in the denominator. Since $3^{-2} = \frac{1}{9}$, we get that
 			\begin{center}
 		\begin{tabular}{| c |} \hline
@@ -67,7 +70,7 @@ Another way of thinking about it is to use the question ``y is b raised to what 
 			\\\hline
 		\end{tabular}
 	\end{center}
-\item For this statement, we are answering the question ``$\frac{1}{2}$ is 2 raised to what power?'' This one is a bit tricky, but we've seen something similar in the question 2. In question 2, we saw that because we had a fraction with a power of 3 (the base we were working with) in the denominator, that our final answer was negative. Here, if we try $2^{-1}$, we get $\frac{1}{2}$. This tells us that 
+\item For this statement, we are answering the question ``$\frac{1}{2}$ is 2 raised to what power?'' This one is a bit tricky, but we've seen something similar in question 2. In question 2, we saw that because we had a fraction with a power of 3 (the base we were working with) in the denominator, that our final answer was negative. Here if we try $2^{-1}$, we get $\frac{1}{2}$. This tells us that 
 			\begin{center}
 		\begin{tabular}{| c |} \hline
 			\\[-4pt]
@@ -244,16 +247,16 @@ Notice that we are using our exponent rules here, specifically the rule $(x^a)^b
 
 \begin{equation*}
 	\begin{split}
-		4y+2 &= 2y-1 \\
-		2y &=-3 \\
-		y&= \frac{-2}{3}
+		4y+2 &= y-1 \\
+		3y &=-3 \\
+		y&= -1
 	\end{split}
 \end{equation*}
 Our final answer is
 	\begin{center}
 		\begin{tabular}{| c |} \hline
 			\\[-4pt]
-			$4^{2y+1} = 2^{y-1}$ solves to give $\displaystyle y= \frac{-2}{3}$ \\[-4pt]
+			$4^{2y+1} = 2^{y-1}$ solves to give $\displaystyle y= -1$ \\[-4pt]
 			\\\hline
 		\end{tabular}
 	\end{center}}\\

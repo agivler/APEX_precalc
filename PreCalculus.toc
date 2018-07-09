@@ -1,5 +1,6 @@
 \thispagestyle {empty}
-\contentsline {chapter}{Table of Contents}{iii}{Doc-Start}
+\contentsline {chapter}{Preface}{v}{section*.1}
+\contentsline {chapter}{Table of Contents}{vii}{section*.1}
 \contentsline {chapter}{\numberline {1}Numbers and Functions}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Real Numbers}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Introduction to Functions}{18}{section.1.2}
@@ -18,4 +19,4 @@
 \contentsline {section}{\numberline {3.3}Fractions and Partial Fractions Decomposition}{123}{section.3.3}
 \contentsline {section}{\numberline {3.4}Introduction to Trigonometric Functions}{136}{section.3.4}
 \contentsline {section}{\numberline {3.5}Trigonometric Functions and Triangles}{143}{section.3.5}
-\contentsline {chapter}{\numberline {A}Solutions To Selected Problems}{A.1}{appendix.A}
+\contentsline {chapter}{\numberline {A}Solutions To Problems}{A.1}{appendix.A}

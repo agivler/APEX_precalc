@@ -18,10 +18,8 @@ You are probably already familiar with the phrase ``order of operations.'' When 
 \begin{enumerate}
 	\item Parentheses
 	\item Exponents
-	\item Multiplication
-	\item Division
-	\item Addition
-	\item Subtraction
+	\item Multiplication/Division
+	\item Addition/Subtraction
 \end{enumerate}
 \end{multicols}
 
@@ -103,7 +101,7 @@ There's one more thing that we have to be careful about with parentheses, and th
 You will almost never see the second form written down, however the first form can you get into trouble if you are using a calculator. If you enter $3+4\div 2+5$ on a calculator, it will first do the division and then the two additions since it can only follow the order of operations (listed earlier). This would give you an answer of 10. However, the work to find the actual answer is shown below.
 
 \vskip \baselineskip
-\example{ex_01_01_03}{Invisible Parentheses in a Fraction}{Evaluate the expression in (\ref{eqn:implied_parentheses_fraction}).} {First, let's go back and find (\ref{eqn:implied_parentheses_fraction}). You may have noticed that the fractions above have (1.6) next to them on the right side of the page. This tells us that (\ref{eqn:implied_parentheses_fraction}) is referring to this expression. Now that we know what we are looking at, let's evaluate it:\\[-8pt]
+\example{ex_01_01_03}{Implied Parentheses in a Fraction}{Evaluate the expression in (\ref{eqn:implied_parentheses_fraction}).} {First, let's go back and find (\ref{eqn:implied_parentheses_fraction}). You may have noticed that the fractions above have (1.6) next to them on the right side of the page. This tells us that (\ref{eqn:implied_parentheses_fraction}) is referring to this expression. Now that we know what we are looking at, let's evaluate it:\\[-8pt]
 \begin{equation}\label{eqn:implied_parentheses_fraction_solution}
 	\begin{split}
 		\frac{3+4}{2+5} & = \frac{(3+4)}{(2+5)} \\
@@ -126,11 +124,11 @@ As you can see, leaving off the implied parentheses drastically changes our answ
 
 \vskip \baselineskip
 
-\example{ex_01_01_04}{Invisible Parenthesis Under a Square Root}{Evaluate \begin{equation*} \sqrt{12\times 3} -20 \end{equation*}.}{
+\example{ex_01_01_04}{Implied Parenthesis Under a Square Root}{Evaluate \begin{equation*} \sqrt{12\times 3} -20 \end{equation*}.}{
 
 \begin{equation}\label{eqn:implied_parentheses_root}
 	\begin{split}
-		\sqrt{12\times3} -11 & = \sqrt{(12\times 3)} -20 \\
+		\sqrt{12\times3} -20 & = \sqrt{(12\times 3)} -20 \\
 				& = \sqrt{(36)} - 20\\
 				& = 6-20\\
 				& = -14
@@ -141,7 +139,7 @@ This gives our final answer:
 \begin{center}
 	\begin{tabular}{| c |} \hline
 		\\[-4pt]
-		$\sqrt{12\times3} -11 = -14$ \\[-4pt]
+		$\sqrt{12\times3} -20 = -14$ \\[-4pt]
 		\\\hline
 	\end{tabular}
 \end{center}
@@ -208,7 +206,7 @@ It's also important to note that all root operations, like square roots, count a
 \vskip \baselineskip
 \noindent\textbf{\large Multiplication and Division}\\
 
-In our original list for the order of operations, we listed multiplication and then division. However, this is not 100\% accurate; mathematicians consider multiplication and division to be on the same level, meaning that one does not take precedence over the other. This means you should not do \emph{all} multiplication steps and then \emph{all} division steps. Instead, you should do multiplication/division from left to right. 
+In our original list for the order of operations, we listed multiplication and division on the same line. This is because mathematicians consider multiplication and division to be on the same level, meaning that one does not take precedence over the other. This means you should not do \emph{all} multiplication steps and then \emph{all} division steps. Instead, you should do multiplication/division from left to right. 
 
 \vskip \baselineskip
 \example{ex_01_01_07}{Multiplication/Division: Left to Right}{Evaluate \begin{equation*}\label{eqn:mult_div} 6\div 2 \times 3  + 1 \times 8 \div 4 \end{equation*} } { 
@@ -233,10 +231,6 @@ In our original list for the order of operations, we listed multiplication and t
 
 Note that we get a different, incorrect, answer of 3 if we do all the multiplication first and then all the division.
 
-\vskip \baselineskip
-\vskip \baselineskip
-\vskip \baselineskip
-\vskip \baselineskip
 \vskip \baselineskip
 \noindent\textbf{\large Addition and Subtraction}\\
 
@@ -376,15 +370,15 @@ Addition and subtraction of fractions can be a bit more complicated. With a frac
 				\frac{1}{2} - \frac{1}{3} + \frac{1}{4} & = \frac{1}{2} \times\frac{3}{3} - \frac{1}{3} \times \frac{2}{2} + \frac{1}{4} \\[6pt]
 									& = \frac{3}{6} - \frac{2}{6} + \frac{1}{4} \\[6pt]
 									& = \frac{3-2}{6} + \frac{1}{4} \\[6pt]
+									& = \frac{1}{6} + \frac{1}{4} \\[6pt]
+									& = \frac{1}{6} \times \frac{2}{2} + \frac{1}{4} \times \frac{3}{3} \\[6pt]
 			\end{split}
 		\end{equation*}
 		\begin{equation*}
 			\begin{split}
-				\phantom{\frac{1}{2} - \frac{1}{3} + \frac{1}{4}} & = \frac{1}{6} + \frac{1}{4} \\[6pt]
-									& = \frac{1}{6} \times \frac{2}{2} + \frac{1}{4} \times \frac{3}{3} \\[6pt]
-									& = \frac{2}{12} + \frac{3}{12} \\[6pt]
-									& = \frac{2+3}{12} \\[6pt]
-									& = \frac{5}{12}
+				\phantom{\frac{1}{2} - \frac{1}{3} + \frac{1}{4}} & = \frac{2}{12} + \frac{3}{12} \\[6pt]
+										  & = \frac{2+3}{12} \\[6pt]
+										  & = \frac{5}{12}
 			\end{split}
 		\end{equation*}
 
