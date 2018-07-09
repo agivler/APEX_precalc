@@ -9,3 +9,6 @@
 *.swo
 *.md5
 *.dpth
+amazon*
+bad_fix*
+
